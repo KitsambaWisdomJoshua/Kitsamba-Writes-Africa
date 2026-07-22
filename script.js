@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSmoothScroll();
     initializeFormHandling();
     initializeAnimations();
+    setActiveNavLink();
 });
 
 // ========================================
@@ -32,45 +33,26 @@ function initializeNavigation() {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
-            updateActiveLink(link);
         });
     });
 
     // Explore button functionality
     if (exploreBtn) {
         exploreBtn.addEventListener('click', () => {
-            document.getElementById('novels').scrollIntoView({ behavior: 'smooth' });
+            window.location.href = 'novels.html';
         });
     }
-
-    // Update active link on scroll
-    window.addEventListener('scroll', () => {
-        updateActiveLinkOnScroll();
-    });
 }
 
-function updateActiveLink(clickedLink) {
-    document.querySelectorAll('.nav-link').forEach(link => {
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
         link.classList.remove('active');
-    });
-    clickedLink.classList.add('active');
-}
-
-function updateActiveLinkOnScroll() {
-    const sections = document.querySelectorAll('section[id]');
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        const href = link.getAttribute('href');
+        
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
             link.classList.add('active');
         }
     });
@@ -83,9 +65,11 @@ function updateActiveLinkOnScroll() {
 function initializeSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -159,6 +143,8 @@ function showNotification(message, type = 'info') {
         border-radius: 5px;
         z-index: 10000;
         animation: slideIn 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        font-weight: 500;
     `;
 
     document.body.appendChild(notification);
@@ -190,7 +176,7 @@ function initializeAnimations() {
     }, observerOptions);
 
     // Observe all cards and sections
-    document.querySelectorAll('.novel-card, .section-card, .blog-card, .lifestyle-card').forEach(el => {
+    document.querySelectorAll('.novel-card, .section-card, .blog-card, .lifestyle-card, .mission-card, .stat-card').forEach(el => {
         observer.observe(el);
     });
 }
@@ -271,6 +257,37 @@ style.innerHTML = `
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         font-weight: 500;
     }
+
+    /* Mobile Navigation Enhancement */
+    .nav-menu.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--dark-secondary);
+        border-bottom: 2px solid var(--primary-color);
+        z-index: 999;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+        }
+    }
 `;
 document.head.appendChild(style);
 
@@ -279,18 +296,18 @@ document.head.appendChild(style);
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const exploreStoriesBtn = document.querySelector('.hero-buttons .btn-primary');
-    const learnMoreBtn = document.querySelector('.hero-buttons .btn-secondary');
+    const exploreStoriesBtn = document.querySelector('.explore-stories-btn');
+    const learnMoreBtn = document.querySelector('.learn-more-btn');
 
     if (exploreStoriesBtn) {
         exploreStoriesBtn.addEventListener('click', () => {
-            document.getElementById('novels').scrollIntoView({ behavior: 'smooth' });
+            window.location.href = 'novels.html';
         });
     }
 
     if (learnMoreBtn) {
         learnMoreBtn.addEventListener('click', () => {
-            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+            window.location.href = 'about.html';
         });
     }
 });
@@ -301,9 +318,87 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.querySelectorAll('.read-more').forEach(btn => {
     btn.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // If it's an internal page link, allow navigation
+        if (href && href !== '#') {
+            return;
+        }
+        
+        // Otherwise, show a placeholder message
         e.preventDefault();
         showNotification('This feature will be available soon!', 'info');
     });
+});
+
+// ========================================
+// SETTINGS PAGE FUNCTIONALITY
+// ========================================
+
+function switchTab(tabName) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.settings-section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Remove active class from all sidebar items
+    const sidebarItems = document.querySelectorAll('.settings-sidebar li');
+    sidebarItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Show selected section
+    const selectedSection = document.getElementById(tabName);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+    }
+
+    // Add active class to clicked sidebar item
+    if (event && event.target) {
+        const closestLi = event.target.closest('li');
+        if (closestLi) {
+            closestLi.classList.add('active');
+        }
+    }
+}
+
+// ========================================
+// BLOG SEARCH & FILTER
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-input');
+    const filterSelect = document.querySelector('.filter-select');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    if (searchInput) {
+        searchInput.addEventListener('keyup', filterBlogPosts);
+    }
+
+    if (filterSelect) {
+        filterSelect.addEventListener('change', filterBlogPosts);
+    }
+
+    function filterBlogPosts() {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        const selectedCategory = filterSelect ? filterSelect.value : '';
+
+        blogCards.forEach(card => {
+            const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+            const description = card.querySelector('p')?.textContent.toLowerCase() || '';
+            const category = card.querySelector('.blog-category')?.textContent.toLowerCase() || '';
+
+            const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+            const matchesCategory = !selectedCategory || category.includes(selectedCategory);
+
+            if (matchesSearch && matchesCategory) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
 });
 
 console.log('Kitsamba Writes Africa - Website loaded successfully!');
