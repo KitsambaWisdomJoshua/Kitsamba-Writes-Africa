@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Joshua - Kitsamba Writes Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(31, 58, 58, 0.7) 100%),
+                    url('https://via.placeholder.com/1200x400') center/cover;
+            padding: 4rem 0;
+            color: var(--text-light);
+        }
+
+        .about-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-hero-image {
+            text-align: center;
+        }
+
+        .about-hero-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            object-fit: cover;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .about-hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .about-tagline {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-intro {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .detailed-about {
+            background-color: var(--dark-secondary);
+            padding: 4rem 0;
+        }
+
+        .mission-section {
+            background-color: var(--dark-bg);
+            padding: 4rem 0;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mission-card {
+            background-color: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .mission-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .achievements-section {
+            background-color: var(--dark-secondary);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .journey-section {
+            background-color: var(--dark-bg);
+            padding: 4rem 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 2rem);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 2rem);
+            text-align: left;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border: 3px solid var(--dark-bg);
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background-color: var(--dark-secondary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .timeline-content h4 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background-color: var(--dark-secondary);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                padding-right: 0;
+                padding-left: 50px;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) {
+                padding-right: 0;
+                padding-left: 50px;
+                text-align: left;
+            }
+
+            .timeline-item::before {
+                left: 0;
+            }
+
+            .timeline-content {
+                border-left: 3px solid var(--primary-color);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-pen-nib"></i>
+                <span>KITSAMBA<br><small>WRITES AFRICA</small></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="novels.html" class="nav-link">Novels</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="lifestyle.html" class="nav-link">African Lifestyle</a></li>
+                <li><a href="about.html" class="nav-link active">About Joshua</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="explore-btn">
+                <i class="fas fa-book-open"></i> Explore Stories
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="about-hero-image">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/KItsamba%20Joshua.png" alt="Kitsamba Joshua">
+                </div>
+                <div class="about-hero-text">
+                    <h1>Kitsamba Joshua</h1>
+                    <p class="about-tagline">Ugandan Novelist & Storyteller</p>
+                    <p class="about-intro">
+                        I'm a passionate writer dedicated to crafting compelling African stories that inspire, entertain, and transform. Through my novels and articles, I explore the depths of human emotion and the beauty of African culture.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="detailed-about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/KItsamba%20Joshua.png" alt="Kitsamba Joshua">
+                </div>
+                <div class="about-text">
+                    <h2>My Story</h2>
+                    <p>
+                        I'm Kitsamba Joshua, a Ugandan novelist and storyteller with a passion for crafting compelling and thought-provoking fiction. Drawing inspiration from everyday life, culture, and the vibrant experiences of African people, I write stories that resonate with readers across the continent and beyond.
+                    </p>
+                    <p>
+                        I attended Kireka Hill Infant School in Kireka, Ebenezer Primary School in Wakiso, Nabumali High School, and Hawthorne Scribner High School. My passion for storytelling infused every stage of my education, as I discovered that stories are the most powerful vehicles for conveying truth, emotion, and meaning.
+                    </p>
+                    <p>
+                        Through my writing, I aim to inspire readers with stories rooted in resilience, hope, and transformation. My novels explore themes of love, loss, survival, destiny, and the interconnectedness of human experiences. Whether examining the pain of grief or the joy of unexpected connections, my work celebrates the complexity and beauty of life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title">My Mission & Vision</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>My Mission</h3>
+                    <p>To tell authentic African stories that celebrate our culture, inspire readers, and contribute to a global understanding of the African experience. I believe in the transformative power of literature to heal, educate, and unite people across borders.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>My Vision</h3>
+                    <p>To establish Kitsamba Writes Africa as a beacon of African literary excellence, where authentic voices are celebrated, cultural heritage is honored, and stories inspire positive change in the world.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>My Passion</h3>
+                    <p>I am dedicated to creating narratives that touch the heart, challenge the mind, and elevate African storytelling on the global stage. Every story I write is a gift to readers who seek meaning and connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Stats -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">Achievements & Milestones</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number">6+</h3>
+                    <p>Novels Published</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">Thousands</h3>
+                    <p>Readers Worldwide</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">100+</h3>
+                    <p>Blog Articles & Stories</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">Africa</h3>
+                    <p>Stories That Inspire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="section-title">My Writing Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h4>Started Writing</h4>
+                        <p>Began my journey as a novelist, exploring themes of love, loss, and resilience through fiction.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h4>First Novel Released</h4>
+                        <p>Published my first novel, marking the beginning of a literary career dedicated to African storytelling.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h4>Expanded Portfolio</h4>
+                        <p>Released multiple novels and started contributing to blogs and literary publications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h4>Growing Recognition</h4>
+                        <p>Gained readership across Africa and beyond, with stories resonating with diverse audiences.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h4>Platform Launch</h4>
+                        <p>Established Kitsamba Writes Africa to share my work and celebrate African literature.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h4>Global Impact</h4>
+                        <p>Continuing to inspire readers worldwide with authentic African narratives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Me On This Literary Journey</h2>
+            <p>Explore my novels, read my blog, and stay connected for the latest stories from Africa.</p>
+            <div class="cta-buttons">
+                <a href="novels.html" class="btn btn-primary">Read My Novels</a>
+                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>KITSAMBA WRITES AFRICA</span>
+                </div>
+                <p>Writing Africa. One Story at a Time</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="novels.html">Novels</a></li>
+                    <li><a href="lifestyle.html">African Lifestyle</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="lifestyle.html">African Traditions</a></li>
+                    <li><a href="blog.html">History</a></li>
+                    <li><a href="lifestyle.html">Culture & Lifestyle</a></li>
+                    <li><a href="blog.html">Inspiration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to get the latest stories and updates from Kitsamba Writes Africa.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kitsamba Writes Africa. All Rights Reserved. | Proudly African. Passionately Written. <i class="fas fa-heart" style="color: #d4af37;"></i></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
