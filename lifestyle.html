@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Lifestyle - Kitsamba Writes Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Lifestyle Page Specific Styles */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(31, 58, 58, 0.7) 100%),
+                    url('https://via.placeholder.com/1200x300') center/cover;
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        .lifestyle-detail {
+            background-color: var(--dark-bg);
+            padding: 4rem 0;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .detail-content.reverse {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .detail-image {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            border: 3px solid var(--primary-color);
+            border-radius: 10px;
+            display: block;
+        }
+
+        .detail-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-text p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .cta-section {
+            background-color: var(--dark-secondary);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .detail-content,
+            .detail-content.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-pen-nib"></i>
+                <span>KITSAMBA<br><small>WRITES AFRICA</small></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="novels.html" class="nav-link">Novels</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="lifestyle.html" class="nav-link active">African Lifestyle</a></li>
+                <li><a href="about.html" class="nav-link">About Joshua</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="explore-btn">
+                <i class="fas fa-book-open"></i> Explore Stories
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">African Lifestyle & Culture</h1>
+            <p class="page-subtitle">Discover the richness, traditions, and beauty of African living</p>
+        </div>
+    </section>
+
+    <!-- Lifestyle Categories -->
+    <section class="lifestyle-section">
+        <div class="container">
+            <div class="lifestyle-grid">
+                <article class="lifestyle-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/traditions.webp" alt="Traditions">
+                    <h3>African Traditions</h3>
+                    <p>Explore the deep-rooted customs, ceremonies, and rituals that define African identity and connect us to our ancestors.</p>
+                    <a href="#traditions-detail" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="lifestyle-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/food.webp" alt="Food">
+                    <h3>Food & Cuisine</h3>
+                    <p>Discover the flavors and stories behind traditional African dishes and the cultural significance of our cooking.</p>
+                    <a href="#food-detail" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="lifestyle-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/arts.webp" alt="Arts">
+                    <h3>Arts & Crafts</h3>
+                    <p>Learn about the incredible artistry and craftsmanship of African creators and the heritage behind each creation.</p>
+                    <a href="#arts-detail" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Content Sections -->
+    <section id="traditions-detail" class="lifestyle-detail">
+        <div class="container">
+            <div class="detail-content">
+                <div class="detail-image">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/traditions.webp" alt="African Traditions">
+                </div>
+                <div class="detail-text">
+                    <h2>African Traditions</h2>
+                    <p>
+                        African traditions represent centuries of wisdom, cultural identity, and spiritual connection. From coming-of-age ceremonies to wedding celebrations, each tradition carries deep meaning and purpose.
+                    </p>
+                    <p>
+                        These customs bond communities together, preserve history, and ensure that the values of our ancestors guide future generations. Whether it's traditional greetings, music, dance, or storytelling, African traditions continue to shape who we are.
+                    </p>
+                    <p>
+                        In a rapidly changing world, maintaining these traditions helps us stay connected to our roots while embracing modern progress. It's about honoring where we come from while building where we're going.
+                    </p>
+                    <a href="blog.html" class="btn btn-primary">Read More Stories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="food-detail" class="lifestyle-detail">
+        <div class="container">
+            <div class="detail-content reverse">
+                <div class="detail-image">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/food.webp" alt="African Food">
+                </div>
+                <div class="detail-text">
+                    <h2>Food & Cuisine</h2>
+                    <p>
+                        African cuisine is a celebration of flavor, tradition, and community. Every dish tells a story of its people—their history, geography, and cultural values. From savory stews to grilled delicacies, African food nourishes both body and soul.
+                    </p>
+                    <p>
+                        Food preparation is often a communal activity, bringing families and villages together. Traditional recipes passed down through generations carry within them the wisdom and love of our ancestors. Each ingredient has significance, from spiritual beliefs to nutritional knowledge.
+                    </p>
+                    <p>
+                        Today's African chefs are reimagining traditional cuisine, blending ancestral recipes with modern techniques to create a global movement of African culinary excellence. Our food is our pride, our identity, and our gift to the world.
+                    </p>
+                    <a href="blog.html" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="arts-detail" class="lifestyle-detail">
+        <div class="container">
+            <div class="detail-content">
+                <div class="detail-image">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/arts.webp" alt="African Arts">
+                </div>
+                <div class="detail-text">
+                    <h2>Arts & Crafts</h2>
+                    <p>
+                        African art is a powerful expression of creativity, spirituality, and cultural identity. From intricate beadwork to sculptural masterpieces, each creation reflects the soul of its maker and the heritage of its people.
+                    </p>
+                    <p>
+                        Traditional crafts like weaving, pottery, carving, and metalwork have been refined over centuries. These skills are not just about creating beautiful objects—they're about preserving cultural knowledge and sustaining livelihoods for artisan communities.
+                    </p>
+                    <p>
+                        Contemporary African artists continue this legacy while pushing creative boundaries, gaining international recognition and transforming the global art scene. African art matters, African artists matter, and their work speaks a universal language of human expression.
+                    </p>
+                    <a href="blog.html" class="btn btn-primary">Discover Artists</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience the Richness of African Culture</h2>
+            <p>Dive deeper into African lifestyle, traditions, and stories through our blog and novels.</p>
+            <div class="cta-buttons">
+                <a href="blog.html" class="btn btn-primary">Read Our Blog</a>
+                <a href="novels.html" class="btn btn-secondary">Explore Novels</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>KITSAMBA WRITES AFRICA</span>
+                </div>
+                <p>Writing Africa. One Story at a Time</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="novels.html">Novels</a></li>
+                    <li><a href="lifestyle.html">African Lifestyle</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#traditions-detail">African Traditions</a></li>
+                    <li><a href="blog.html">History</a></li>
+                    <li><a href="#food-detail">Culture & Lifestyle</a></li>
+                    <li><a href="blog.html">Inspiration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to get the latest stories and updates from Kitsamba Writes Africa.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kitsamba Writes Africa. All Rights Reserved. | Proudly African. Passionately Written. <i class="fas fa-heart" style="color: #d4af37;"></i></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
