@@ -1,1 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Kitsamba Writes Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Settings Specific Styles */
+        .settings-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
+        .settings-sidebar {
+            background-color: var(--dark-secondary);
+            border-radius: 10px;
+            padding: 2rem 0;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .settings-sidebar ul {
+            list-style: none;
+        }
+
+        .settings-sidebar li {
+            border-left: 4px solid transparent;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .settings-sidebar li a {
+            color: var(--text-gray);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color var(--transition);
+        }
+
+        .settings-sidebar li:hover,
+        .settings-sidebar li.active {
+            border-left-color: var(--primary-color);
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .settings-sidebar li:hover a,
+        .settings-sidebar li.active a {
+            color: var(--primary-color);
+        }
+
+        .settings-content {
+            background-color: var(--dark-secondary);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .settings-section {
+            display: none;
+        }
+
+        .settings-section.active {
+            display: block;
+        }
+
+        .settings-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .settings-section p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .setting-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--dark-tertiary);
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+
+        .setting-item label {
+            display: block;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .setting-item input[type="text"],
+        .setting-item input[type="email"],
+        .setting-item select,
+        .setting-item textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.8rem;
+            background-color: var(--dark-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            color: var(--text-light);
+            font-family: inherit;
+        }
+
+        .setting-item textarea {
+            resize: vertical;
+        }
+
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .toggle-checkbox {
+            width: 50px;
+            height: 26px;
+            background-color: var(--dark-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 13px;
+            cursor: pointer;
+            position: relative;
+            transition: all var(--transition);
+        }
+
+        .toggle-checkbox input {
+            display: none;
+        }
+
+        .toggle-checkbox input:checked + .toggle-slider {
+            background-color: var(--primary-color);
+        }
+
+        .toggle-checkbox input:checked + .toggle-slider::after {
+            transform: translateX(24px);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background-color: var(--text-gray);
+            border-radius: 50%;
+            transition: all var(--transition);
+        }
+
+        .toggle-slider::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .button-group button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+
+        .button-group .btn-save {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+
+        .button-group .btn-save:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .button-group .btn-cancel {
+            background-color: transparent;
+            border: 2px solid var(--text-gray);
+            color: var(--text-gray);
+        }
+
+        .button-group .btn-cancel:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .danger-zone {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .danger-zone h3 {
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
+
+        .danger-zone p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .settings-container {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-sidebar {
+                position: static;
+            }
+
+            .settings-sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0;
+            }
+
+            .settings-sidebar li {
+                flex: 1;
+                min-width: 150px;
+                text-align: center;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .settings-sidebar li.active {
+                border-left: none;
+                border-bottom-color: var(--primary-color);
+            }
+
+            .setting-item input[type="text"],
+            .setting-item input[type="email"],
+            .setting-item select,
+            .setting-item textarea {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-pen-nib"></i>
+                <span>KITSAMBA<br><small>WRITES AFRICA</small></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="novels.html" class="nav-link">Novels</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="lifestyle.html" class="nav-link">African Lifestyle</a></li>
+                <li><a href="about.html" class="nav-link">About Joshua</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="explore-btn">
+                <i class="fas fa-book-open"></i> Explore Stories
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Settings</h1>
+            <p class="page-subtitle">Manage your account and preferences</p>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section class="settings-section-wrapper">
+        <div class="container">
+            <div class="settings-container">
+                <!-- Settings Sidebar -->
+                <aside class="settings-sidebar">
+                    <ul>
+                        <li class="active"><a href="#account" onclick="switchTab('account')"><i class="fas fa-user"></i> Account</a></li>
+                        <li><a href="#privacy" onclick="switchTab('privacy')"><i class="fas fa-lock"></i> Privacy & Security</a></li>
+                        <li><a href="#notifications" onclick="switchTab('notifications')"><i class="fas fa-bell"></i> Notifications</a></li>
+                        <li><a href="#appearance" onclick="switchTab('appearance')"><i class="fas fa-palette"></i> Appearance</a></li>
+                        <li><a href="#preferences" onclick="switchTab('preferences')"><i class="fas fa-sliders-h"></i> Preferences</a></li>
+                        <li><a href="#payments" onclick="switchTab('payments')"><i class="fas fa-credit-card"></i> Payments</a></li>
+                        <li><a href="#connected" onclick="switchTab('connected')"><i class="fas fa-link"></i> Connected Services</a></li>
+                        <li><a href="#storage" onclick="switchTab('storage')"><i class="fas fa-database"></i> Storage</a></li>
+                        <li><a href="#help" onclick="switchTab('help')"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                        <li><a href="#legal" onclick="switchTab('legal')"><i class="fas fa-file-contract"></i> Legal</a></li>
+                        <li><a href="#about" onclick="switchTab('about')"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="#logout" onclick="switchTab('logout')"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- Account Section -->
+                    <div id="account" class="settings-section active">
+                        <h2>Account Settings</h2>
+                        <p>Manage your personal information and account details.</p>
+
+                        <div class="setting-item">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" placeholder="Kitsamba Joshua" value="Kitsamba Joshua">
+                        </div>
+
+                        <div class="setting-item">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="your@email.com" value="contact@kitsambawrites.com">
+                        </div>
+
+                        <div class="setting-item">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="kitsambajoshua" value="kitsambajoshua">
+                        </div>
+
+                        <div class="setting-item">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" placeholder="Tell us about yourself..." rows="4">Ugandan novelist and storyteller passionate about African stories</textarea>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-save">Save Changes</button>
+                            <button class="btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Privacy & Security Section -->
+                    <div id="privacy" class="settings-section">
+                        <h2>Privacy & Security</h2>
+                        <p>Control your privacy settings and security options.</p>
+
+                        <div class="setting-item">
+                            <label>Profile Visibility</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="profileVisibility" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Make profile public</span>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <label>Show Email Address</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="showEmail">
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Allow others to see your email</span>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <label for="password">Change Password</label>
+                            <input type="text" id="password" placeholder="Enter new password">
+                        </div>
+
+                        <div class="setting-item">
+                            <label>Two-Factor Authentication</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="2fa">
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Enable 2FA for extra security</span>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-save">Save Changes</button>
+                            <button class="btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Section -->
+                    <div id="notifications" class="settings-section">
+                        <h2>Notification Settings</h2>
+                        <p>Choose how and when you want to receive notifications.</p>
+
+                        <div class="setting-item">
+                            <label>Email Notifications</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="emailNotif" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Receive email notifications</span>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <label>New Blog Post Alerts</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="blogAlerts" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Get notified about new blog posts</span>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <label>New Novel Releases</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="novelAlerts" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Notify me about new novels</span>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <label>Newsletter</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="newsletter" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Subscribe to our newsletter</span>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-save">Save Changes</button>
+                            <button class="btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Section -->
+                    <div id="appearance" class="settings-section">
+                        <h2>Appearance</h2>
+                        <p>Customize how the website looks for you.</p>
+
+                        <div class="setting-item">
+                            <label for="theme">Theme</label>
+                            <select id="theme">
+                                <option>Dark Mode (Default)</option>
+                                <option>Light Mode</option>
+                                <option>Auto (System)</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-item">
+                            <label for="fontSize">Font Size</label>
+                            <select id="fontSize">
+                                <option>Small</option>
+                                <option selected>Medium (Default)</option>
+                                <option>Large</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-save">Save Changes</button>
+                            <button class="btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Section -->
+                    <div id="preferences" class="settings-section">
+                        <h2>Reading Preferences</h2>
+                        <p>Set your preferences for content and reading experience.</p>
+
+                        <div class="setting-item">
+                            <label for="language">Preferred Language</label>
+                            <select id="language">
+                                <option selected>English</option>
+                                <option>Luganda</option>
+                                <option>French</option>
+                                <option>Spanish</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-item">
+                            <label>Content Categories of Interest</label>
+                            <div class="toggle-switch">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="cat1" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>Fiction & Novels</span>
+                            </div>
+                            <div class="toggle-switch" style="margin-top: 0.5rem;">
+                                <div class="toggle-checkbox">
+                                    <input type="checkbox" id="cat2" checked>
+                                    <span class="toggle-slider"></span>
+                                </div>
+                                <span>African Culture & Lifestyle</span>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-save">Save Changes</button>
+                            <button class="btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Payments Section -->
+                    <div id="payments" class="settings-section">
+                        <h2>Payment Methods</h2>
+                        <p>Manage your payment information.</p>
+
+                        <div class="setting-item">
+                            <p style="color: var(--text-gray);">No payment methods added yet.</p>
+                            <button class="btn btn-primary">Add Payment Method</button>
+                        </div>
+                    </div>
+
+                    <!-- Connected Services Section -->
+                    <div id="connected" class="settings-section">
+                        <h2>Connected Services</h2>
+                        <p>Manage your connected social media and services.</p>
+
+                        <div class="setting-item">
+                            <p>Connect your social media accounts to share updates easily.</p>
+                            <button class="btn btn-primary">Connect Facebook</button>
+                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Connect Instagram</button>
+                        </div>
+                    </div>
+
+                    <!-- Storage Section -->
+                    <div id="storage" class="settings-section">
+                        <h2>Storage</h2>
+                        <p>Manage your account storage.</p>
+
+                        <div class="setting-item">
+                            <p>Storage Used: 250 MB of 5 GB</p>
+                            <div style="background-color: var(--dark-bg); border-radius: 5px; overflow: hidden; margin-top: 1rem;">
+                                <div style="background-color: var(--primary-color); width: 5%; height: 20px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help & Support Section -->
+                    <div id="help" class="settings-section">
+                        <h2>Help & Support</h2>
+                        <p>Get help and support for your account.</p>
+
+                        <div class="setting-item">
+                            <button class="btn btn-primary">Contact Support</button>
+                            <button class="btn btn-primary" style="margin-left: 0.5rem;">View FAQ</button>
+                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Documentation</button>
+                        </div>
+                    </div>
+
+                    <!-- Legal Section -->
+                    <div id="legal" class="settings-section">
+                        <h2>Legal</h2>
+                        <p>Review our legal documents and policies.</p>
+
+                        <div class="setting-item">
+                            <button class="btn btn-primary">Terms of Service</button>
+                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Privacy Policy</button>
+                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Cookie Policy</button>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div id="about" class="settings-section">
+                        <h2>About</h2>
+                        <p>Learn more about Kitsamba Writes Africa.</p>
+
+                        <div class="setting-item">
+                            <p><strong>Version:</strong> 1.0.0</p>
+                            <p><strong>Last Updated:</strong> July 2025</p>
+                            <button class="btn btn-primary">Check for Updates</button>
+                        </div>
+                    </div>
+
+                    <!-- Logout Section -->
+                    <div id="logout" class="settings-section">
+                        <h2>Log Out</h2>
+                        <p>You are currently logged in to your account.</p>
+
+                        <div class="danger-zone">
+                            <h3>Log Out</h3>
+                            <p>You will be logged out of your account and redirected to the home page.</p>
+                            <button class="btn btn-primary" style="background-color: #dc3545;">Log Out Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>KITSAMBA WRITES AFRICA</span>
+                </div>
+                <p>Writing Africa. One Story at a Time</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="novels.html">Novels</a></li>
+                    <li><a href="lifestyle.html">African Lifestyle</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="lifestyle.html">African Traditions</a></li>
+                    <li><a href="blog.html">History</a></li>
+                    <li><a href="lifestyle.html">Culture & Lifestyle</a></li>
+                    <li><a href="blog.html">Inspiration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to get the latest stories and updates from Kitsamba Writes Africa.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kitsamba Writes Africa. All Rights Reserved. | Proudly African. Passionately Written. <i class="fas fa-heart" style="color: #d4af37;"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.settings-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all sidebar items
+            const sidebarItems = document.querySelectorAll('.settings-sidebar li');
+            sidebarItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(tabName);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+
+            // Add active class to clicked sidebar item
+            event.target.closest('li').classList.add('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
