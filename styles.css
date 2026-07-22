@@ -148,8 +148,8 @@ body {
    ======================================== */
 
 .hero {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(31, 58, 58, 0.6) 100%),
-                url('https://via.placeholder.com/1200x600') center/cover;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(31, 58, 58, 0.7) 100%),
+            url('https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/hero-background.webp.jpg') center/cover;
     padding: 4rem 0;
     color: var(--text-light);
     min-height: 600px;
