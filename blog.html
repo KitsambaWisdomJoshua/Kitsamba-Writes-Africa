@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kitsamba Writes Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Blog Page Specific Styles */
+        .blog-controls {
+            background-color: var(--dark-secondary);
+            padding: 2rem 0;
+            margin: 2rem 0;
+        }
+
+        .search-filter {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 1rem;
+            max-width: 600px;
+        }
+
+        .search-input,
+        .filter-select {
+            padding: 0.8rem 1rem;
+            background-color: var(--dark-bg);
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            color: var(--text-light);
+            font-family: inherit;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-gray);
+        }
+
+        .blog-category {
+            display: inline-block;
+            background-color: rgba(212, 175, 55, 0.2);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pagination-section {
+            background-color: var(--dark-bg);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .page-link {
+            padding: 0.6rem 1rem;
+            background-color: var(--dark-secondary);
+            border: 1px solid var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .page-link:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+
+        .page-link.active {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border-color: var(--primary-color);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(31, 58, 58, 0.7) 100%),
+                    url('https://via.placeholder.com/1200x300') center/cover;
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 768px) {
+            .search-filter {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-pen-nib"></i>
+                <span>KITSAMBA<br><small>WRITES AFRICA</small></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="novels.html" class="nav-link">Novels</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="lifestyle.html" class="nav-link">African Lifestyle</a></li>
+                <li><a href="about.html" class="nav-link">About Joshua</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="explore-btn">
+                <i class="fas fa-book-open"></i> Explore Stories
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Latest Blog Posts</h1>
+            <p class="page-subtitle">Thoughts, insights, and inspiring stories from Africa</p>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="blog-controls">
+        <div class="container">
+            <div class="search-filter">
+                <input type="text" class="search-input" placeholder="Search blog posts...">
+                <select class="filter-select">
+                    <option value="">All Categories</option>
+                    <option value="storytelling">Storytelling</option>
+                    <option value="culture">Culture</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="writing">Writing Tips</option>
+                    <option value="history">History</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-storytelling.webp" alt="The Power of African Storytelling">
+                    <div class="blog-content">
+                        <span class="blog-date">July 15, 2025</span>
+                        <span class="blog-category">Storytelling</span>
+                        <h3>The Power of African Storytelling</h3>
+                        <p>Discover why African narratives are changing the world and inspiring millions with authentic voices and untold stories. From ancient griots to modern authors, storytelling remains the heartbeat of our culture.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-heritage.webp" alt="Understanding African Heritage">
+                    <div class="blog-content">
+                        <span class="blog-date">July 10, 2025</span>
+                        <span class="blog-category">Culture</span>
+                        <h3>Understanding African Heritage</h3>
+                        <p>A deep dive into the roots of African culture, history, and its profound relevance in today's modern world. Explore how our heritage shapes identity and influences contemporary society.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/writing-journey.webp" alt="Writing from the Heart: My Journey">
+                    <div class="blog-content">
+                        <span class="blog-date">July 5, 2025</span>
+                        <span class="blog-category">Writing</span>
+                        <h3>Writing from the Heart: My Journey</h3>
+                        <p>Behind the scenes: how I craft stories that resonate with African audiences and explore the human spirit. Learn about the creative process and the passion that drives authentic storytelling.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-storytelling.webp" alt="The Resilience of African Communities">
+                    <div class="blog-content">
+                        <span class="blog-date">June 28, 2025</span>
+                        <span class="blog-category">History</span>
+                        <h3>The Resilience of African Communities</h3>
+                        <p>Examining how African societies have overcome challenges and built strong foundations for future generations. Stories of triumph, unity, and unwavering hope.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-heritage.webp" alt="Contemporary African Lifestyle">
+                    <div class="blog-content">
+                        <span class="blog-date">June 20, 2025</span>
+                        <span class="blog-category">Lifestyle</span>
+                        <h3>Contemporary African Lifestyle</h3>
+                        <p>Blending tradition with modernity: how young Africans are redefining what it means to live authentically in the 21st century while honoring our roots.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/writing-journey.webp" alt="5 Tips for Aspiring Writers">
+                    <div class="blog-content">
+                        <span class="blog-date">June 15, 2025</span>
+                        <span class="blog-category">Writing Tips</span>
+                        <h3>5 Tips for Aspiring Writers</h3>
+                        <p>Whether you're just starting your writing journey or looking to improve your craft, these essential tips will help you develop your unique voice and create compelling narratives.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-storytelling.webp" alt="The Role of Art in Society">
+                    <div class="blog-content">
+                        <span class="blog-date">June 8, 2025</span>
+                        <span class="blog-category">Culture</span>
+                        <h3>The Role of Art in Society</h3>
+                        <p>Art transcends boundaries and speaks to the soul. Discover how African artists are using their craft to challenge perceptions and inspire change.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-heritage.webp" alt="Preserving African Languages">
+                    <div class="blog-content">
+                        <span class="blog-date">June 1, 2025</span>
+                        <span class="blog-category">Culture</span>
+                        <h3>Preserving African Languages</h3>
+                        <p>Languages are living repositories of culture and history. Explore efforts to preserve and celebrate the linguistic diversity of Africa.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/writing-journey.webp" alt="Finding Inspiration Everywhere">
+                    <div class="blog-content">
+                        <span class="blog-date">May 25, 2025</span>
+                        <span class="blog-category">Storytelling</span>
+                        <h3>Finding Inspiration Everywhere</h3>
+                        <p>The best stories come from everyday moments. Learn how to observe the world around you and transform ordinary experiences into extraordinary narratives.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination-section">
+        <div class="container">
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>KITSAMBA WRITES AFRICA</span>
+                </div>
+                <p>Writing Africa. One Story at a Time</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="novels.html">Novels</a></li>
+                    <li><a href="lifestyle.html">African Lifestyle</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="lifestyle.html">African Traditions</a></li>
+                    <li><a href="blog.html">History</a></li>
+                    <li><a href="lifestyle.html">Culture & Lifestyle</a></li>
+                    <li><a href="blog.html">Inspiration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to get the latest stories and updates from Kitsamba Writes Africa.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kitsamba Writes Africa. All Rights Reserved. | Proudly African. Passionately Written. <i class="fas fa-heart" style="color: #d4af37;"></i></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
