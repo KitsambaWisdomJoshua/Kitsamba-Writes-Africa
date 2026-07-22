@@ -8,24 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Settings Specific Styles */
+        .settings-wrapper {
+            background-color: var(--dark-bg);
+            padding: 3rem 0;
+            min-height: calc(100vh - 300px);
+        }
+
         .settings-container {
             display: grid;
             grid-template-columns: 250px 1fr;
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .settings-sidebar {
             background-color: var(--dark-secondary);
             border-radius: 10px;
-            padding: 2rem 0;
+            padding: 0;
             height: fit-content;
             position: sticky;
             top: 100px;
+            overflow: hidden;
         }
 
         .settings-sidebar ul {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         .settings-sidebar li {
@@ -33,6 +41,11 @@
             padding: 1rem 1.5rem;
             cursor: pointer;
             transition: all var(--transition);
+            border-bottom: 1px solid var(--dark-tertiary);
+        }
+
+        .settings-sidebar li:last-child {
+            border-bottom: none;
         }
 
         .settings-sidebar li a {
@@ -42,6 +55,7 @@
             align-items: center;
             gap: 10px;
             transition: color var(--transition);
+            font-size: 0.95rem;
         }
 
         .settings-sidebar li:hover,
@@ -67,11 +81,12 @@
 
         .settings-section.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
         .settings-section h2 {
             font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--primary-color);
         }
 
@@ -100,6 +115,7 @@
 
         .setting-item input[type="text"],
         .setting-item input[type="email"],
+        .setting-item input[type="password"],
         .setting-item select,
         .setting-item textarea {
             width: 100%;
@@ -110,10 +126,20 @@
             border-radius: 5px;
             color: var(--text-light);
             font-family: inherit;
+            transition: all var(--transition);
+        }
+
+        .setting-item input:focus,
+        .setting-item select:focus,
+        .setting-item textarea:focus {
+            outline: none;
+            border-color: var(--text-light);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
         }
 
         .setting-item textarea {
             resize: vertical;
+            min-height: 100px;
         }
 
         .toggle-switch {
@@ -123,44 +149,48 @@
         }
 
         .toggle-checkbox {
+            position: relative;
+            display: inline-block;
             width: 50px;
             height: 26px;
-            background-color: var(--dark-bg);
-            border: 2px solid var(--primary-color);
-            border-radius: 13px;
-            cursor: pointer;
-            position: relative;
-            transition: all var(--transition);
         }
 
         .toggle-checkbox input {
             display: none;
         }
 
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--dark-bg);
+            transition: all var(--transition);
+            border: 2px solid var(--primary-color);
+            border-radius: 13px;
+        }
+
+        .toggle-slider::before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--text-gray);
+            transition: all var(--transition);
+            border-radius: 50%;
+        }
+
         .toggle-checkbox input:checked + .toggle-slider {
             background-color: var(--primary-color);
         }
 
-        .toggle-checkbox input:checked + .toggle-slider::after {
+        .toggle-checkbox input:checked + .toggle-slider::before {
             transform: translateX(24px);
-        }
-
-        .toggle-slider {
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 22px;
-            height: 22px;
-            background-color: var(--text-gray);
-            border-radius: 50%;
-            transition: all var(--transition);
-        }
-
-        .toggle-slider::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            background-color: var(--dark-bg);
         }
 
         .button-group {
@@ -169,7 +199,8 @@
             margin-top: 2rem;
         }
 
-        .button-group button {
+        .btn-save,
+        .btn-cancel {
             padding: 0.8rem 2rem;
             border: none;
             border-radius: 5px;
@@ -178,23 +209,23 @@
             transition: all var(--transition);
         }
 
-        .button-group .btn-save {
+        .btn-save {
             background-color: var(--primary-color);
             color: var(--dark-bg);
         }
 
-        .button-group .btn-save:hover {
+        .btn-save:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
-        .button-group .btn-cancel {
+        .btn-cancel {
             background-color: transparent;
             border: 2px solid var(--text-gray);
             color: var(--text-gray);
         }
 
-        .button-group .btn-cancel:hover {
+        .btn-cancel:hover {
             border-color: var(--primary-color);
             color: var(--primary-color);
         }
@@ -217,6 +248,35 @@
             margin-bottom: 1rem;
         }
 
+        .page-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(31, 58, 58, 0.7) 100%);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @media (max-width: 768px) {
             .settings-container {
                 grid-template-columns: 1fr;
@@ -227,17 +287,16 @@
             }
 
             .settings-sidebar ul {
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 0;
             }
 
             .settings-sidebar li {
-                flex: 1;
-                min-width: 150px;
-                text-align: center;
                 border-left: none;
                 border-bottom: 3px solid transparent;
+                text-align: center;
+                padding: 0.8rem 0.5rem;
             }
 
             .settings-sidebar li.active {
@@ -247,9 +306,33 @@
 
             .setting-item input[type="text"],
             .setting-item input[type="email"],
+            .setting-item input[type="password"],
             .setting-item select,
             .setting-item textarea {
                 max-width: 100%;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn-save,
+            .btn-cancel {
+                width: 100%;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .settings-sidebar ul {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-sidebar li a {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -270,9 +353,9 @@
                 <li><a href="about.html" class="nav-link">About Joshua</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="explore-btn">
-                <i class="fas fa-book-open"></i> Explore Stories
-            </button>
+            <a href="settings.html" class="explore-btn">
+                <i class="fas fa-cog"></i> Settings
+            </a>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -290,24 +373,20 @@
     </section>
 
     <!-- Settings Section -->
-    <section class="settings-section-wrapper">
+    <section class="settings-wrapper">
         <div class="container">
             <div class="settings-container">
                 <!-- Settings Sidebar -->
                 <aside class="settings-sidebar">
                     <ul>
-                        <li class="active"><a href="#account" onclick="switchTab('account')"><i class="fas fa-user"></i> Account</a></li>
-                        <li><a href="#privacy" onclick="switchTab('privacy')"><i class="fas fa-lock"></i> Privacy & Security</a></li>
-                        <li><a href="#notifications" onclick="switchTab('notifications')"><i class="fas fa-bell"></i> Notifications</a></li>
-                        <li><a href="#appearance" onclick="switchTab('appearance')"><i class="fas fa-palette"></i> Appearance</a></li>
-                        <li><a href="#preferences" onclick="switchTab('preferences')"><i class="fas fa-sliders-h"></i> Preferences</a></li>
-                        <li><a href="#payments" onclick="switchTab('payments')"><i class="fas fa-credit-card"></i> Payments</a></li>
-                        <li><a href="#connected" onclick="switchTab('connected')"><i class="fas fa-link"></i> Connected Services</a></li>
-                        <li><a href="#storage" onclick="switchTab('storage')"><i class="fas fa-database"></i> Storage</a></li>
-                        <li><a href="#help" onclick="switchTab('help')"><i class="fas fa-question-circle"></i> Help & Support</a></li>
-                        <li><a href="#legal" onclick="switchTab('legal')"><i class="fas fa-file-contract"></i> Legal</a></li>
-                        <li><a href="#about" onclick="switchTab('about')"><i class="fas fa-info-circle"></i> About</a></li>
-                        <li><a href="#logout" onclick="switchTab('logout')"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                        <li class="active" onclick="switchTab(event, 'account')"><a href="#"><i class="fas fa-user"></i> Account</a></li>
+                        <li onclick="switchTab(event, 'privacy')"><a href="#"><i class="fas fa-lock"></i> Privacy</a></li>
+                        <li onclick="switchTab(event, 'notifications')"><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                        <li onclick="switchTab(event, 'appearance')"><a href="#"><i class="fas fa-palette"></i> Appearance</a></li>
+                        <li onclick="switchTab(event, 'preferences')"><a href="#"><i class="fas fa-sliders-h"></i> Preferences</a></li>
+                        <li onclick="switchTab(event, 'help')"><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                        <li onclick="switchTab(event, 'about')"><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li onclick="switchTab(event, 'logout')"><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                     </ul>
                 </aside>
 
@@ -335,12 +414,12 @@
 
                         <div class="setting-item">
                             <label for="bio">Bio</label>
-                            <textarea id="bio" placeholder="Tell us about yourself..." rows="4">Ugandan novelist and storyteller passionate about African stories</textarea>
+                            <textarea id="bio" placeholder="Tell us about yourself...">Ugandan novelist and storyteller passionate about African stories</textarea>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save">Save Changes</button>
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
+                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
                         </div>
                     </div>
 
@@ -352,10 +431,10 @@
                         <div class="setting-item">
                             <label>Profile Visibility</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="profileVisibility" checked>
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Make profile public</span>
                             </div>
                         </div>
@@ -363,33 +442,33 @@
                         <div class="setting-item">
                             <label>Show Email Address</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="showEmail">
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox">
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Allow others to see your email</span>
                             </div>
                         </div>
 
                         <div class="setting-item">
                             <label for="password">Change Password</label>
-                            <input type="text" id="password" placeholder="Enter new password">
+                            <input type="password" id="password" placeholder="Enter new password">
                         </div>
 
                         <div class="setting-item">
                             <label>Two-Factor Authentication</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="2fa">
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox">
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Enable 2FA for extra security</span>
                             </div>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save">Save Changes</button>
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
+                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
                         </div>
                     </div>
 
@@ -401,10 +480,10 @@
                         <div class="setting-item">
                             <label>Email Notifications</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="emailNotif" checked>
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Receive email notifications</span>
                             </div>
                         </div>
@@ -412,10 +491,10 @@
                         <div class="setting-item">
                             <label>New Blog Post Alerts</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="blogAlerts" checked>
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Get notified about new blog posts</span>
                             </div>
                         </div>
@@ -423,10 +502,10 @@
                         <div class="setting-item">
                             <label>New Novel Releases</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="novelAlerts" checked>
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Notify me about new novels</span>
                             </div>
                         </div>
@@ -434,17 +513,17 @@
                         <div class="setting-item">
                             <label>Newsletter</label>
                             <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="newsletter" checked>
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Subscribe to our newsletter</span>
                             </div>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save">Save Changes</button>
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
+                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
                         </div>
                     </div>
 
@@ -456,7 +535,7 @@
                         <div class="setting-item">
                             <label for="theme">Theme</label>
                             <select id="theme">
-                                <option>Dark Mode (Default)</option>
+                                <option selected>Dark Mode (Default)</option>
                                 <option>Light Mode</option>
                                 <option>Auto (System)</option>
                             </select>
@@ -472,8 +551,8 @@
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save">Save Changes</button>
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
+                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
                         </div>
                     </div>
 
@@ -494,85 +573,37 @@
 
                         <div class="setting-item">
                             <label>Content Categories of Interest</label>
-                            <div class="toggle-switch">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="cat1" checked>
+                            <div class="toggle-switch" style="margin-top: 0.8rem;">
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>Fiction & Novels</span>
                             </div>
-                            <div class="toggle-switch" style="margin-top: 0.5rem;">
-                                <div class="toggle-checkbox">
-                                    <input type="checkbox" id="cat2" checked>
+                            <div class="toggle-switch" style="margin-top: 0.8rem;">
+                                <label class="toggle-checkbox">
+                                    <input type="checkbox" checked>
                                     <span class="toggle-slider"></span>
-                                </div>
+                                </label>
                                 <span>African Culture & Lifestyle</span>
                             </div>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save">Save Changes</button>
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
+                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
                         </div>
                     </div>
 
-                    <!-- Payments Section -->
-                    <div id="payments" class="settings-section">
-                        <h2>Payment Methods</h2>
-                        <p>Manage your payment information.</p>
-
-                        <div class="setting-item">
-                            <p style="color: var(--text-gray);">No payment methods added yet.</p>
-                            <button class="btn btn-primary">Add Payment Method</button>
-                        </div>
-                    </div>
-
-                    <!-- Connected Services Section -->
-                    <div id="connected" class="settings-section">
-                        <h2>Connected Services</h2>
-                        <p>Manage your connected social media and services.</p>
-
-                        <div class="setting-item">
-                            <p>Connect your social media accounts to share updates easily.</p>
-                            <button class="btn btn-primary">Connect Facebook</button>
-                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Connect Instagram</button>
-                        </div>
-                    </div>
-
-                    <!-- Storage Section -->
-                    <div id="storage" class="settings-section">
-                        <h2>Storage</h2>
-                        <p>Manage your account storage.</p>
-
-                        <div class="setting-item">
-                            <p>Storage Used: 250 MB of 5 GB</p>
-                            <div style="background-color: var(--dark-bg); border-radius: 5px; overflow: hidden; margin-top: 1rem;">
-                                <div style="background-color: var(--primary-color); width: 5%; height: 20px;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Help & Support Section -->
+                    <!-- Help Section -->
                     <div id="help" class="settings-section">
                         <h2>Help & Support</h2>
                         <p>Get help and support for your account.</p>
 
                         <div class="setting-item">
-                            <button class="btn btn-primary">Contact Support</button>
-                            <button class="btn btn-primary" style="margin-left: 0.5rem;">View FAQ</button>
-                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Documentation</button>
-                        </div>
-                    </div>
-
-                    <!-- Legal Section -->
-                    <div id="legal" class="settings-section">
-                        <h2>Legal</h2>
-                        <p>Review our legal documents and policies.</p>
-
-                        <div class="setting-item">
-                            <button class="btn btn-primary">Terms of Service</button>
-                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Privacy Policy</button>
-                            <button class="btn btn-primary" style="margin-left: 0.5rem;">Cookie Policy</button>
+                            <p>Need assistance? Contact our support team or check our FAQ.</p>
+                            <button class="btn btn-primary" style="margin-right: 0.5rem;">Contact Support</button>
+                            <button class="btn btn-primary">View FAQ</button>
                         </div>
                     </div>
 
@@ -584,6 +615,7 @@
                         <div class="setting-item">
                             <p><strong>Version:</strong> 1.0.0</p>
                             <p><strong>Last Updated:</strong> July 2025</p>
+                            <p><strong>Platform:</strong> Kitsamba Writes Africa</p>
                             <button class="btn btn-primary">Check for Updates</button>
                         </div>
                     </div>
@@ -596,7 +628,7 @@
                         <div class="danger-zone">
                             <h3>Log Out</h3>
                             <p>You will be logged out of your account and redirected to the home page.</p>
-                            <button class="btn btn-primary" style="background-color: #dc3545;">Log Out Now</button>
+                            <button class="btn btn-primary" style="background-color: #dc3545;" onclick="logOut()">Log Out Now</button>
                         </div>
                     </div>
                 </div>
@@ -656,8 +688,11 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        function switchTab(tabName) {
+        function switchTab(event, tabName) {
+            event.preventDefault();
+            
             // Hide all sections
             const sections = document.querySelectorAll('.settings-section');
             sections.forEach(section => {
@@ -679,7 +714,21 @@
             // Add active class to clicked sidebar item
             event.target.closest('li').classList.add('active');
         }
+
+        function saveSettings() {
+            showNotification('Settings saved successfully!', 'success');
+        }
+
+        function cancelSettings() {
+            showNotification('Changes cancelled', 'info');
+        }
+
+        function logOut() {
+            showNotification('Logging out...', 'info');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
+        }
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
