@@ -3,270 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - Kitsamba Writes Africa</title>
+    <title>Account Settings - Kitsamba Writes Africa</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Settings Specific Styles */
-        .settings-wrapper {
+        /* Professional Settings Styles */
+        .settings-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(61, 107, 95, 0.3) 100%);
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .settings-hero h1 {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .settings-hero p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .settings-main {
             background-color: var(--dark-bg);
             padding: 3rem 0;
-            min-height: calc(100vh - 300px);
+            min-height: calc(100vh - 400px);
         }
 
-        .settings-container {
+        .settings-wrapper {
             display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 2rem;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
         }
 
-        .settings-sidebar {
+        /* Sidebar Navigation */
+        .settings-nav {
             background-color: var(--dark-secondary);
             border-radius: 10px;
             padding: 0;
-            height: fit-content;
             position: sticky;
             top: 100px;
-            overflow: hidden;
+            height: fit-content;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .settings-sidebar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .settings-sidebar li {
+        .nav-item {
+            padding: 1.2rem 1.5rem;
             border-left: 4px solid transparent;
-            padding: 1rem 1.5rem;
             cursor: pointer;
             transition: all var(--transition);
             border-bottom: 1px solid var(--dark-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .settings-sidebar li:last-child {
+        .nav-item:last-child {
             border-bottom: none;
         }
 
-        .settings-sidebar li a {
+        .nav-item a {
             color: var(--text-gray);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: color var(--transition);
-            font-size: 0.95rem;
+            gap: 12px;
+            width: 100%;
+            font-weight: 500;
+            transition: all var(--transition);
         }
 
-        .settings-sidebar li:hover,
-        .settings-sidebar li.active {
-            border-left-color: var(--primary-color);
+        .nav-item:hover,
+        .nav-item.active {
             background-color: rgba(212, 175, 55, 0.1);
+            border-left-color: var(--primary-color);
         }
 
-        .settings-sidebar li:hover a,
-        .settings-sidebar li.active a {
+        .nav-item:hover a,
+        .nav-item.active a {
             color: var(--primary-color);
         }
 
+        .nav-item i {
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        /* Content Area */
         .settings-content {
             background-color: var(--dark-secondary);
             border-radius: 10px;
-            padding: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .settings-section {
+        .content-section {
             display: none;
         }
 
-        .settings-section.active {
+        .content-section.active {
             display: block;
-            animation: fadeIn 0.3s ease;
+            animation: slideIn 0.3s ease;
         }
 
-        .settings-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .settings-section p {
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .setting-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--dark-tertiary);
-        }
-
-        .setting-item:last-child {
-            border-bottom: none;
-        }
-
-        .setting-item label {
-            display: block;
-            color: var(--text-light);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .setting-item input[type="text"],
-        .setting-item input[type="email"],
-        .setting-item input[type="password"],
-        .setting-item select,
-        .setting-item textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 0.8rem;
-            background-color: var(--dark-bg);
-            border: 1px solid var(--primary-color);
-            border-radius: 5px;
-            color: var(--text-light);
-            font-family: inherit;
-            transition: all var(--transition);
-        }
-
-        .setting-item input:focus,
-        .setting-item select:focus,
-        .setting-item textarea:focus {
-            outline: none;
-            border-color: var(--text-light);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-        }
-
-        .setting-item textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .toggle-switch {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .toggle-checkbox {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 26px;
-        }
-
-        .toggle-checkbox input {
-            display: none;
-        }
-
-        .toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--dark-bg);
-            transition: all var(--transition);
-            border: 2px solid var(--primary-color);
-            border-radius: 13px;
-        }
-
-        .toggle-slider::before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 2px;
-            bottom: 2px;
-            background-color: var(--text-gray);
-            transition: all var(--transition);
-            border-radius: 50%;
-        }
-
-        .toggle-checkbox input:checked + .toggle-slider {
-            background-color: var(--primary-color);
-        }
-
-        .toggle-checkbox input:checked + .toggle-slider::before {
-            transform: translateX(24px);
-            background-color: var(--dark-bg);
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn-save,
-        .btn-cancel {
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all var(--transition);
-        }
-
-        .btn-save {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
-        }
-
-        .btn-save:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-cancel {
-            background-color: transparent;
-            border: 2px solid var(--text-gray);
-            color: var(--text-gray);
-        }
-
-        .btn-cancel:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .danger-zone {
-            background-color: rgba(220, 53, 69, 0.1);
-            border-left: 4px solid #dc3545;
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-top: 2rem;
-        }
-
-        .danger-zone h3 {
-            color: #dc3545;
-            margin-bottom: 0.5rem;
-        }
-
-        .danger-zone p {
-            color: var(--text-gray);
-            margin-bottom: 1rem;
-        }
-
-        .page-hero {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(31, 58, 58, 0.7) 100%);
-            padding: 3rem 0;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .page-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .page-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-        }
-
-        @keyframes fadeIn {
+        @keyframes slideIn {
             from {
                 opacity: 0;
                 transform: translateY(10px);
@@ -277,38 +119,256 @@
             }
         }
 
+        .section-header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--dark-tertiary);
+            padding-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header h2 i {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            max-width: 450px;
+            padding: 0.9rem 1.2rem;
+            background-color: var(--dark-bg);
+            border: 1px solid var(--dark-tertiary);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+            max-width: 100%;
+        }
+
+        .form-hint {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Toggle Switch */
+        .toggle-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 55px;
+            height: 30px;
+            background-color: var(--dark-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            transition: all var(--transition);
+        }
+
+        .toggle-switch input:checked ~ .toggle-slider {
+            left: 27px;
+        }
+
+        .toggle-switch input:checked {
+            background-color: var(--primary-color);
+        }
+
+        .toggle-label {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark-tertiary);
+        }
+
+        .btn-primary,
+        .btn-secondary,
+        .btn-danger {
+            padding: 0.95rem 2.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--text-gray);
+            color: var(--text-gray);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .info-box p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Danger Zone */
+        .danger-zone {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+            padding: 2rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .danger-zone h3 {
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .danger-zone p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .settings-container {
+            .settings-wrapper {
                 grid-template-columns: 1fr;
             }
 
-            .settings-sidebar {
+            .settings-nav {
                 position: static;
-            }
-
-            .settings-sidebar ul {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0;
+                padding: 0;
             }
 
-            .settings-sidebar li {
+            .nav-item {
                 border-left: none;
-                border-bottom: 3px solid transparent;
+                border-bottom: 2px solid var(--dark-tertiary);
                 text-align: center;
-                padding: 0.8rem 0.5rem;
+                padding: 1rem;
             }
 
-            .settings-sidebar li.active {
-                border-left: none;
-                border-bottom-color: var(--primary-color);
+            .nav-item a {
+                flex-direction: column;
+                font-size: 0.85rem;
             }
 
-            .setting-item input[type="text"],
-            .setting-item input[type="email"],
-            .setting-item input[type="password"],
-            .setting-item select,
-            .setting-item textarea {
+            .nav-item i {
+                font-size: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
                 max-width: 100%;
             }
 
@@ -316,23 +376,38 @@
                 flex-direction: column;
             }
 
-            .btn-save,
-            .btn-cancel {
+            .btn-primary,
+            .btn-secondary,
+            .btn-danger {
                 width: 100%;
+                justify-content: center;
             }
 
-            .page-title {
-                font-size: 1.8rem;
+            .section-header h2 {
+                font-size: 1.4rem;
             }
         }
 
         @media (max-width: 480px) {
-            .settings-sidebar ul {
+            .settings-nav {
                 grid-template-columns: 1fr;
             }
 
-            .settings-sidebar li a {
-                font-size: 0.85rem;
+            .settings-content {
+                padding: 1.5rem;
+            }
+
+            .nav-item {
+                border-bottom: 1px solid var(--dark-tertiary);
+            }
+
+            .nav-item a {
+                flex-direction: row;
+                font-size: 0.9rem;
+            }
+
+            .nav-item i {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -364,206 +439,194 @@
         </div>
     </nav>
 
-    <!-- Page Title -->
-    <section class="page-hero">
+    <!-- Settings Header -->
+    <section class="settings-hero">
         <div class="container">
-            <h1 class="page-title">Settings</h1>
-            <p class="page-subtitle">Manage your account and preferences</p>
+            <h1><i class="fas fa-cog"></i> Account Settings</h1>
+            <p>Manage your profile, preferences, and account security</p>
         </div>
     </section>
 
-    <!-- Settings Section -->
-    <section class="settings-wrapper">
+    <!-- Settings Main -->
+    <section class="settings-main">
         <div class="container">
-            <div class="settings-container">
-                <!-- Settings Sidebar -->
-                <aside class="settings-sidebar">
-                    <ul>
-                        <li class="active" onclick="switchTab(event, 'account')"><a href="#"><i class="fas fa-user"></i> Account</a></li>
-                        <li onclick="switchTab(event, 'privacy')"><a href="#"><i class="fas fa-lock"></i> Privacy</a></li>
-                        <li onclick="switchTab(event, 'notifications')"><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
-                        <li onclick="switchTab(event, 'appearance')"><a href="#"><i class="fas fa-palette"></i> Appearance</a></li>
-                        <li onclick="switchTab(event, 'preferences')"><a href="#"><i class="fas fa-sliders-h"></i> Preferences</a></li>
-                        <li onclick="switchTab(event, 'help')"><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
-                        <li onclick="switchTab(event, 'about')"><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-                        <li onclick="switchTab(event, 'logout')"><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
-                    </ul>
+            <div class="settings-wrapper">
+                <!-- Sidebar Navigation -->
+                <aside class="settings-nav">
+                    <div class="nav-item active" onclick="openTab(event, 'profile')">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    </div>
+                    <div class="nav-item" onclick="openTab(event, 'security')">
+                        <a href="#"><i class="fas fa-shield-alt"></i> Security</a>
+                    </div>
+                    <div class="nav-item" onclick="openTab(event, 'notifications')">
+                        <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+                    </div>
+                    <div class="nav-item" onclick="openTab(event, 'preferences')">
+                        <a href="#"><i class="fas fa-sliders-h"></i> Preferences</a>
+                    </div>
+                    <div class="nav-item" onclick="openTab(event, 'privacy')">
+                        <a href="#"><i class="fas fa-lock"></i> Privacy</a>
+                    </div>
                 </aside>
 
-                <!-- Settings Content -->
+                <!-- Content Area -->
                 <div class="settings-content">
-                    <!-- Account Section -->
-                    <div id="account" class="settings-section active">
-                        <h2>Account Settings</h2>
-                        <p>Manage your personal information and account details.</p>
-
-                        <div class="setting-item">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" id="fullname" placeholder="Kitsamba Joshua" value="Kitsamba Joshua">
+                    <!-- Profile Section -->
+                    <div id="profile" class="content-section active">
+                        <div class="section-header">
+                            <h2><i class="fas fa-user-circle"></i> Profile Information</h2>
+                            <p>Update your personal profile details</p>
                         </div>
 
-                        <div class="setting-item">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="your@email.com" value="contact@kitsambawrites.com">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="Kitsamba Joshua" placeholder="Enter your full name">
                         </div>
 
-                        <div class="setting-item">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" placeholder="kitsambajoshua" value="kitsambajoshua">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" value="contact@kitsambawrites.com" placeholder="Enter your email">
+                            <p class="form-hint">✓ Verified</p>
                         </div>
 
-                        <div class="setting-item">
-                            <label for="bio">Bio</label>
-                            <textarea id="bio" placeholder="Tell us about yourself...">Ugandan novelist and storyteller passionate about African stories</textarea>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" value="kitsambajoshua" placeholder="Enter your username">
+                            <p class="form-hint">Your unique identifier on Kitsamba Writes Africa</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea placeholder="Tell readers about yourself...">Ugandan novelist and storyteller passionate about African stories and culture</textarea>
+                            <p class="form-hint">Maximum 500 characters</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Website</label>
+                            <input type="text" placeholder="https://yourwebsite.com">
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
-                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
+                            <button class="btn-primary" onclick="saveProfile()">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                            <button class="btn-secondary" onclick="cancelChanges()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Privacy & Security Section -->
-                    <div id="privacy" class="settings-section">
-                        <h2>Privacy & Security</h2>
-                        <p>Control your privacy settings and security options.</p>
-
-                        <div class="setting-item">
-                            <label>Profile Visibility</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Make profile public</span>
-                            </div>
+                    <!-- Security Section -->
+                    <div id="security" class="content-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-shield-alt"></i> Security Settings</h2>
+                            <p>Protect your account with strong security measures</p>
                         </div>
 
-                        <div class="setting-item">
-                            <label>Show Email Address</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox">
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Allow others to see your email</span>
-                            </div>
+                        <div class="info-box">
+                            <h4>Account Status</h4>
+                            <p>Your account security status: <strong style="color: var(--primary-color);">Excellent</strong></p>
                         </div>
 
-                        <div class="setting-item">
-                            <label for="password">Change Password</label>
-                            <input type="password" id="password" placeholder="Enter new password">
+                        <h3 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1rem;">Password</h3>
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" placeholder="Enter your current password">
                         </div>
 
-                        <div class="setting-item">
-                            <label>Two-Factor Authentication</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox">
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Enable 2FA for extra security</span>
-                            </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" placeholder="Enter new password">
+                            <p class="form-hint">At least 8 characters with uppercase, lowercase, numbers and symbols</p>
                         </div>
+
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" placeholder="Confirm new password">
+                        </div>
+
+                        <h3 style="color: var(--text-light); margin: 2.5rem 0 1.5rem; font-size: 1rem;">Two-Factor Authentication</h3>
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Enable 2FA for enhanced security</span>
+                        </div>
+                        <p class="form-hint">Adds an extra layer of protection to your account</p>
 
                         <div class="button-group">
-                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
-                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
+                            <button class="btn-primary" onclick="saveProfile()">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                            <button class="btn-secondary" onclick="cancelChanges()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
                         </div>
                     </div>
 
                     <!-- Notifications Section -->
-                    <div id="notifications" class="settings-section">
-                        <h2>Notification Settings</h2>
-                        <p>Choose how and when you want to receive notifications.</p>
-
-                        <div class="setting-item">
-                            <label>Email Notifications</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Receive email notifications</span>
-                            </div>
+                    <div id="notifications" class="content-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-bell"></i> Notification Preferences</h2>
+                            <p>Choose how you want to receive updates</p>
                         </div>
 
-                        <div class="setting-item">
-                            <label>New Blog Post Alerts</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Get notified about new blog posts</span>
-                            </div>
+                        <h3 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1rem;">Email Notifications</h3>
+                        
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">New Blog Posts</span>
                         </div>
 
-                        <div class="setting-item">
-                            <label>New Novel Releases</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Notify me about new novels</span>
-                            </div>
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">New Novel Releases</span>
                         </div>
 
-                        <div class="setting-item">
-                            <label>Newsletter</label>
-                            <div class="toggle-switch">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Subscribe to our newsletter</span>
-                            </div>
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Newsletter</span>
+                        </div>
+
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Weekly Digest</span>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
-                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
-                        </div>
-                    </div>
-
-                    <!-- Appearance Section -->
-                    <div id="appearance" class="settings-section">
-                        <h2>Appearance</h2>
-                        <p>Customize how the website looks for you.</p>
-
-                        <div class="setting-item">
-                            <label for="theme">Theme</label>
-                            <select id="theme">
-                                <option selected>Dark Mode (Default)</option>
-                                <option>Light Mode</option>
-                                <option>Auto (System)</option>
-                            </select>
-                        </div>
-
-                        <div class="setting-item">
-                            <label for="fontSize">Font Size</label>
-                            <select id="fontSize">
-                                <option>Small</option>
-                                <option selected>Medium (Default)</option>
-                                <option>Large</option>
-                            </select>
-                        </div>
-
-                        <div class="button-group">
-                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
-                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
+                            <button class="btn-primary" onclick="saveProfile()">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                            <button class="btn-secondary" onclick="cancelChanges()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
                         </div>
                     </div>
 
                     <!-- Preferences Section -->
-                    <div id="preferences" class="settings-section">
-                        <h2>Reading Preferences</h2>
-                        <p>Set your preferences for content and reading experience.</p>
+                    <div id="preferences" class="content-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-sliders-h"></i> Display Preferences</h2>
+                            <p>Customize your reading experience</p>
+                        </div>
 
-                        <div class="setting-item">
-                            <label for="language">Preferred Language</label>
-                            <select id="language">
+                        <div class="form-group">
+                            <label>Language</label>
+                            <select>
                                 <option selected>English</option>
                                 <option>Luganda</option>
                                 <option>French</option>
@@ -571,64 +634,94 @@
                             </select>
                         </div>
 
-                        <div class="setting-item">
-                            <label>Content Categories of Interest</label>
-                            <div class="toggle-switch" style="margin-top: 0.8rem;">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>Fiction & Novels</span>
-                            </div>
-                            <div class="toggle-switch" style="margin-top: 0.8rem;">
-                                <label class="toggle-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="toggle-slider"></span>
-                                </label>
-                                <span>African Culture & Lifestyle</span>
-                            </div>
+                        <div class="form-group">
+                            <label>Theme</label>
+                            <select>
+                                <option selected>Dark Mode (Default)</option>
+                                <option>Light Mode</option>
+                                <option>System Default</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Font Size</label>
+                            <select>
+                                <option>Small</option>
+                                <option selected>Medium (Default)</option>
+                                <option>Large</option>
+                            </select>
+                        </div>
+
+                        <h3 style="color: var(--text-light); margin: 2.5rem 0 1.5rem; font-size: 1rem;">Content Preferences</h3>
+                        
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Fiction & Novels</span>
+                        </div>
+
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">African Culture & Lifestyle</span>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-save" onclick="saveSettings()">Save Changes</button>
-                            <button class="btn-cancel" onclick="cancelSettings()">Cancel</button>
+                            <button class="btn-primary" onclick="saveProfile()">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                            <button class="btn-secondary" onclick="cancelChanges()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Help Section -->
-                    <div id="help" class="settings-section">
-                        <h2>Help & Support</h2>
-                        <p>Get help and support for your account.</p>
-
-                        <div class="setting-item">
-                            <p>Need assistance? Contact our support team or check our FAQ.</p>
-                            <button class="btn btn-primary" style="margin-right: 0.5rem;">Contact Support</button>
-                            <button class="btn btn-primary">View FAQ</button>
+                    <!-- Privacy Section -->
+                    <div id="privacy" class="content-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-lock"></i> Privacy & Data</h2>
+                            <p>Control how your data is used and shared</p>
                         </div>
-                    </div>
 
-                    <!-- About Section -->
-                    <div id="about" class="settings-section">
-                        <h2>About</h2>
-                        <p>Learn more about Kitsamba Writes Africa.</p>
-
-                        <div class="setting-item">
-                            <p><strong>Version:</strong> 1.0.0</p>
-                            <p><strong>Last Updated:</strong> July 2025</p>
-                            <p><strong>Platform:</strong> Kitsamba Writes Africa</p>
-                            <button class="btn btn-primary">Check for Updates</button>
+                        <h3 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1rem;">Profile Visibility</h3>
+                        
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Public Profile</span>
                         </div>
-                    </div>
+                        <p class="form-hint" style="margin-bottom: 2rem;">Allow others to view your profile and reading activity</p>
 
-                    <!-- Logout Section -->
-                    <div id="logout" class="settings-section">
-                        <h2>Log Out</h2>
-                        <p>You are currently logged in to your account.</p>
+                        <div class="toggle-group">
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">Show Email Address</span>
+                        </div>
+                        <p class="form-hint" style="margin-bottom: 2rem;">Display email on your public profile</p>
 
                         <div class="danger-zone">
-                            <h3>Log Out</h3>
-                            <p>You will be logged out of your account and redirected to the home page.</p>
-                            <button class="btn btn-primary" style="background-color: #dc3545;" onclick="logOut()">Log Out Now</button>
+                            <h3><i class="fas fa-trash"></i> Delete Account</h3>
+                            <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
+                            <button class="btn-danger" onclick="deleteAccount()">
+                                <i class="fas fa-trash"></i> Delete My Account
+                            </button>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-primary" onclick="saveProfile()">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                            <button class="btn-secondary" onclick="cancelChanges()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -690,18 +783,18 @@
 
     <script src="script.js"></script>
     <script>
-        function switchTab(event, tabName) {
+        function openTab(event, tabName) {
             event.preventDefault();
-            
+
             // Hide all sections
-            const sections = document.querySelectorAll('.settings-section');
+            const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // Remove active class from all sidebar items
-            const sidebarItems = document.querySelectorAll('.settings-sidebar li');
-            sidebarItems.forEach(item => {
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
                 item.classList.remove('active');
             });
 
@@ -711,23 +804,25 @@
                 selectedSection.classList.add('active');
             }
 
-            // Add active class to clicked sidebar item
-            event.target.closest('li').classList.add('active');
+            // Add active class to clicked nav item
+            event.target.closest('.nav-item').classList.add('active');
         }
 
-        function saveSettings() {
+        function saveProfile() {
             showNotification('Settings saved successfully!', 'success');
         }
 
-        function cancelSettings() {
+        function cancelChanges() {
             showNotification('Changes cancelled', 'info');
         }
 
-        function logOut() {
-            showNotification('Logging out...', 'info');
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1500);
+        function deleteAccount() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                showNotification('Account deletion in progress...', 'info');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
         }
     </script>
 </body>
