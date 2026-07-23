@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Settings - Kitsamba Writes Africa</title>
+    <title>Settings - Kitsamba Writes Africa</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -315,27 +315,6 @@
             margin: 0;
         }
 
-        /* Danger Zone */
-        .danger-zone {
-            background-color: rgba(220, 53, 69, 0.1);
-            border-left: 4px solid #dc3545;
-            padding: 2rem;
-            border-radius: 6px;
-            margin-top: 2rem;
-        }
-
-        .danger-zone h3 {
-            color: #dc3545;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .danger-zone p {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .settings-wrapper {
@@ -428,9 +407,11 @@
                 <li><a href="about.html" class="nav-link">About Joshua</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <a href="settings.html" class="explore-btn">
-                <i class="fas fa-cog"></i> Settings
-            </a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="login.html" class="btn btn-secondary" style="padding: 0.5rem 1.5rem; border: 2px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -442,8 +423,8 @@
     <!-- Settings Header -->
     <section class="settings-hero">
         <div class="container">
-            <h1><i class="fas fa-cog"></i> Account Settings</h1>
-            <p>Manage your profile, preferences, and account security</p>
+            <h1><i class="fas fa-cog"></i> Settings & Preferences</h1>
+            <p>Customize your reading experience and manage your preferences</p>
         </div>
     </section>
 
@@ -453,10 +434,7 @@
             <div class="settings-wrapper">
                 <!-- Sidebar Navigation -->
                 <aside class="settings-nav">
-                    <div class="nav-item active" onclick="openTab(event, 'profile')">
-                        <a href="#"><i class="fas fa-user"></i> Profile</a>
-                    </div>
-                    <div class="nav-item" onclick="openTab(event, 'security')">
+                    <div class="nav-item active" onclick="openTab(event, 'security')">
                         <a href="#"><i class="fas fa-shield-alt"></i> Security</a>
                     </div>
                     <div class="nav-item" onclick="openTab(event, 'notifications')">
@@ -468,57 +446,15 @@
                     <div class="nav-item" onclick="openTab(event, 'privacy')">
                         <a href="#"><i class="fas fa-lock"></i> Privacy</a>
                     </div>
+                    <div class="nav-item" onclick="openTab(event, 'help')">
+                        <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+                    </div>
                 </aside>
 
                 <!-- Content Area -->
                 <div class="settings-content">
-                    <!-- Profile Section -->
-                    <div id="profile" class="content-section active">
-                        <div class="section-header">
-                            <h2><i class="fas fa-user-circle"></i> Profile Information</h2>
-                            <p>Update your personal profile details</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" value="Kitsamba Joshua" placeholder="Enter your full name">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" value="contact@kitsambawrites.com" placeholder="Enter your email">
-                            <p class="form-hint">✓ Verified</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" value="kitsambajoshua" placeholder="Enter your username">
-                            <p class="form-hint">Your unique identifier on Kitsamba Writes Africa</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Bio</label>
-                            <textarea placeholder="Tell readers about yourself...">Ugandan novelist and storyteller passionate about African stories and culture</textarea>
-                            <p class="form-hint">Maximum 500 characters</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Website</label>
-                            <input type="text" placeholder="https://yourwebsite.com">
-                        </div>
-
-                        <div class="button-group">
-                            <button class="btn-primary" onclick="saveProfile()">
-                                <i class="fas fa-save"></i> Save Changes
-                            </button>
-                            <button class="btn-secondary" onclick="cancelChanges()">
-                                <i class="fas fa-times"></i> Cancel
-                            </button>
-                        </div>
-                    </div>
-
                     <!-- Security Section -->
-                    <div id="security" class="content-section">
+                    <div id="security" class="content-section active">
                         <div class="section-header">
                             <h2><i class="fas fa-shield-alt"></i> Security Settings</h2>
                             <p>Protect your account with strong security measures</p>
@@ -557,7 +493,7 @@
                         <p class="form-hint">Adds an extra layer of protection to your account</p>
 
                         <div class="button-group">
-                            <button class="btn-primary" onclick="saveProfile()">
+                            <button class="btn-primary" onclick="saveSettings()">
                                 <i class="fas fa-save"></i> Save Changes
                             </button>
                             <button class="btn-secondary" onclick="cancelChanges()">
@@ -608,7 +544,7 @@
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-primary" onclick="saveProfile()">
+                            <button class="btn-primary" onclick="saveSettings()">
                                 <i class="fas fa-save"></i> Save Changes
                             </button>
                             <button class="btn-secondary" onclick="cancelChanges()">
@@ -671,7 +607,7 @@
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-primary" onclick="saveProfile()">
+                            <button class="btn-primary" onclick="saveSettings()">
                                 <i class="fas fa-save"></i> Save Changes
                             </button>
                             <button class="btn-secondary" onclick="cancelChanges()">
@@ -707,20 +643,59 @@
                         </div>
                         <p class="form-hint" style="margin-bottom: 2rem;">Display email on your public profile</p>
 
-                        <div class="danger-zone">
-                            <h3><i class="fas fa-trash"></i> Delete Account</h3>
-                            <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
-                            <button class="btn-danger" onclick="deleteAccount()">
-                                <i class="fas fa-trash"></i> Delete My Account
+                        <h3 style="color: var(--text-light); margin: 2.5rem 0 1.5rem; font-size: 1rem;">Data Management</h3>
+
+                        <div class="form-group">
+                            <button class="btn-primary" style="background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);">
+                                <i class="fas fa-download"></i> Download My Data
                             </button>
                         </div>
 
                         <div class="button-group">
-                            <button class="btn-primary" onclick="saveProfile()">
+                            <button class="btn-primary" onclick="saveSettings()">
                                 <i class="fas fa-save"></i> Save Changes
                             </button>
                             <button class="btn-secondary" onclick="cancelChanges()">
                                 <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Help & Support Section -->
+                    <div id="help" class="content-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-question-circle"></i> Help & Support</h2>
+                            <p>Get assistance and learn more about Kitsamba Writes Africa</p>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>Need Help?</h4>
+                            <p>Our support team is here to assist you. Choose an option below to get started.</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                            <button class="btn-primary" style="background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); justify-content: center;">
+                                <i class="fas fa-envelope"></i> Contact Support
+                            </button>
+                            <button class="btn-primary" style="background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); justify-content: center;">
+                                <i class="fas fa-book"></i> Documentation
+                            </button>
+                            <button class="btn-primary" style="background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); justify-content: center;">
+                                <i class="fas fa-comments"></i> FAQ
+                            </button>
+                        </div>
+
+                        <h3 style="color: var(--text-light); margin: 2.5rem 0 1.5rem; font-size: 1rem;">About This Platform</h3>
+                        <p style="color: var(--text-gray); margin-bottom: 1rem;">
+                            <strong>Kitsamba Writes Africa</strong> is a platform dedicated to sharing authentic African stories, culture, and lifestyle with readers worldwide.
+                        </p>
+                        <p style="color: var(--text-gray);">
+                            <strong>Version:</strong> 1.0.0 | <strong>Last Updated:</strong> July 2025
+                        </p>
+
+                        <div class="button-group">
+                            <button class="btn-primary" style="background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);">
+                                <i class="fas fa-sync"></i> Check for Updates
                             </button>
                         </div>
                     </div>
@@ -787,14 +762,12 @@
             event.preventDefault();
 
             // Hide all sections
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
+            document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
 
             // Remove active class from all nav items
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
+            document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
             });
 
@@ -808,21 +781,12 @@
             event.target.closest('.nav-item').classList.add('active');
         }
 
-        function saveProfile() {
+        function saveSettings() {
             showNotification('Settings saved successfully!', 'success');
         }
 
         function cancelChanges() {
             showNotification('Changes cancelled', 'info');
-        }
-
-        function deleteAccount() {
-            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-                showNotification('Account deletion in progress...', 'info');
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 2000);
-            }
         }
     </script>
 </body>
