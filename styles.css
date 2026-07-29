@@ -877,13 +877,28 @@ body {
 }
 .email-link {
     font-size: 1.3rem;
-    font-weight: bold;
-    color: #0d6efd; /* Blue */
+    font-weight: 700;
+    color: #d4af37; /* Gold */
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
 .email-link:hover {
-    color: #d4af37; /* Gold on hover */
+    color: #d4af37;
     text-decoration: underline;
+}
+.contact-info-item a {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.contact-info-item a:hover {
+    color: #f5c542;
+    text-decoration: underline;
+}
+
+.contact-info-item p {
+    font-size: 1.15rem;
+    font-weight: 700;
 }
