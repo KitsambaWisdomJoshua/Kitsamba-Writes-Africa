@@ -875,3 +875,15 @@ body {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
+.email-link {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0d6efd; /* Blue */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.email-link:hover {
+    color: #d4af37; /* Gold on hover */
+    text-decoration: underline;
+}
