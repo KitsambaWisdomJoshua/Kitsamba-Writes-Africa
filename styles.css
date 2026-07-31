@@ -1562,3 +1562,207 @@ body {
     }
 
 }
+/* ========================================
+   PREMIUM NAVBAR DESIGN
+   KITSAMBA WRITES AFRICA
+======================================== */
+
+
+/* Main Navbar */
+
+.navbar {
+
+    background: rgba(26,26,26,0.95);
+
+    backdrop-filter: blur(10px);
+
+    padding:18px 40px;
+
+    border-bottom:2px solid var(--primary-color);
+
+    box-shadow:0 5px 20px rgba(212,175,55,0.15);
+
+}
+
+
+
+/* Logo */
+
+.logo a {
+
+    text-decoration:none;
+
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size:1.8rem;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    color:var(--primary-color);
+
+}
+
+
+.logo span {
+
+    color:#ffffff;
+
+    display:block;
+
+    font-size:1rem;
+
+    letter-spacing:4px;
+
+    margin-top:5px;
+
+}
+
+
+
+/* Navigation */
+
+.navbar nav ul {
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+
+
+.navbar nav ul li a {
+
+    text-decoration:none;
+
+    color:#e8e8e8;
+
+    font-family:'Segoe UI', sans-serif;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    position:relative;
+
+    transition:.3s ease;
+
+}
+
+
+
+/* Hover */
+
+.navbar nav ul li a:hover {
+
+    color:var(--primary-color);
+
+}
+
+
+
+/* Gold underline animation */
+
+.navbar nav ul li a::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--primary-color);
+
+    transition:.3s;
+
+}
+
+
+
+.navbar nav ul li a:hover::after,
+
+.navbar nav ul li a.active::after {
+
+    width:100%;
+
+}
+
+
+
+/* Active Page */
+
+.navbar nav ul li a.active {
+
+    color:var(--primary-color);
+
+}
+
+
+
+/* Logo hover */
+
+.logo a:hover {
+
+    text-shadow:0 0 15px rgba(212,175,55,.6);
+
+}
+
+
+
+/* Mobile Navbar */
+
+@media(max-width:768px){
+
+
+.navbar{
+
+    padding:15px 20px;
+
+}
+
+
+.logo a{
+
+    font-size:1.3rem;
+
+}
+
+
+.logo span{
+
+    font-size:.75rem;
+
+}
+
+
+.navbar nav ul{
+
+    gap:15px;
+
+}
+
+
+.navbar nav ul li a{
+
+    font-size:.85rem;
+
+}
+
+
+}
