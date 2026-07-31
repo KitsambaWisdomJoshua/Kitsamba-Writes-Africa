@@ -1191,3 +1191,165 @@ body {
     }
 
 }
+/* ========================================
+   CONTACT PAGE TEXT & COLOR FINAL FIX
+======================================== */
+
+
+/* Remove browser blue link colors */
+
+.contact-form-section a,
+.support-section a,
+.social-section a,
+.contact-footer a {
+
+    color: var(--primary-color);
+    text-decoration: none;
+
+}
+
+
+.contact-form-section a:visited,
+.support-section a:visited,
+.social-section a:visited,
+.contact-footer a:visited {
+
+    color: var(--primary-color);
+
+}
+
+
+
+/* Main Contact Text */
+
+.contact-form-section h2,
+.support-section h2,
+.social-section h2,
+.contact-footer h2 {
+
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+
+}
+
+
+
+.contact-form-section p,
+.support-section p,
+.social-section p,
+.contact-footer p {
+
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+
+}
+
+
+
+/* Form Labels */
+
+.contact-form-section label {
+
+    color: var(--primary-color);
+    font-size: 1rem;
+
+}
+
+
+
+/* Inputs */
+
+.contact-form-section input,
+.contact-form-section textarea {
+
+    font-size: 1rem;
+    color: var(--text-light);
+    background-color: var(--dark-bg);
+
+}
+
+
+
+/* Placeholder */
+
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder {
+
+    color: var(--text-gray);
+
+}
+
+
+
+/* Support Buttons */
+
+.support-btn {
+
+    color: var(--dark-bg) !important;
+
+}
+
+
+
+.support-btn:hover {
+
+    color: var(--dark-bg) !important;
+
+}
+
+
+
+/* Social Icons */
+
+.social-icons a {
+
+    color: var(--primary-color) !important;
+
+}
+
+
+
+.social-icons a:hover {
+
+    color: var(--dark-bg) !important;
+
+}
+
+
+
+/* Footer text */
+
+.contact-footer strong {
+
+    color: var(--primary-color);
+
+}
+
+
+
+/* Mobile Font Adjustment */
+
+@media(max-width:768px){
+
+    .contact-form-section h2,
+    .support-section h2,
+    .social-section h2,
+    .contact-footer h2 {
+
+        font-size:1.8rem;
+
+    }
+
+
+    .contact-form-section p,
+    .support-section p,
+    .social-section p,
+    .contact-footer p {
+
+        font-size:0.95rem;
+
+    }
+
+}
