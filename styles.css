@@ -1353,3 +1353,212 @@ body {
     }
 
 }
+/* ========================================
+   CONTACT PAGE COMPLETE FIX
+======================================== */
+
+
+/* Contact Hero */
+
+.contact-hero {
+
+    background: linear-gradient(
+        135deg,
+        #1a1a1a,
+        #1f3a3a
+    );
+
+    padding:80px 20px;
+
+    text-align:center;
+
+}
+
+
+.contact-hero h1 {
+
+    color:var(--primary-color);
+
+    font-size:3rem;
+
+}
+
+
+.hero-intro {
+
+    color:var(--text-gray);
+
+    font-size:1.2rem;
+
+    margin-top:15px;
+
+}
+
+
+
+/* Welcome Section */
+
+.welcome-message {
+
+    padding:60px 20px;
+
+    background:var(--dark-bg);
+
+}
+
+
+.welcome-message h2 {
+
+    text-align:center;
+
+    color:var(--primary-color);
+
+    font-size:2.2rem;
+
+}
+
+
+.welcome-message p {
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    text-align:center;
+
+    color:var(--text-gray);
+
+    font-size:1.05rem;
+
+}
+
+
+
+/* Contact Cards */
+
+.contact-information {
+
+    padding:70px 20px;
+
+    background:var(--dark-secondary);
+
+}
+
+
+.contact-information h2 {
+
+    text-align:center;
+
+    color:var(--primary-color);
+
+    font-size:2.3rem;
+
+    margin-bottom:40px;
+
+}
+
+
+.contact-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+
+.contact-card {
+
+    background:#1f1f1f;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    border-top:4px solid var(--primary-color);
+
+    transition:.3s;
+
+}
+
+
+.contact-card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(212,175,55,.2);
+
+}
+
+
+.contact-card i {
+
+    font-size:40px;
+
+    color:var(--primary-color);
+
+    margin-bottom:15px;
+
+}
+
+
+.contact-card h3 {
+
+    color:var(--text-light);
+
+    margin-bottom:15px;
+
+}
+
+
+.contact-card p,
+.contact-card a {
+
+    color:var(--text-gray);
+
+    font-size:1rem;
+
+    text-decoration:none;
+
+}
+
+
+.contact-card a:hover {
+
+    color:var(--primary-color);
+
+}
+
+
+
+/* Fix social icons only on contact page */
+
+.social-section .social-icons a {
+
+    color:var(--primary-color)!important;
+
+}
+
+
+.social-section .social-icons a:hover {
+
+    color:#111!important;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .contact-hero h1{
+
+        font-size:2rem;
+
+    }
+
+}
