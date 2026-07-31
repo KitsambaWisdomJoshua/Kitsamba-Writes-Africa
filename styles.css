@@ -882,23 +882,52 @@ body {
     text-decoration: none;
 }
 
-.email-link:hover {
-    color: #d4af37;
-    text-decoration: underline;
+/* ===== CONTACT INFORMATION ===== */
+
+.contact-info-item {
+    background: #252525;
+    border-left: 5px solid #d4af37;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s ease;
 }
-.contact-info-item a {
-    font-size: 1.3rem;
-    font-weight: 700;
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212,175,55,0.25);
+}
+
+.info-icon {
+    width: 70px;
+    height: 70px;
+    background: #d4af37;
+    color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.info-content h4 {
     color: #d4af37;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.info-content p,
+.info-content a {
+    color: #ffffff !important;
+    font-size: 22px;
+    font-weight: bold;
     text-decoration: none;
+    word-break: break-word;
 }
 
-.contact-info-item a:hover {
-    color: #f5c542;
-    text-decoration: underline;
-}
-
-.contact-info-item p {
-    font-size: 1.15rem;
-    font-weight: 700;
+.info-content a:hover {
+    color: #d4af37 !important;
 }
