@@ -52,17 +52,17 @@
         /* Navigation */
         .navbar {
             background-color: var(--dark-secondary);
-            padding: 1.2rem 0;
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
             transition: all 0.3s ease;
         }
 
         body.light-mode .navbar {
             background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
         }
 
         .nav-container {
@@ -75,24 +75,47 @@
         }
 
         .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
         }
 
         .nav-logo:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+
+        .nav-logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover img {
+            filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
+        }
+
+        .nav-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, var(--primary-color), #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
@@ -102,6 +125,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .nav-link:hover,
@@ -116,7 +140,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary-color);
+            background: linear-gradient(90deg, var(--primary-color), #d4af37);
             transition: width 0.3s ease;
         }
 
@@ -127,7 +151,7 @@
 
         .nav-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             align-items: center;
         }
 
@@ -138,6 +162,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            padding: 0.5rem;
         }
 
         .theme-toggle:hover {
@@ -146,23 +171,56 @@
         }
 
         .nav-btn {
-            padding: 0.6rem 1.5rem;
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
+            padding: 0.7rem 1.8rem;
+            background: linear-gradient(135deg, var(--primary-color), #d4af37);
+            color: #000;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
         }
 
         .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-gray);
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-gray);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
         /* Hero Section */
@@ -243,8 +301,8 @@
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
+            background: linear-gradient(135deg, var(--primary-color), #d4af37);
+            color: #000;
         }
 
         .btn-primary:hover {
@@ -526,6 +584,10 @@
                 display: none;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
             .novels-grid {
                 grid-template-columns: 1fr;
             }
@@ -538,6 +600,18 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-logo-text {
+                display: none;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -545,10 +619,10 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-pen-nib"></i>
-                Kitsamba Writes
-            </div>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Kitsamba Writes Africa Logo">
+                <span class="nav-logo-text">Kitsamba</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="novels.html" class="nav-link">Novels</a></li>
@@ -567,6 +641,11 @@
                     <i class="fas fa-sign-in-alt"></i> Sign In
                 </a>
             </div>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -721,6 +800,13 @@
                 document.body.classList.remove('light-mode');
                 localStorage.setItem('theme', 'dark');
             }
+        }
+
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            hamburger.classList.toggle('active');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
         }
 
         // Load theme on page load
