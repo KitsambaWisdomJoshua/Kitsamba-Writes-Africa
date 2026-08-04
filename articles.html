@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Kitsamba Writes Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Articles page specific small tweaks */
+        .page-hero { padding: 2.5rem 0; text-align: center; }
+        .articles-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:1.6rem; max-width:1100px; margin:0 auto; }
+        @media (max-width:768px){ .articles-grid{grid-template-columns:1fr} }
+    </style>
+</head>
+<body>
+    <!-- Navigation (will be simplified by script.js) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-pen-nib"></i>
+                <span>KITSAMBA<br><small>WRITES AFRICA</small></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="novels.html" class="nav-link">Novels</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- Top hero/title -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Articles</h1>
+            <p class="page-subtitle">Essays, commentary, and features celebrating African voices</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Featured Articles</h2>
+            <p>Insightful essays and long-form pieces</p>
+        </div>
+
+        <div class="articles-grid">
+            <article class="blog-card">
+                <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/african-heritage.webp" alt="Understanding African Heritage">
+                <div class="blog-content">
+                    <span class="blog-date">July 10, 2025</span>
+                    <h3>Understanding African Heritage</h3>
+                    <p>A deep dive into the roots of African culture and its relevance today.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/writing-journey.webp" alt="Writing from the Heart">
+                <div class="blog-content">
+                    <span class="blog-date">July 5, 2025</span>
+                    <h3>Writing from the Heart: My Journey</h3>
+                    <p>How authentic voices are shaping contemporary African literature.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo"><i class="fas fa-pen-nib"></i><span>KITSAMBA WRITES AFRICA</span></div>
+                <p>A digital platform celebrating authentic African stories.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="novels.html">Novels</a></li>
+                    <li><a href="blog.html">Articles</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-icons"><a href="#" class="social-link"><i class="fab fa-facebook"></i></a><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Kitsamba Writes Africa. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
