@@ -1,6 +1,28 @@
 // ========================================
-// KITSAMBA WRITES AFRICA - JAVASCRIPT
+// KITSAMBA WRITES AFRICA - JAVASCRIPT (updated)
 // ========================================
+
+// Ensure default theme (light) across all pages
+(function ensureLightTheme() {
+    try {
+        const saved = localStorage.getItem('theme');
+        if (!saved) {
+            localStorage.setItem('theme', 'light');
+            document.body.classList.add('light-mode');
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else if (saved === 'light') {
+            document.body.classList.add('light-mode');
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.body.classList.remove('light-mode');
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    } catch (e) {
+        // localStorage may be unavailable in some contexts
+        document.body.classList.add('light-mode');
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
@@ -15,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================
 
 function initializeNavigation() {
+    injectAllPagesButton();
+
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -32,7 +56,7 @@ function initializeNavigation() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
         });
     });
 
@@ -42,6 +66,54 @@ function initializeNavigation() {
             window.location.href = 'novels.html';
         });
     }
+}
+
+// Inject a single "All Pages" dropdown into pages that use the existing nav markup
+function injectAllPagesButton() {
+    const navContainer = document.querySelector('.nav-container');
+    if (!navContainer) return;
+    if (document.getElementById('allPagesBtn')) return; // already injected
+
+    const allPagesDiv = document.createElement('div');
+    allPagesDiv.className = 'all-pages';
+    allPagesDiv.innerHTML = `
+        <button id="allPagesBtn" class="all-pages-btn" aria-expanded="false">All Pages ▾</button>
+        <ul id="allPagesMenu" class="all-pages-menu" hidden>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="novels.html">Novels</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="lifestyle.html">Lifestyle</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="african-life.html">African Life</a></li>
+            <li><a href="culture-history.html">Culture &amp; History</a></li>
+            <li><a href="about.html">About Joshua</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="videos.html">Videos</a></li>
+        </ul>
+    `;
+
+    // Insert before nav-actions if present, otherwise append
+    const navActions = navContainer.querySelector('.nav-actions');
+    if (navActions) navContainer.insertBefore(allPagesDiv, navActions);
+    else navContainer.appendChild(allPagesDiv);
+
+    const btn = allPagesDiv.querySelector('#allPagesBtn');
+    const menu = allPagesDiv.querySelector('#allPagesMenu');
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = menu.hasAttribute('hidden');
+        if (open) { menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+        else { menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+    });
+
+    // Close if clicked outside
+    document.addEventListener('click', (e) => {
+        if (!allPagesDiv.contains(e.target)) {
+            menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false');
+        }
+    });
 }
 
 function setActiveNavLink() {
