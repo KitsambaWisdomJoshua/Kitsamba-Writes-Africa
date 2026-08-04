@@ -1,11 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCL42Y2EGC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);}  
   gtag('js', new Date());
-
   gtag('config', 'G-NCL42Y2EGC');
 </script>
     <meta charset="UTF-8">
@@ -19,13 +20,13 @@
     <meta property="og:title" content="Kitsamba Writes Africa">
     <meta property="og:description" content="Discover authentic African novels, articles, and stories from talented writers across Africa.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kitsambawrites.netlify.app/">
-    <meta property="og:image" content="https://kitsambawrites.netlify.app/logo.png">
+    <meta property="og:url" content="https://kitsambawisdomjoshua.github.io/Kitsamba-Writes-Africa/">
+    <meta property="og:image" content="https://kitsambawisdomjoshua.github.io/Kitsamba-Writes-Africa/images/logo.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kitsamba Writes Africa">
     <meta name="twitter:description" content="Discover authentic African novels, articles, and stories from talented writers across Africa.">
-    <meta name="twitter:image" content="https://kitsambawrites.netlify.app/logo.png">
+    <meta name="twitter:image" content="https://kitsambawisdomjoshua.github.io/Kitsamba-Writes-Africa/images/logo.png">
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -116,550 +117,71 @@
 
         .nav-logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
             letter-spacing: -0.5px;
             color: var(--primary-dark);
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            align-items: center;
-        }
+        /* All pages dropdown */
+        .all-pages { position: relative; }
+        .all-pages-btn { background:transparent; border:1px solid rgba(0,0,0,0.06); padding:8px 14px; border-radius:8px; cursor:pointer; font-weight:600; }
+        .all-pages-menu { position:absolute; right:0; margin-top:8px; background:#fff; border:1px solid rgba(0,0,0,0.06); list-style:none; padding:8px 0; border-radius:8px; min-width:220px; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+        .all-pages-menu li a { display:block; padding:10px 16px; color:var(--text-dark); text-decoration:none; }
+        .all-pages-menu li a:hover { background:var(--bg-cream); }
 
-        .nav-link {
-            color: var(--text-gray);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-            letter-spacing: 0.3px;
-        }
+        .nav-actions { display:flex; gap:1rem; align-items:center; }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-burnt-orange);
-        }
+        .theme-toggle { background: none; border: none; color: var(--text-gray); font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; padding: 0.5rem; }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-burnt-orange);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-actions {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-gray);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0.5rem;
-        }
-
-        .theme-toggle:hover {
-            color: var(--accent-burnt-orange);
-        }
-
-        .nav-btn {
-            padding: 0.75rem 2rem;
-            background-color: var(--accent-burnt-orange);
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-        }
-
-        .nav-btn:hover {
-            background-color: var(--primary-warm);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: var(--text-dark);
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-dark);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
+        .nav-btn { padding: 0.6rem 1rem; background-color: var(--accent-burnt-orange); color: #ffffff; border-radius: 6px; text-decoration:none; font-weight:600; }
 
         /* HERO SECTION - LARGE BANNER */
         .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, rgba(44, 36, 22, 0.9) 100%), 
-                        url('https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/KItsamba%20Joshua.png') center/cover;
-            background-blend-mode: overlay;
-            min-height: 85vh;
+            background-image: url('images/hero-background.webp.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
-            color: #ffffff;
+            color: var(--text-dark);
         }
 
-        .hero::before {
+        /* subtle overlay to ensure text readability on light hero */
+        .hero::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(193, 122, 107, 0.1) 0%, rgba(74, 124, 126, 0.1) 100%);
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.3));
             pointer-events: none;
         }
 
-        .hero-content {
-            max-width: 1400px;
-            width: 100%;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
+        .hero-content { max-width: 1200px; width:100%; position: relative; z-index:2; display:flex; gap:24px; align-items:center; justify-content:space-between; }
+        .hero-left { max-width:760px; }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 48px); font-weight:800; margin-bottom:12px; color:var(--primary-dark); }
+        .hero-content p { color:var(--text-gray); font-size:1.1rem; max-width:720px; }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
+        .hero-avatar { width:88px; height:88px; border-radius:50%; overflow:hidden; border:3px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,0.12); flex-shrink:0; }
+        .hero-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
 
-        .hero-content p {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255, 255, 255, 0.95);
-            font-weight: 400;
-        }
+        .hero-buttons { margin-top:18px; display:flex; gap:12px; }
+        .btn { padding:0.9rem 1.6rem; border-radius:6px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+        .btn-primary { background:var(--accent-burnt-orange); color:#fff; }
+        .btn-secondary { background:transparent; border:2px solid var(--accent-burnt-orange); color:var(--accent-burnt-orange); }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        /* FOOTER - light with logo watermark */
+        .footer { background:var(--bg-cream); color:var(--text-dark); padding:3.5rem 2rem; margin-top:3rem; position:relative; overflow:hidden; }
+        .footer::before { content:''; position:absolute; right:6%; top:6%; width:300px; height:300px; background-image: url('images/logo.png'); background-repeat:no-repeat; background-size:contain; background-position:center; opacity:0.06; pointer-events:none; transform:rotate(0deg); }
+        .footer-content { max-width:1400px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:2rem; }
+        .footer-section h4 { margin-bottom:10px; }
 
-        .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            letter-spacing: 0.3px;
-            font-family: 'Inter', sans-serif;
-        }
+        /* responsive */
+        @media (max-width:880px) { .hero-content { flex-direction:column; align-items:flex-start; } .hero-avatar { margin-top:12px; } .all-pages-menu { right: 10px; } }
 
-        .btn-primary {
-            background-color: var(--accent-burnt-orange);
-            color: #ffffff;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-warm);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-large);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid #ffffff;
-            color: #ffffff;
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* SECTION STYLING */
-        .section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            letter-spacing: -0.5px;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .section-header::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-burnt-orange);
-            margin: 2rem auto 0;
-            border-radius: 2px;
-        }
-
-        /* NOVELS GRID - CARD LAYOUT */
-        .novels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .novel-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .novel-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-large);
-            border-color: var(--accent-burnt-orange);
-        }
-
-        .novel-cover {
-            width: 100%;
-            height: 380px;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--accent-mustard), var(--accent-teal));
-            position: relative;
-        }
-
-        .novel-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .novel-card:hover .novel-cover img {
-            transform: scale(1.08);
-        }
-
-        .novel-info {
-            padding: 2rem 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .novel-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            color: var(--text-dark);
-            line-height: 1.3;
-            letter-spacing: -0.3px;
-        }
-
-        .novel-info p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .novel-link {
-            color: var(--accent-burnt-orange);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-
-        .novel-link:hover {
-            gap: 1rem;
-            color: var(--primary-warm);
-        }
-
-        /* STATS SECTION */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .stat-card {
-            background-color: #ffffff;
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-burnt-orange);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--accent-burnt-orange);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .stat-label {
-            color: var(--text-gray);
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        /* CTA SECTION */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-dark) 100%);
-            padding: 4.5rem 2rem;
-            text-align: center;
-            border-radius: 8px;
-            margin: 4rem 0;
-            color: #ffffff;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .cta-section p {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        /* FOOTER */
-        .footer {
-            background-color: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 4rem 2rem 2rem;
-            margin-top: 5rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: #ffffff;
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        .footer-section p {
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-burnt-orange);
-            padding-left: 0.5rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .nav-menu {
-                display: none;
-                gap: 1.5rem;
-                flex-direction: column;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .novels-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .nav-logo-text {
-                display: none;
-            }
-
-            .nav-logo img {
-                height: 45px;
-            }
-
-            .section {
-                padding: 3rem 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero {
-                min-height: 70vh;
-                padding: 2rem 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .novel-info h3 {
-                font-size: 1.2rem;
-            }
-
-            .nav-menu {
-                gap: 0.5rem;
-            }
-
-            .nav-link {
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -668,27 +190,35 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.png" alt="Kitsamba Writes Africa">
-                <span class="nav-logo-text">Kitsamba</span>
+                <span class="nav-logo-text">Kitsamba Writes Africa</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="novels.html" class="nav-link">Novels</a></li>
-                <li><a href="blog.html" class="nav-link">Articles</a></li>
-                <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-            </ul>
+
+            <div class="all-pages">
+                <button id="allPagesBtn" class="all-pages-btn" aria-expanded="false">All Pages ▾</button>
+                <ul id="allPagesMenu" class="all-pages-menu" hidden>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="novels.html">Novels</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="lifestyle.html">Lifestyle</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="african-life.html">African Life</a></li>
+                    <li><a href="culture-history.html">Culture &amp; History</a></li>
+                    <li><a href="about.html">About Joshua</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+
             <div class="nav-actions">
                 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
-                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
                 </button>
-                <a href="login.html" class="nav-btn">
-                    <i class="fas fa-sign-in-alt"></i> Sign In
-                </a>
+                <a href="login.html" class="nav-btn"><i class="fas fa-sign-in-alt"></i> Sign In</a>
             </div>
-            <button class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <button class="hamburger" onclick="toggleMenu()" style="display:none;">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
@@ -696,15 +226,17 @@
     <!-- HERO SECTION - LARGE BANNER -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Discover Authentic African Stories</h1>
-            <p>Experience powerful narratives from Africa's most compelling voices. Read, explore, and celebrate the richness of our continent's literary heritage.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="location.href='novels.html'">
-                    <i class="fas fa-book"></i> Read Now
-                </button>
-                <button class="btn btn-secondary" onclick="location.href='about.html'">
-                    <i class="fas fa-arrow-right"></i> Learn More
-                </button>
+            <div class="hero-left">
+                <h1>Discover Authentic African Stories</h1>
+                <p>A digital platform celebrating authentic African stories, voices, and cultural narratives from writers across the continent.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" href="novels.html"><i class="fas fa-book"></i> Read Now</a>
+                    <a class="btn btn-secondary" href="about.html"><i class="fas fa-arrow-right"></i> Learn More</a>
+                </div>
+            </div>
+
+            <div class="hero-avatar" title="Kitsamba Joshua">
+                <img src="images/KItsamba Joshua.png" alt="Kitsamba Joshua">
             </div>
         </div>
     </section>
@@ -716,6 +248,7 @@
             <p>Curated selections from our library of authentic African narratives</p>
         </div>
         <div class="novels-grid">
+            <!-- Cards reused from novels.html (links to novels page) -->
             <div class="novel-card">
                 <div class="novel-cover">
                     <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/The%20Silence%20At%202PM.png?raw=true" alt="The Silence at 2PM">
@@ -751,36 +284,12 @@
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">6+</div>
-                <div class="stat-label">Novels Published</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">10K+</div>
-                <div class="stat-label">Active Readers</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Articles & Essays</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">Africa</div>
-                <div class="stat-label">Stories That Inspire</div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA SECTION -->
     <section class="section">
         <div class="cta-section">
             <h2>Start Your Reading Journey</h2>
             <p>Join thousands of readers discovering authentic African narratives and cultural wisdom.</p>
-            <button class="btn btn-primary" onclick="location.href='login.html'">
-                <i class="fas fa-user-plus"></i> Create Free Account
-            </button>
+            <button class="btn btn-primary" onclick="location.href='login.html'"><i class="fas fa-user-plus"></i> Create Free Account</button>
         </div>
     </section>
 
@@ -796,15 +305,15 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="novels.html">Novels</a></li>
-                    <li><a href="blog.html">Articles</a></li>
+                    <li><a href="articles.html">Articles</a></li>
                     <li><a href="lifestyle.html">Lifestyle</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="lifestyle.html">African Life</a></li>
-                    <li><a href="blog.html">Culture & History</a></li>
+                    <li><a href="african-life.html">African Life</a></li>
+                    <li><a href="culture-history.html">Culture &amp; History</a></li>
                     <li><a href="about.html">About Joshua</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -826,34 +335,41 @@
 
     <script src="script.js"></script>
     <script>
+        // All Pages dropdown
+        const allPagesBtn = document.getElementById('allPagesBtn');
+        const allPagesMenu = document.getElementById('allPagesMenu');
+        allPagesBtn.addEventListener('click', () => {
+            const open = allPagesMenu.hasAttribute('hidden');
+            if (open) { allPagesMenu.removeAttribute('hidden'); allPagesBtn.setAttribute('aria-expanded','true'); }
+            else { allPagesMenu.setAttribute('hidden',''); allPagesBtn.setAttribute('aria-expanded','false'); }
+        });
+        document.addEventListener('click', (e) => { if (!allPagesBtn.contains(e.target) && !allPagesMenu.contains(e.target)) { allPagesMenu.setAttribute('hidden',''); allPagesBtn.setAttribute('aria-expanded','false'); } });
+
+        function toggleMenu() { const nav = document.querySelector('.nav-menu'); if (nav) nav.classList.toggle('active'); }
+
         function toggleTheme() {
             const html = document.documentElement;
-            const isDarkMode = html.getAttribute('data-theme') === 'dark';
-            
-            if (isDarkMode) {
-                html.setAttribute('data-theme', 'light');
-                document.body.classList.add('light-mode');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
+            const saved = localStorage.getItem('theme') || 'light';
+            if (saved === 'light') {
+                // switch to dark
                 document.body.classList.remove('light-mode');
                 localStorage.setItem('theme', 'dark');
+            } else {
+                // switch to light
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
             }
         }
 
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        }
-
-        // Load theme on page load
+        // Ensure default theme is light across all pages
         window.addEventListener('load', () => {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const savedTheme = localStorage.getItem('theme') || 'light';
             if (savedTheme === 'light') {
                 document.body.classList.add('light-mode');
                 document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.body.classList.remove('light-mode');
+                document.documentElement.setAttribute('data-theme', 'dark');
             }
         });
     </script>
