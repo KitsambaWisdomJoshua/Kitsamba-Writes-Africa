@@ -811,42 +811,56 @@ Follow Us
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDarkMode = html.getAttribute('data-theme') === 'dark';
-            
-            if (isDarkMode) {
-                html.setAttribute('data-theme', 'light');
-                document.body.classList.add('light-mode');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                document.body.classList.remove('light-mode');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
+  <script>
+function toggleTheme() {
 
-        // Load theme on page load
-        window.addEventListener('load', () => {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        });
-    <script>
+    const html = document.documentElement;
+    const isDarkMode = html.getAttribute('data-theme') === 'dark';
+
+    if (isDarkMode) {
+
+        html.setAttribute('data-theme', 'light');
+        document.body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+
+    } else {
+
+        html.setAttribute('data-theme', 'dark');
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+
+    }
+
+}
+
+
+// Load saved theme
+
+window.addEventListener('load', () => {
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+
+    if(savedTheme === 'light'){
+
+        document.body.classList.add('light-mode');
+        document.documentElement.setAttribute('data-theme','light');
+
+    }
+
+});
+
+
+// SIDE MENU
 
 const menuToggle = document.getElementById("menuToggle");
-
 const sideMenu = document.getElementById("sideMenu");
 
 
-menuToggle.onclick = function(){
+menuToggle.addEventListener("click", function(){
 
     sideMenu.classList.add("active");
 
-};
+});
 
 
 function closeMenu(){
@@ -854,7 +868,6 @@ function closeMenu(){
     sideMenu.classList.remove("active");
 
 }
-
 
 </script>
     
