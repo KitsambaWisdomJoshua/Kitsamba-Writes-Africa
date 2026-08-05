@@ -1767,3 +1767,43 @@ body {
     color:#ccc;
 
 }
+.side-menu{
+    position: fixed;
+    top:0;
+    right:-350px;
+    width:320px;
+    height:100vh;
+    background:#111;
+    padding:30px;
+    transition:0.4s;
+    z-index:2000;
+}
+
+
+.side-menu.active{
+    right:0;
+}
+
+
+.side-menu ul{
+    list-style:none;
+    margin-top:30px;
+}
+
+
+.side-menu ul li{
+    margin:20px 0;
+}
+
+
+.side-menu ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+
+.side-menu ul li i{
+    color:#d4af37;
+    margin-right:15px;
+}
