@@ -433,3 +433,29 @@ function closeMenu(){
     }
 
 }
+
+// ALL PAGES DROPDOWN
+
+const pagesBtn = document.getElementById("pagesBtn");
+
+const pagesDropdown = document.getElementById("pagesDropdown");
+
+
+pagesBtn.addEventListener("click", function(){
+
+    pagesDropdown.classList.toggle("active");
+
+});
+
+
+// Close dropdown when clicking outside
+
+document.addEventListener("click", function(event){
+
+    if(!pagesBtn.contains(event.target) && !pagesDropdown.contains(event.target)){
+
+        pagesDropdown.classList.remove("active");
+
+    }
+
+});
