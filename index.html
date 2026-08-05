@@ -835,6 +835,28 @@ Follow Us
                 document.documentElement.setAttribute('data-theme', 'light');
             }
         });
-    </script>
+    <script>
+
+const menuToggle = document.getElementById("menuToggle");
+
+const sideMenu = document.getElementById("sideMenu");
+
+
+menuToggle.onclick = function(){
+
+    sideMenu.classList.add("active");
+
+};
+
+
+function closeMenu(){
+
+    sideMenu.classList.remove("active");
+
+}
+
+
+</script>
+    
 </body>
 </html>
