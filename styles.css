@@ -1766,3 +1766,25 @@ body {
 
 
 }
+/* ===== MENU BUTTON ===== */
+
+.menu-toggle {
+    background: #d4af37;
+    color: #111;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #c49b1c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+}
