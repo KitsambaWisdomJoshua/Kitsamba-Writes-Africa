@@ -1114,3 +1114,263 @@ body {
 
 
 }
+/* ========================================
+   KITSAMBA CONTACT PAGE PREMIUM UPGRADE
+======================================== */
+
+.contact-form-section {
+    background: linear-gradient(
+        135deg,
+        #1a1a1a,
+        #111111
+    );
+    padding: 70px 20px;
+}
+
+
+.contact-form-section .container {
+    max-width: 900px;
+}
+
+
+.contact-form-section h2,
+.support-section h2,
+.social-section h2,
+.contact-footer h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+
+.contact-form-section p,
+.support-section p,
+.social-section p,
+.contact-footer p {
+    text-align:center;
+    color:var(--text-gray);
+    max-width:800px;
+    margin:auto;
+}
+
+
+/* Contact Form Card */
+
+.contact-form-section form {
+
+    margin-top:40px;
+    background:#252525;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    border-top:4px solid var(--primary-color);
+
+    box-shadow:
+    0 15px 40px rgba(212,175,55,0.15);
+
+}
+
+
+.form-group label {
+
+    color:var(--primary-color);
+    font-weight:bold;
+
+}
+
+
+.form-group input,
+.form-group textarea {
+
+    background:#111;
+    border:1px solid #444;
+
+    color:white;
+
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color:var(--primary-color);
+
+}
+
+
+/* Send Button */
+
+.send-btn {
+
+    background:var(--primary-color);
+    color:#111;
+
+    border-radius:30px;
+
+    padding:15px;
+
+    font-weight:bold;
+
+    transition:var(--transition);
+
+}
+
+
+.send-btn:hover {
+
+    background:white;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* Support Section */
+
+.support-section {
+
+    background:#252525;
+
+    padding:70px 20px;
+
+}
+
+
+.support-buttons {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+
+.support-btn {
+
+    background:var(--primary-color);
+
+    color:#111;
+
+    padding:15px 35px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.support-btn:hover {
+
+    background:white;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* Social Section */
+
+.social-section {
+
+    padding:70px 20px;
+
+    background:#1a1a1a;
+
+}
+
+
+.social-icons {
+
+    justify-content:center;
+
+    margin-top:30px;
+
+}
+
+
+.social-icons a {
+
+    width:50px;
+    height:50px;
+
+    background:#252525;
+
+    border:2px solid var(--primary-color);
+
+    color:var(--primary-color);
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+
+.social-icons a:hover {
+
+    background:var(--primary-color);
+
+    color:#111;
+
+    transform:translateY(-8px);
+
+}
+
+
+
+/* Contact Footer */
+
+.contact-footer {
+
+    background:#000;
+
+    padding:50px 20px;
+
+    border-top:2px solid var(--primary-color);
+
+}
+
+
+
+/* Mobile Fix */
+
+@media(max-width:768px){
+
+    .contact-form-section form{
+
+        padding:25px;
+
+    }
+
+
+    .support-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}
