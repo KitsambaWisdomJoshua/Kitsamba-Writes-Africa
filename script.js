@@ -402,3 +402,34 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('Kitsamba Writes Africa - Website loaded successfully!');
+// SIDE MENU CONTROL
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const menuToggle = document.getElementById("menuToggle");
+    const sideMenu = document.getElementById("sideMenu");
+
+    if(menuToggle && sideMenu){
+
+        menuToggle.addEventListener("click", function(){
+
+            sideMenu.classList.add("active");
+
+        });
+
+    }
+
+});
+
+
+function closeMenu(){
+
+    const sideMenu = document.getElementById("sideMenu");
+
+    if(sideMenu){
+
+        sideMenu.classList.remove("active");
+
+    }
+
+}
