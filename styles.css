@@ -1855,7 +1855,7 @@ body {
 }
 
 
-.pages-dropdown.active{
+.pages-dropdown.show{
 
     display:block;
 
