@@ -167,15 +167,20 @@ gtag('config', 'G-NCL42Y2EGC');
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(61, 107, 95, 0.1) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
+    min-height: 90vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("images/hero.background.webp.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
 
         .hero::before {
             content: '';
