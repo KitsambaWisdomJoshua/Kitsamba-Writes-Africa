@@ -188,13 +188,14 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.profile-img {
-    width: 250px;
-    height: 250px;
+.hero-image img {
+    width: 280px;
+    height: 280px;
+    display: block;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
-    object-fit: contain;
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
 
 .hero-subtitle {
