@@ -1,932 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NCL42Y2EGC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-gtag('config', 'G-NCL42Y2EGC'); 
-</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5834477107428352"
-     crossorigin="anonymous"></script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="google-site-verification" content="O8H5BB7B7Ansm0VMquWZ3SK5VTP_RisMr-zW3KF5Gc8" />
+    <title>Kitsamba Writes Africa | African Stories & Novels</title>
 
-    <title>Kitsamba Writes Africa | Read African Novels, Articles & News</title>
-    <meta name="description" content="Discover African novels, inspiring articles, and the latest news on Kitsamba Writes Africa. Read and share stories from talented African writers.">
+    <meta name="description"
+          content="Kitsamba Writes Africa is a home for African novels, stories, culture and ideas. Writing Africa, one story at a time.">
 
-    <meta property="og:title" content="Kitsamba Writes Africa">
-<meta property="og:description" content="Read African novels, articles, and the latest news from talented African writers.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kitsambawrites.netlify.app/">
-<meta property="og:image" content="https://kitsambawrites.netlify.app/logo.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kitsamba Writes Africa">
-<meta name="twitter:description" content="Read African novels, articles, and the latest news from talented African writers.">
-<meta name="twitter:image" content="https://kitsambawrites.netlify.app/logo.png">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
     <style>
-        /* Modern Professional Styles */
+
+        /* ==========================
+           GLOBAL
+        ========================== */
+
+        :root {
+            --black: #0b0b0b;
+            --black-soft: #121212;
+            --black-card: #181818;
+            --gold: #d8ac56;
+            --gold-light: #f1cf83;
+            --cream: #f8f3e8;
+            --white: #ffffff;
+            --gray: #b7b7b7;
+            --border: rgba(216, 172, 86, 0.22);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: "DM Sans", sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        body.light-mode {
-            background-color: #f8f9fa;
-            color: #1a1a1a;
+        img {
+            width: 100%;
+            display: block;
         }
 
-        /* Navigation */
-        .navbar {
-            background-color: var(--dark-secondary);
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        body.light-mode .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: var(--text-gray);
+        a {
             text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            line-height: 1.12;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            max-width: 650px;
+            color: var(--gray);
+            font-size: 1.03rem;
+        }
+
+
+        /* ==========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background: rgba(8, 8, 8, 0.82);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+        }
+
+        .brand-text strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 1.14rem;
+            letter-spacing: 1px;
+        }
+
+        .brand-text span {
+            display: block;
+            color: var(--gold);
+            font-size: 0.67rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #dddddd;
+            font-size: 0.92rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-button {
+            background: var(--gold);
+            color: #111 !important;
+            padding: 11px 20px;
+            border-radius: 50px;
+            font-weight: 700 !important;
+        }
+
+        .menu-btn {
+            border: none;
+            background: none;
+            color: white;
+            font-size: 1.5rem;
+            display: none;
+            cursor: pointer;
+        }
+
+
+        /* ==========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,.96) 0%,
+                    rgba(5,5,5,.83) 45%,
+                    rgba(5,5,5,.38) 100%
+                ),
+                url("images/hero.background.webp.png");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
             position: relative;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link::after {
-            content: '';
+        .hero::after {
+            content: "";
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-gray);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            color: var(--primary-color);
-            transform: rotate(20deg);
-        }
-
-        .nav-btn {
-            padding: 0.6rem 1.5rem;
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-    min-height: 90vh;
-    background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("images/hero.background.webp.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            pointer-events: none;
+            inset: auto 0 0 0;
+            height: 160px;
+            background: linear-gradient(transparent, var(--black));
         }
 
         .hero-content {
-    max-width: 1200px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
+            width: min(1180px, 92%);
+            margin: auto;
+            padding-top: 120px;
+            position: relative;
+            z-index: 2;
+        }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
+        .hero-copy {
+            max-width: 760px;
+        }
+
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold-light);
+            font-size: .78rem;
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 23px;
         }
 
-        body.light-mode .hero-text h1 {
-            color: #1a1a1a;
+        .hero-small::before {
+            content: "";
+            width: 45px;
+            height: 1px;
+            background: var(--gold);
         }
 
-        .hero-text h1 .highlight {
-            color: var(--primary-color);
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3.2rem, 8vw, 6.7rem);
+            line-height: .98;
+            letter-spacing: -2px;
+            margin-bottom: 28px;
         }
 
-        .hero-text p {
-            font-size: 1.15rem;
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 2rem;
+        .hero h1 span {
+            color: var(--gold);
         }
 
-        .hero-buttons {
+        .hero p {
+            color: #d0d0d0;
+            max-width: 640px;
+            font-size: clamp(1rem, 2vw, 1.18rem);
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
             display: flex;
-            gap: 1.5rem;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
+            justify-content: center;
+            gap: 10px;
+            transition: .25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
+            background: var(--gold);
+            color: #111;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.35);
+            color: white;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
         }
 
-        .btn-secondary:hover {
-            background-color: rgba(212, 175, 55, 0.1);
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 38px;
+            margin-top: 60px;
         }
-.hero-image {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
 
-        .hero-image img {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 12px 30px rgba(0,0,0,.35);
-}
+        .stat strong {
+            font-family: "Playfair Display", serif;
+            color: var(--gold-light);
+            font-size: 1.9rem;
+            display: block;
+        }
 
-        /* Section */
-        .section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
+        .stat span {
+            color: #aaa;
+            font-size: .85rem;
+        }
+
+
+        /* ==========================
+           FEATURED BOOKS
+        ========================== */
+
+        .books-section {
+            padding: 110px 0;
         }
 
         .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 45px;
         }
 
-        .section-header h2 {
-            font-size: 2.5rem;
+        .view-link {
+            color: var(--gold);
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-light);
+            white-space: nowrap;
         }
 
-        body.light-mode .section-header h2 {
-            color: #1a1a1a;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Novels Grid */
-        .novels-grid {
+        .book-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
         }
 
-        .novel-card {
-            background-color: var(--dark-secondary);
-            border-radius: 12px;
+        .book-card {
+            background: var(--black-card);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 18px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid var(--dark-tertiary);
+            transition: .35s ease;
         }
 
-        body.light-mode .novel-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-        }
-
-        .novel-card:hover {
+        .book-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-            border-color: var(--primary-color);
+            border-color: var(--border);
+            box-shadow: 0 25px 60px rgba(0,0,0,.45);
         }
 
-        .novel-cover {
-            width: 100%;
-            height: 350px;
+        .book-cover {
+            aspect-ratio: 2 / 3;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--primary-color), rgba(212, 175, 55, 0.5));
+            background: #222;
+            position: relative;
         }
 
-        .novel-cover img {
+        .book-cover img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.04);
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(10,10,10,.86);
+            color: var(--gold-light);
+            padding: 7px 12px;
+            border-radius: 30px;
+            font-size: .72rem;
+            font-weight: 700;
+        }
+
+        .book-info {
+            padding: 22px;
+        }
+
+        .book-info h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .book-info p {
+            color: var(--gray);
+            font-size: .88rem;
+            margin-bottom: 18px;
+        }
+
+        .read-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: .9rem;
+        }
+
+
+        /* ==========================
+           AUTHOR
+        ========================== */
+
+        .author-section {
+            padding: 80px 0 120px;
+        }
+
+        .author-box {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            min-height: 580px;
+            background: var(--cream);
+            color: #181818;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        .author-image {
+            min-height: 500px;
+        }
+
+        .author-image img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .author-copy {
+            padding: clamp(45px, 7vw, 90px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .author-copy .eyebrow {
+            color: #a77923;
+        }
+
+        .author-copy h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.4rem, 5vw, 4.3rem);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .author-copy p {
+            color: #555;
+            font-size: 1.02rem;
+            margin-bottom: 18px;
+        }
+
+        .author-signature {
+            font-family: "Playfair Display", serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            margin: 12px 0 28px;
+        }
+
+        .dark-btn {
+            align-self: flex-start;
+            background: #111;
+            color: white;
+        }
+
+
+        /* ==========================
+           CULTURE
+        ========================== */
+
+        .culture {
+            padding: 30px 0 120px;
+        }
+
+        .culture-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1.45fr 1fr 1fr;
+            grid-template-rows: 260px 260px;
+            gap: 18px;
+        }
+
+        .culture-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .culture-card:first-child {
+            grid-row: 1 / 3;
+        }
+
+        .culture-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: .45s;
         }
 
-        .novel-card:hover .novel-cover img {
-            transform: scale(1.05);
+        .culture-card:hover img {
+            transform: scale(1.06);
         }
 
-        .novel-info {
-            padding: 1.5rem;
+        .culture-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+            background: linear-gradient(
+                transparent 30%,
+                rgba(0,0,0,.85)
+            );
         }
 
-        .novel-info h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: var(--text-light);
+        .culture-overlay h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.5rem;
         }
 
-        body.light-mode .novel-info h3 {
-            color: #1a1a1a;
+        .culture-overlay span {
+            color: var(--gold-light);
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .novel-info p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
 
-        .novel-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        /* ==========================
+           QUOTE
+        ========================== */
 
-        .novel-link:hover {
-            gap: 1rem;
-        }
-
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .stat-card {
-            background-color: var(--dark-secondary);
-            padding: 2rem;
-            border-radius: 12px;
+        .quote-section {
+            padding: 100px 0;
             text-align: center;
-            border: 1px solid var(--dark-tertiary);
-            transition: all 0.3s ease;
+            background:
+                radial-gradient(circle at center,
+                rgba(216,172,86,.12),
+                transparent 60%);
         }
 
-        body.light-mode .stat-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
+        .quote-mark {
+            font-family: Georgia, serif;
+            font-size: 6rem;
+            color: var(--gold);
+            height: 70px;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
+        .quote-section blockquote {
+            max-width: 900px;
+            margin: auto;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2rem, 4.5vw, 3.8rem);
+            line-height: 1.25;
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+        .quote-section p {
+            margin-top: 24px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: .8rem;
         }
 
-        .stat-label {
-            color: var(--text-gray);
-            font-size: 1rem;
+
+        /* ==========================
+           NEWSLETTER
+        ========================== */
+
+        .newsletter {
+            padding: 50px 0 120px;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(61, 107, 95, 0.1) 100%);
-            padding: 4rem 2rem;
+        .newsletter-box {
+            padding: clamp(40px, 6vw, 75px);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(216,172,86,.13),
+                    rgba(255,255,255,.025)
+                );
+
             text-align: center;
-            border-radius: 15px;
-            margin: 4rem 0;
         }
 
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
+        .newsletter-box h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.1rem, 5vw, 3.8rem);
+            margin-bottom: 15px;
         }
 
-        body.light-mode .cta-section h2 {
-            color: #1a1a1a;
+        .newsletter-box p {
+            max-width: 600px;
+            color: var(--gray);
+            margin: 0 auto 30px;
         }
 
-        .cta-section p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
+        .newsletter-form {
+            max-width: 570px;
+            margin: auto;
+            display: flex;
+            background: white;
+            padding: 6px;
+            border-radius: 50px;
         }
 
-        /* Footer */
-        .footer {
-            background-color: var(--dark-secondary);
-            color: var(--text-gray);
-            padding: 4rem 2rem 2rem;
-            margin-top: 5rem;
+        .newsletter-form input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 0 20px;
+            font-family: inherit;
+            min-width: 0;
         }
 
-        body.light-mode .footer {
-            background-color: #f0f0f0;
+        .newsletter-form button {
+            border: none;
+            background: var(--gold);
+            color: #111;
+            font-weight: 800;
+            padding: 14px 24px;
+            border-radius: 50px;
+            cursor: pointer;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+
+        /* ==========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding: 70px 0 30px;
+            background: #070707;
+        }
+
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 1.6fr 1fr 1fr;
+            gap: 50px;
         }
 
-        .footer-section h4 {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        .footer-brand h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.7rem;
+            margin-bottom: 15px;
         }
 
-        body.light-mode .footer-section h4 {
-            color: #1a1a1a;
+        .footer-brand p {
+            color: #999;
+            max-width: 430px;
         }
 
-        .footer-section ul {
-            list-style: none;
+        .footer-column h4 {
+            color: var(--gold);
+            margin-bottom: 18px;
         }
 
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
+        .footer-column a {
+            color: #aaa;
+            display: block;
+            margin-bottom: 10px;
+            transition: .2s;
         }
 
-        .footer-section a {
-            color: var(--text-gray);
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .footer-column a:hover {
+            color: white;
         }
 
-        .footer-section a:hover {
-            color: var(--primary-color);
+        .socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .socials a {
+            width: 39px;
+            height: 39px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
         }
 
         .footer-bottom {
-            border-top: 1px solid var(--dark-tertiary);
-            padding-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid #222;
+            color: #777;
+            font-size: .82rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        body.light-mode .footer-bottom {
-            border-top-color: #e0e0e0;
-        }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
+        /* ==========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 950px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: #0c0c0c;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px 5%;
+                gap: 23px;
+
+                transform: translateY(-150%);
+                transition: .3s;
+                border-bottom: 1px solid #222;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .author-box {
                 grid-template-columns: 1fr;
             }
 
-            .hero-text h1 {
-                font-size: 2.2rem;
+            .author-image {
+                height: 550px;
             }
 
-            .nav-menu {
-                display: none;
+            .culture-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .novels-grid {
-                grid-template-columns: 1fr;
+            .culture-card:first-child {
+                grid-column: 1 / 3;
+                grid-row: auto;
             }
 
-            .hero-buttons {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .hero {
+                min-height: 92vh;
+                background-position: 65% center;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .section-header {
+                align-items: flex-start;
                 flex-direction: column;
             }
 
-            .btn {
-                width: 100%;
-                justify-content: center;
+            .book-grid {
+                grid-template-columns: 1fr;
             }
+
+            .book-card {
+                max-width: 430px;
+                margin: auto;
+            }
+
+            .author-image {
+                height: 430px;
+            }
+
+            .culture-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+            }
+
+            .culture-card,
+            .culture-card:first-child {
+                grid-column: auto;
+                grid-row: auto;
+                height: 320px;
+            }
+
+            .newsletter-form {
+                display: block;
+                background: none;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+                padding: 15px 18px;
+                border-radius: 50px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
         }
+
     </style>
 </head>
+
+
 <body>
-    <!-- Navigation -->
-  <!-- Navigation -->
-<nav class="navbar">
-
-    <div class="nav-container">
-
-        <!-- Logo -->
-        <div class="nav-logo">
-            <i class="fas fa-pen-nib"></i>
-            KITSAMBA WRITES AFRICA
-        </div>
-
-    <!-- All Pages Area -->
-<div class="pages-area">
-
-<button class="pages-btn" id="pagesBtn">
-    <i class="fas fa-layer-group"></i>
-    All Pages
-    <i class="fas fa-chevron-down"></i>
-</button>
 
 
-<!-- All Pages Dropdown -->
-<div class="pages-dropdown" id="pagesDropdown">
+<!-- ==========================
+     NAVIGATION
+========================== -->
 
-<a href="index.html">
-    <i class="fas fa-house"></i>
-    Home
-</a>
+<header>
 
-<a href="about.html">
-    <i class="fas fa-user"></i>
-    About
-</a>
+    <div class="container">
 
-<a href="novels.html">
-    <i class="fas fa-book"></i>
-    Novels
-</a>
+        <nav>
 
-<a href="blog.html">
-    <i class="fas fa-pen"></i>
-    Blog
-</a>
+            <a href="index.html" class="brand">
 
-<a href="lifestyle.html">
-    <i class="fas fa-leaf"></i>
-    African Lifestyle
-</a>
-
-<a href="contact.html">
-    <i class="fas fa-envelope"></i>
-    Contact
-</a>
-
-<a href="login.html">
-    <i class="fas fa-user-plus"></i>
-    Account
-</a>
-
-</div>
-
-</div>
-
-
-</div> 
-
-        <!-- Right Actions -->
-        <div class="nav-actions">
-
-            <!-- Theme Button -->
-            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
-                <i class="fas fa-sun"></i>
-            </button>
-
-            <!-- Menu Button -->
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-                Menu
-            </button>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-<!-- Side Menu -->
-<div class="side-menu" id="sideMenu">
-
-<div class="menu-header">
-
-<h2>MENU</h2>
-
-<button onclick="closeMenu()">
-<i class="fas fa-times"></i>
-</button>
-
-</div>
-
-  <ul>
-
-<li>
-<a href="index.html">
-<i class="fas fa-house"></i>
-Home
-</a>
-</li>
-
-
-<li>
-<a href="about.html">
-<i class="fas fa-user"></i>
-About
-</a>
-</li>
-
-
-<li>
-<a href="novels.html">
-<i class="fas fa-book"></i>
-Novels
-</a>
-</li>
-
-
-<li>
-<a href="blog.html">
-<i class="fas fa-pen"></i>
-Blog
-</a>
-</li>
-
-
-<li>
-<a href="lifestyle.html">
-<i class="fas fa-leaf"></i>
-Lifestyle
-</a>
-</li>
-
-
-<li>
-<a href="contact.html">
-<i class="fas fa-envelope"></i>
-Contact
-</a>
-</li>
-
-
-<li>
-<a href="#social">
-<i class="fas fa-share-nodes"></i>
-Follow Us
-</a>
-</li>
-
-</ul>
-
-
-    <hr>
-
-
-    <div class="social-menu">
-
-        <a href="#">Facebook</a>
-
-        <a href="#">Instagram</a>
-
-        <a href="#">X (Twitter)</a>
-
-        <a href="#">LinkedIn</a>
-
-        <a href="#">YouTube</a>
-
-    </div>
-
-</div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Discover <span class="highlight">African Stories</span> That Matter</h1>
-                <p>Explore compelling narratives, rich cultural traditions, and inspiring tales from across Africa. Join a community of readers who celebrate authentic African voices.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="location.href='novels.html'">
-                        <i class="fas fa-book"></i> Explore Novels
-                    </button>
-                    <button class="btn btn-secondary" onclick="location.href='about.html'">
-                        <i class="fas fa-user"></i> Learn More
-                    </button>
+                <div class="brand-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://github.com/kitsambawisdomjoshua/Kitsamba-Writes-Africa/raw/main/images/KItsamba%20Joshua.png" alt="Kitsamba Joshua">
-            </div>
-        </div>
-    </section>
 
-    <!-- Featured Novels Section -->
-    <section class="section">
+                <div class="brand-text">
+                    <strong>Kitsamba Writes</strong>
+                    <span>Africa</span>
+                </div>
+
+            </a>
+
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="index.html">Home</a>
+                <a href="novels.html">Novels</a>
+                <a href="blog.html">Blog</a>
+                <a href="lifestyle.html">African Lifestyle</a>
+                <a href="about.html">About Joshua</a>
+                <a href="contact.html">Contact</a>
+
+                <a href="novels.html" class="nav-button">
+                    Start Reading
+                </a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-copy">
+
+            <div class="hero-small">
+                Stories born from Africa
+            </div>
+
+            <h1>
+                Writing Africa.
+                <br>
+                <span>One Story</span>
+                at a Time.
+            </h1>
+
+            <p>
+                Step into stories shaped by love, struggle, hope,
+                culture and the unforgettable rhythm of African life.
+                Discover novels and ideas written to stay with you
+                long after the final page.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="novels.html" class="btn btn-primary">
+                    <i class="fa-solid fa-book-open"></i>
+                    Explore Novels
+                </a>
+
+                <a href="about.html" class="btn btn-outline">
+                    Meet the Author
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div class="stat">
+                    <strong>06+</strong>
+                    <span>Original stories</span>
+                </div>
+
+                <div class="stat">
+                    <strong>Africa</strong>
+                    <span>At the heart of every story</span>
+                </div>
+
+                <div class="stat">
+                    <strong>∞</strong>
+                    <span>Stories still to be told</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+     FEATURED NOVELS
+========================== -->
+
+<section class="books-section">
+
+    <div class="container">
+
         <div class="section-header">
-            <h2>Featured Novels</h2>
-            <p>Explore our most compelling stories that capture the essence of African experiences</p>
-        </div>
-        <div class="novels-grid">
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/The%20Silence%20At%202PM.png?raw=true" alt="The Silence at 2PM">
+
+            <div>
+
+                <div class="eyebrow">
+                    Featured stories
                 </div>
-                <div class="novel-info">
-                    <h3>The Silence at 2PM</h3>
-                    <p>A profound story about grief, loss, and discovering that love transcends death itself.</p>
-                    <a href="novels.html" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
+
+                <h2 class="section-title">
+                    Stories worth getting lost in.
+                </h2>
+
+                <p class="section-description">
+                    Explore original novels built around human emotion,
+                    relationships, choices, dreams and the realities
+                    that shape life across Africa.
+                </p>
+
             </div>
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/The%20Streets%20of%20Fate.png?raw=true" alt="The Streets of Fate">
+            <a href="novels.html" class="view-link">
+                View all novels
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+
+        <div class="book-grid">
+
+
+            <!-- BOOK 1 -->
+
+            <article class="book-card">
+
+                <div class="book-cover">
+
+                    <img
+                        src="images/The Silence At 2PM.png"
+                        alt="The Silence At 2PM">
+
+                    <span class="book-badge">
+                        Featured
+                    </span>
+
                 </div>
-                <div class="novel-info">
-                    <h3>The Streets of Fate</h3>
-                    <p>From street child to success, a powerful journey of resilience, hope, and destiny.</p>
-                    <a href="novels.html" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
+
+                <div class="book-info">
+
+                    <h3>
+                        The Silence at 2PM
+                    </h3>
+
+                    <p>
+                        A story of silence, difficult choices
+                        and moments that change everything.
+                    </p>
+
+                    <a href="novels.html" class="read-link">
+
+                        Read the story
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
                 </div>
+
+            </article>
+
+
+
+            <!-- BOOK 2 -->
+
+            <article class="book-card">
+
+                <div class="book-cover">
+
+                    <img
+                        src="images/The Streets of Fate.png"
+                        alt="The Streets of Fate">
+
+                    <span class="book-badge">
+                        African Fiction
+                    </span>
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>
+                        The Streets of Fate
+                    </h3>
+
+                    <p>
+                        Dreams and destiny collide on streets
+                        where every decision comes with a price.
+                    </p>
+
+                    <a href="novels.html" class="read-link">
+
+                        Read the story
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- BOOK 3 -->
+
+            <article class="book-card">
+
+                <div class="book-cover">
+
+                    <img
+                        src="images/A Love Written In Rain.png"
+                        alt="A Love Written In Rain">
+
+                    <span class="book-badge">
+                        Romance
+                    </span>
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>
+                        A Love Written in Rain
+                    </h3>
+
+                    <p>
+                        A heartfelt journey through love,
+                        timing, memory and the things we cannot forget.
+                    </p>
+
+                    <a href="novels.html" class="read-link">
+
+                        Read the story
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- BOOK 4 -->
+
+            <article class="book-card">
+
+                <div class="book-cover">
+
+                    <img
+                        src="images/Before The Last Goodbye.png"
+                        alt="Before The Last Goodbye">
+
+                    <span class="book-badge">
+                        Emotional Fiction
+                    </span>
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>
+                        Before the Last Goodbye
+                    </h3>
+
+                    <p>
+                        Some goodbyes happen once.
+                        Others remain with us for a lifetime.
+                    </p>
+
+                    <a href="novels.html" class="read-link">
+
+                        Read the story
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+     AUTHOR SECTION
+========================== -->
+
+<section class="author-section">
+
+    <div class="container">
+
+        <div class="author-box">
+
+            <div class="author-image">
+
+                <img
+                    src="images/Kitsamba Joshua.jpg"
+                    alt="Kitsamba Joshua">
+
             </div>
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/A%20Love%20Written%20In%20Rain.png?raw=true" alt="A Love Written in Rain">
+
+            <div class="author-copy">
+
+                <div class="eyebrow">
+                    Behind the stories
                 </div>
-                <div class="novel-info">
-                    <h3>A Love Written in Rain</h3>
-                    <p>A contemporary romance where destiny brings two broken hearts together in Kampala.</p>
-                    <a href="novels.html" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
+
+                <h2>
+                    Meet Kitsamba Joshua.
+                </h2>
+
+                <p>
+                    Every place has stories that deserve to be remembered.
+                    Every generation has voices that deserve to be heard.
+                </p>
+
+                <p>
+                    Kitsamba Writes Africa is a growing home for stories
+                    inspired by African life, relationships, ambition,
+                    struggle, culture and hope.
+                </p>
+
+                <p>
+                    The mission is simple: tell meaningful African stories
+                    in a way that speaks to readers at home and beyond.
+                </p>
+
+                <div class="author-signature">
+                    “Writing Africa, one story at a time.”
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">6+</div>
-                <div class="stat-label">Novels Published</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">Thousands</div>
-                <div class="stat-label">Readers Worldwide</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Articles & Stories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">Africa</div>
-                <div class="stat-label">Stories That Inspire</div>
-            </div>
-        </div>
-    </section>
+                <a href="about.html" class="btn dark-btn">
 
-    <!-- CTA Section -->
-    <section class="section">
-        <div class="cta-section">
-            <h2>Start Your Journey Today</h2>
-            <p>Join thousands of readers exploring authentic African narratives and cultural wisdom</p>
-            <button class="btn btn-primary" onclick="location.href='login.html'">
-                <i class="fas fa-user-plus"></i> Create Free Account
-            </button>
-        </div>
-    </section>
+                    My Story
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Kitsamba Writes Africa</h4>
-                <p>Authentic African stories, culture, and lifestyle content for readers worldwide.</p>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="novels.html">Novels</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Categories</h4>
-                <ul>
-                    <li><a href="lifestyle.html">African Lifestyle</a></li>
-                    <li><a href="blog.html">Culture & History</a></li>
-                    <li><a href="blog.html">Inspiration</a></li>
-                    <li><a href="about.html">About Joshua</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <ul style="list-style: none; display: flex; gap: 1rem;">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                </ul>
-            </div>
+
         </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+     AFRICAN CULTURE
+========================== -->
+
+<section class="culture">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Beyond the novels
+        </div>
+
+        <h2 class="section-title">
+            Africa is more than a setting.
+        </h2>
+
+        <p class="section-description">
+            Explore the traditions, voices, food, creativity
+            and everyday experiences that make African life
+            endlessly worth writing about.
+        </p>
+
+
+        <div class="culture-grid">
+
+
+            <a href="lifestyle.html" class="culture-card">
+
+                <img
+                    src="images/african-heritage.webp"
+                    alt="African heritage">
+
+                <div class="culture-overlay">
+
+                    <div>
+
+                        <span>Heritage</span>
+
+                        <h3>
+                            Stories rooted in identity
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="lifestyle.html" class="culture-card">
+
+                <img
+                    src="images/food.webp"
+                    alt="African food">
+
+                <div class="culture-overlay">
+
+                    <div>
+
+                        <span>Lifestyle</span>
+
+                        <h3>
+                            Food & everyday life
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="lifestyle.html" class="culture-card">
+
+                <img
+                    src="images/art.webp"
+                    alt="African art">
+
+                <div class="culture-overlay">
+
+                    <div>
+
+                        <span>Creativity</span>
+
+                        <h3>
+                            Art that tells stories
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="blog.html" class="culture-card">
+
+                <img
+                    src="images/african-storytelling.webp"
+                    alt="African storytelling">
+
+                <div class="culture-overlay">
+
+                    <div>
+
+                        <span>Storytelling</span>
+
+                        <h3>
+                            The power of our voices
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="blog.html" class="culture-card">
+
+                <img
+                    src="images/tradition.webp"
+                    alt="African traditions">
+
+                <div class="culture-overlay">
+
+                    <div>
+
+                        <span>Tradition</span>
+
+                        <h3>
+                            Where the past meets today
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+     QUOTE
+========================== -->
+
+<section class="quote-section">
+
+    <div class="container">
+
+        <div class="quote-mark">
+            “
+        </div>
+
+        <blockquote>
+            Africa has never lacked stories.
+            What we need are more places where
+            those stories can live.
+        </blockquote>
+
+        <p>
+            Kitsamba Writes Africa
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+     NEWSLETTER
+========================== -->
+
+<section class="newsletter">
+
+    <div class="container">
+
+        <div class="newsletter-box">
+
+            <div class="eyebrow">
+                Join the journey
+            </div>
+
+            <h2>
+                Never miss the next story.
+            </h2>
+
+            <p>
+                Get new novels, chapters, articles and
+                updates from Kitsamba Writes Africa.
+            </p>
+
+
+            <form
+                class="newsletter-form"
+                onsubmit="subscribeUser(event)">
+
+                <input
+                    id="newsletterEmail"
+                    type="email"
+                    placeholder="Enter your email address"
+                    required>
+
+                <button type="submit">
+                    Subscribe
+                </button>
+
+            </form>
+
+            <p
+                id="newsletterMessage"
+                style="margin-top:15px; font-size:.9rem;">
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <h3>
+                    Kitsamba Writes Africa
+                </h3>
+
+                <p>
+                    A home for African stories, novels,
+                    ideas and culture.
+                    Writing Africa, one story at a time.
+                </p>
+
+
+                <div class="socials">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="novels.html">Novels</a>
+                <a href="blog.html">Blog</a>
+                <a href="lifestyle.html">African Lifestyle</a>
+                <a href="articles.html">Articles</a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    About
+                </h4>
+
+                <a href="about.html">About Joshua</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Reader Login</a>
+
+            </div>
+
+
+        </div>
+
+
         <div class="footer-bottom">
-            <p>&copy; 2025 Kitsamba Writes Africa. All Rights Reserved.</p>
+
+            <span>
+                © <span id="year"></span> Kitsamba Writes Africa.
+                All rights reserved.
+            </span>
+
+            <span>
+                Made for readers who believe African stories matter.
+            </span>
+
         </div>
-    </footer>
 
-    <script src="script.js"></script>
-  <script>
-function toggleTheme() {
+    </div>
 
-    const html = document.documentElement;
-    const isDarkMode = html.getAttribute('data-theme') === 'dark';
+</footer>
 
-    if (isDarkMode) {
 
-        html.setAttribute('data-theme', 'light');
-        document.body.classList.add('light-mode');
-        localStorage.setItem('theme', 'light');
 
-    } else {
+<script>
 
-        html.setAttribute('data-theme', 'dark');
-        document.body.classList.remove('light-mode');
-        localStorage.setItem('theme', 'dark');
+    /* MOBILE MENU */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+        const icon =
+            menuBtn.querySelector("i");
+
+
+        if (navLinks.classList.contains("active")) {
+
+            icon.className =
+                "fa-solid fa-xmark";
+
+        } else {
+
+            icon.className =
+                "fa-solid fa-bars";
+
+        }
+
+    });
+
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuBtn.querySelector("i").className =
+                    "fa-solid fa-bars";
+
+            });
+
+        });
+
+
+
+    /* FOOTER YEAR */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+
+    /* NEWSLETTER DEMO */
+
+    function subscribeUser(event) {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("newsletterEmail");
+
+        const message =
+            document.getElementById("newsletterMessage");
+
+
+        message.textContent =
+            "Thank you! Newsletter registration will be connected soon.";
+
+        message.style.color =
+            "#f1cf83";
+
+        email.value = "";
 
     }
-
-}
-
-
-// Load saved theme
-
-window.addEventListener('load', () => {
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-
-    if(savedTheme === 'light'){
-
-        document.body.classList.add('light-mode');
-        document.documentElement.setAttribute('data-theme','light');
-
-    }
-
-});
-
-
-// SIDE MENU
-
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-
-
-menuToggle.addEventListener("click", function(){
-
-    sideMenu.classList.add("active");
-
-});
-
-
-function closeMenu(){
-
-    sideMenu.classList.remove("active");
-
-}
 
 </script>
-    
+
+
 </body>
 </html>
