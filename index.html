@@ -9,11 +9,9 @@
     <meta name="description"
           content="Kitsamba Writes Africa is a home for African novels, stories, culture and ideas. Writing Africa, one story at a time.">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,10 +19,6 @@
           rel="stylesheet">
 
     <style>
-
-        /* ==========================
-           GLOBAL
-        ========================== */
 
         :root {
             --black: #0b0b0b;
@@ -66,6 +60,11 @@
             color: inherit;
         }
 
+        button,
+        input {
+            font-family: inherit;
+        }
+
         .container {
             width: min(1180px, 92%);
             margin: auto;
@@ -94,9 +93,7 @@
         }
 
 
-        /* ==========================
-           NAVBAR
-        ========================== */
+        /* NAVIGATION */
 
         header {
             position: fixed;
@@ -104,7 +101,7 @@
             top: 0;
             left: 0;
             z-index: 999;
-            background: rgba(8, 8, 8, 0.82);
+            background: rgba(8, 8, 8, 0.86);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
         }
@@ -114,12 +111,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 30px;
         }
 
         .brand {
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-shrink: 0;
         }
 
         .brand-icon {
@@ -150,17 +149,17 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 28px;
         }
 
-        .nav-links a {
+        .nav-links > a {
             color: #dddddd;
             font-size: 0.92rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: 0.25s;
         }
 
-        .nav-links a:hover {
+        .nav-links > a:hover {
             color: var(--gold);
         }
 
@@ -170,6 +169,9 @@
             padding: 11px 20px;
             border-radius: 50px;
             font-weight: 700 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
         }
 
         .menu-btn {
@@ -182,9 +184,132 @@
         }
 
 
-        /* ==========================
-           HERO
-        ========================== */
+        /* MAIN MENU DROPDOWN */
+
+        .main-menu {
+            position: relative;
+        }
+
+        .main-menu-button {
+            border: none;
+            background: transparent;
+            color: #dddddd;
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 0;
+        }
+
+        .main-menu-button:hover {
+            color: var(--gold);
+        }
+
+        .main-menu-button .menu-bars {
+            color: var(--gold);
+        }
+
+        .main-menu-button .arrow {
+            font-size: 0.7rem;
+            transition: transform 0.25s ease;
+        }
+
+        .main-menu.active .main-menu-button {
+            color: var(--gold);
+        }
+
+        .main-menu.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .main-menu-dropdown {
+            position: absolute;
+            top: calc(100% + 18px);
+            right: 0;
+            width: 310px;
+            background: rgba(15, 15, 15, 0.98);
+            border: 1px solid rgba(216, 172, 86, 0.28);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 25px 70px rgba(0,0,0,.65);
+            backdrop-filter: blur(20px);
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            pointer-events: none;
+
+            transition: all 0.25s ease;
+        }
+
+        .main-menu.active .main-menu-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .main-menu-dropdown::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 22px;
+            right: 22px;
+            height: 2px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--gold),
+                    transparent
+                );
+        }
+
+        .menu-heading {
+            padding: 10px 14px 12px;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            margin-bottom: 6px;
+        }
+
+        .menu-heading strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            color: white;
+            font-size: 1.05rem;
+        }
+
+        .menu-heading span {
+            color: #888;
+            font-size: .76rem;
+        }
+
+        .main-menu-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 15px;
+            border-radius: 11px;
+            color: #dddddd;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .main-menu-dropdown a i {
+            width: 22px;
+            color: var(--gold);
+            text-align: center;
+        }
+
+        .main-menu-dropdown a:hover {
+            background: rgba(216, 172, 86, 0.12);
+            color: var(--gold);
+            padding-left: 19px;
+        }
+
+
+        /* HERO */
 
         .hero {
             min-height: 100vh;
@@ -320,9 +445,7 @@
         }
 
 
-        /* ==========================
-           FEATURED BOOKS
-        ========================== */
+        /* FEATURED BOOKS */
 
         .books-section {
             padding: 110px 0;
@@ -417,9 +540,7 @@
         }
 
 
-        /* ==========================
-           AUTHOR
-        ========================== */
+        /* AUTHOR */
 
         .author-section {
             padding: 80px 0 120px;
@@ -483,9 +604,7 @@
         }
 
 
-        /* ==========================
-           CULTURE
-        ========================== */
+        /* CULTURE */
 
         .culture {
             padding: 30px 0 120px;
@@ -545,9 +664,7 @@
         }
 
 
-        /* ==========================
-           QUOTE
-        ========================== */
+        /* QUOTE */
 
         .quote-section {
             padding: 100px 0;
@@ -582,9 +699,7 @@
         }
 
 
-        /* ==========================
-           NEWSLETTER
-        ========================== */
+        /* NEWSLETTER */
 
         .newsletter {
             padding: 50px 0 120px;
@@ -631,7 +746,6 @@
             outline: none;
             flex: 1;
             padding: 0 20px;
-            font-family: inherit;
             min-width: 0;
         }
 
@@ -646,9 +760,7 @@
         }
 
 
-        /* ==========================
-           FOOTER
-        ========================== */
+        /* FOOTER */
 
         footer {
             border-top: 1px solid rgba(255,255,255,.08);
@@ -716,9 +828,7 @@
         }
 
 
-        /* ==========================
-           MOBILE
-        ========================== */
+        /* MOBILE */
 
         @media (max-width: 950px) {
 
@@ -731,14 +841,20 @@
                 top: 78px;
                 left: 0;
                 width: 100%;
+                max-height: calc(100vh - 78px);
+                overflow-y: auto;
+
                 background: #0c0c0c;
+
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 30px 5%;
-                gap: 23px;
+
+                padding: 28px 5%;
+                gap: 21px;
 
                 transform: translateY(-150%);
                 transition: .3s;
+
                 border-bottom: 1px solid #222;
             }
 
@@ -746,9 +862,48 @@
                 transform: translateY(0);
             }
 
+            .nav-links > a {
+                width: 100%;
+            }
+
             .nav-button {
                 width: 100%;
-                text-align: center;
+                justify-content: center;
+            }
+
+            .main-menu {
+                width: 100%;
+            }
+
+            .main-menu-button {
+                width: 100%;
+                justify-content: space-between;
+                font-size: 0.95rem;
+            }
+
+            .main-menu-dropdown {
+                position: static;
+
+                width: 100%;
+
+                margin-top: 10px;
+
+                display: none;
+
+                opacity: 1;
+                visibility: visible;
+
+                transform: none;
+
+                pointer-events: auto;
+
+                box-shadow: none;
+
+                background: #141414;
+            }
+
+            .main-menu.active .main-menu-dropdown {
+                display: block;
             }
 
             .book-grid {
@@ -780,6 +935,14 @@
 
 
         @media (max-width: 650px) {
+
+            .brand-text strong {
+                font-size: 1rem;
+            }
+
+            .brand-text span {
+                font-size: .6rem;
+            }
 
             .hero {
                 min-height: 92vh;
@@ -858,10 +1021,6 @@
 <body>
 
 
-<!-- ==========================
-     NAVIGATION
-========================== -->
-
 <header>
 
     <div class="container">
@@ -882,22 +1041,161 @@
             </a>
 
 
-            <button class="menu-btn" id="menuBtn">
+            <button class="menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+
                 <i class="fa-solid fa-bars"></i>
+
             </button>
 
 
             <div class="nav-links" id="navLinks">
 
-                <a href="index.html">Home</a>
-                <a href="novels.html">Novels</a>
-                <a href="blog.html">Blog</a>
-                <a href="lifestyle.html">African Lifestyle</a>
-                <a href="about.html">About Joshua</a>
-                <a href="contact.html">Contact</a>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="novels.html">
+                    Novels
+                </a>
+
+
+                <div class="main-menu" id="mainMenu">
+
+                    <button
+                        class="main-menu-button"
+                        id="mainMenuButton"
+                        type="button">
+
+                        <i class="fa-solid fa-bars menu-bars"></i>
+
+                        Menu
+
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+
+                    </button>
+
+
+                    <div
+                        class="main-menu-dropdown"
+                        id="mainMenuDropdown">
+
+
+                        <div class="menu-heading">
+
+                            <strong>
+                                Explore Kitsamba Writes
+                            </strong>
+
+                            <span>
+                                Stories, culture and more
+                            </span>
+
+                        </div>
+
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            <span>Home</span>
+
+                        </a>
+
+
+                        <a href="about.html">
+
+                            <i class="fa-solid fa-user-pen"></i>
+
+                            <span>About</span>
+
+                        </a>
+
+
+                        <a href="articles.html">
+
+                            <i class="fa-solid fa-newspaper"></i>
+
+                            <span>Articles</span>
+
+                        </a>
+
+
+                        <a href="blog.html">
+
+                            <i class="fa-solid fa-pen-nib"></i>
+
+                            <span>Blog</span>
+
+                        </a>
+
+
+                        <a href="contact.html">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <span>Contact</span>
+
+                        </a>
+
+
+                        <a href="lifestyle.html">
+
+                            <i class="fa-solid fa-earth-africa"></i>
+
+                            <span>Lifestyle</span>
+
+                        </a>
+
+
+                        <a href="login.html">
+
+                            <i class="fa-solid fa-right-to-bracket"></i>
+
+                            <span>Login</span>
+
+                        </a>
+
+
+                        <a href="novels.html">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                            <span>Novels</span>
+
+                        </a>
+
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            <span>Settings</span>
+
+                        </a>
+
+
+                        <a href="videos.html">
+
+                            <i class="fa-solid fa-circle-play"></i>
+
+                            <span>Videos</span>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
 
                 <a href="novels.html" class="nav-button">
+
+                    <i class="fa-solid fa-book-open"></i>
+
                     Start Reading
+
                 </a>
 
             </div>
@@ -909,10 +1207,6 @@
 </header>
 
 
-
-<!-- ==========================
-     HERO
-========================== -->
 
 <section class="hero">
 
@@ -938,16 +1232,24 @@
                 long after the final page.
             </p>
 
+
             <div class="hero-actions">
 
                 <a href="novels.html" class="btn btn-primary">
+
                     <i class="fa-solid fa-book-open"></i>
+
                     Explore Novels
+
                 </a>
 
+
                 <a href="about.html" class="btn btn-outline">
+
                     Meet the Author
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
@@ -956,18 +1258,29 @@
             <div class="hero-stats">
 
                 <div class="stat">
+
                     <strong>06+</strong>
+
                     <span>Original stories</span>
+
                 </div>
 
+
                 <div class="stat">
+
                     <strong>Africa</strong>
+
                     <span>At the heart of every story</span>
+
                 </div>
 
+
                 <div class="stat">
+
                     <strong>∞</strong>
+
                     <span>Stories still to be told</span>
+
                 </div>
 
             </div>
@@ -979,10 +1292,6 @@
 </section>
 
 
-
-<!-- ==========================
-     FEATURED NOVELS
-========================== -->
 
 <section class="books-section">
 
@@ -1008,9 +1317,13 @@
 
             </div>
 
+
             <a href="novels.html" class="view-link">
+
                 View all novels
+
                 <i class="fa-solid fa-arrow-right"></i>
+
             </a>
 
         </div>
@@ -1019,8 +1332,6 @@
 
         <div class="book-grid">
 
-
-            <!-- BOOK 1 -->
 
             <article class="book-card">
 
@@ -1035,6 +1346,7 @@
                     </span>
 
                 </div>
+
 
                 <div class="book-info">
 
@@ -1061,8 +1373,6 @@
 
 
 
-            <!-- BOOK 2 -->
-
             <article class="book-card">
 
                 <div class="book-cover">
@@ -1076,6 +1386,7 @@
                     </span>
 
                 </div>
+
 
                 <div class="book-info">
 
@@ -1102,8 +1413,6 @@
 
 
 
-            <!-- BOOK 3 -->
-
             <article class="book-card">
 
                 <div class="book-cover">
@@ -1117,6 +1426,7 @@
                     </span>
 
                 </div>
+
 
                 <div class="book-info">
 
@@ -1143,8 +1453,6 @@
 
 
 
-            <!-- BOOK 4 -->
-
             <article class="book-card">
 
                 <div class="book-cover">
@@ -1158,6 +1466,7 @@
                     </span>
 
                 </div>
+
 
                 <div class="book-info">
 
@@ -1191,15 +1500,12 @@
 
 
 
-<!-- ==========================
-     AUTHOR SECTION
-========================== -->
-
 <section class="author-section">
 
     <div class="container">
 
         <div class="author-box">
+
 
             <div class="author-image">
 
@@ -1257,10 +1563,6 @@
 </section>
 
 
-
-<!-- ==========================
-     AFRICAN CULTURE
-========================== -->
 
 <section class="culture">
 
@@ -1411,10 +1713,6 @@
 
 
 
-<!-- ==========================
-     QUOTE
-========================== -->
-
 <section class="quote-section">
 
     <div class="container">
@@ -1438,10 +1736,6 @@
 </section>
 
 
-
-<!-- ==========================
-     NEWSLETTER
-========================== -->
 
 <section class="newsletter">
 
@@ -1479,6 +1773,7 @@
 
             </form>
 
+
             <p
                 id="newsletterMessage"
                 style="margin-top:15px; font-size:.9rem;">
@@ -1491,10 +1786,6 @@
 </section>
 
 
-
-<!-- ==========================
-     FOOTER
-========================== -->
 
 <footer>
 
@@ -1547,9 +1838,10 @@
                 </h4>
 
                 <a href="novels.html">Novels</a>
+                <a href="articles.html">Articles</a>
                 <a href="blog.html">Blog</a>
                 <a href="lifestyle.html">African Lifestyle</a>
-                <a href="articles.html">Articles</a>
+                <a href="videos.html">Videos</a>
 
             </div>
 
@@ -1558,12 +1850,13 @@
             <div class="footer-column">
 
                 <h4>
-                    About
+                    Website
                 </h4>
 
-                <a href="about.html">About Joshua</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="login.html">Reader Login</a>
+                <a href="settings.html">Settings</a>
 
             </div>
 
@@ -1592,22 +1885,27 @@
 
 <script>
 
-    /* MOBILE MENU */
-
-    const menuBtn =
-        document.getElementById("menuBtn");
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
 
     const navLinks =
         document.getElementById("navLinks");
 
+    const mainMenu =
+        document.getElementById("mainMenu");
 
-    menuBtn.addEventListener("click", () => {
+    const mainMenuButton =
+        document.getElementById("mainMenuButton");
+
+
+    /* MOBILE NAVIGATION */
+
+    mobileMenuBtn.addEventListener("click", function () {
 
         navLinks.classList.toggle("active");
 
         const icon =
-            menuBtn.querySelector("i");
-
+            mobileMenuBtn.querySelector("i");
 
         if (navLinks.classList.contains("active")) {
 
@@ -1619,23 +1917,55 @@
             icon.className =
                 "fa-solid fa-bars";
 
+            mainMenu.classList.remove("active");
+
         }
 
     });
 
 
 
-    /* CLOSE MENU AFTER CLICK */
+    /* MAIN DROPDOWN MENU */
+
+    mainMenuButton.addEventListener("click", function(event) {
+
+        event.stopPropagation();
+
+        mainMenu.classList.toggle("active");
+
+    });
+
+
+
+    /* CLOSE MAIN MENU IF USER CLICKS OUTSIDE */
+
+    document.addEventListener("click", function(event) {
+
+        if (!mainMenu.contains(event.target)) {
+
+            mainMenu.classList.remove("active");
+
+        }
+
+    });
+
+
+
+    /* CLOSE MOBILE MENU AFTER NORMAL LINK */
 
     document
         .querySelectorAll(".nav-links a")
-        .forEach(link => {
+        .forEach(function(link) {
 
-            link.addEventListener("click", () => {
+            link.addEventListener("click", function() {
 
                 navLinks.classList.remove("active");
 
-                menuBtn.querySelector("i").className =
+                mainMenu.classList.remove("active");
+
+                mobileMenuBtn
+                    .querySelector("i")
+                    .className =
                     "fa-solid fa-bars";
 
             });
@@ -1651,7 +1981,7 @@
 
 
 
-    /* NEWSLETTER DEMO */
+    /* NEWSLETTER DEMONSTRATION */
 
     function subscribeUser(event) {
 
