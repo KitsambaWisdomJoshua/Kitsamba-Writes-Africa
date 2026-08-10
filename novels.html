@@ -1,229 +1,3464 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novels - Kitsamba Writes Africa</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .page-header {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(61, 107, 95, 0.1) 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
 
-        .page-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
+<meta charset="UTF-8">
 
-        body.light-mode .page-header h1 {
-            color: #1a1a1a;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .page-header p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-        }
+<title>Novels | Kitsamba Writes Africa</title>
 
-        .novels-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+<meta name="description"
+content="Explore original African novels and stories from Kitsamba Writes Africa.">
 
-        .novels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        .novel-card {
-            background-color: var(--dark-secondary);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid var(--dark-tertiary);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-        body.light-mode .novel-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-        }
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-        .novel-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-            border-color: var(--primary-color);
-        }
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+rel="stylesheet">
 
-        .novel-cover {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(135deg, var(--primary-color), rgba(212, 175, 55, 0.5));
-            overflow: hidden;
-        }
 
-        .novel-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+<style>
 
-        .novel-card:hover .novel-cover img {
-            transform: scale(1.08);
-        }
+:root{
 
-        .novel-info {
-            padding: 2rem;
-        }
+--black:#0b0b0b;
+--dark:#121212;
+--card:#181818;
 
-        .novel-info h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
+--gold:#d8ac56;
+--gold-light:#f2cf83;
 
-        body.light-mode .novel-info h3 {
-            color: #1a1a1a;
-        }
+--white:#ffffff;
+--gray:#aaa;
 
-        .novel-info p {
-            color: var(--text-gray);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
+--cream:#f7f1e5;
 
-        .novel-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
+--border:rgba(216,172,86,.25);
 
-        .novel-link:hover {
-            gap: 1rem;
-        }
+}
 
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2rem;
-            }
 
-            .novels-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+body{
+
+font-family:"DM Sans",sans-serif;
+
+background:var(--black);
+
+color:white;
+
+line-height:1.6;
+
+overflow-x:hidden;
+
+}
+
+
+a{
+
+text-decoration:none;
+color:inherit;
+
+}
+
+
+button,
+input{
+
+font-family:inherit;
+
+}
+
+
+img{
+
+width:100%;
+display:block;
+
+}
+
+
+.container{
+
+width:min(1180px,92%);
+
+margin:auto;
+
+}
+
+
+/* =====================
+NAVIGATION
+===================== */
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+z-index:999;
+
+background:rgba(8,8,8,.88);
+
+backdrop-filter:blur(16px);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+
+nav{
+
+min-height:78px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:25px;
+
+}
+
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+flex-shrink:0;
+
+}
+
+
+.brand-icon{
+
+width:42px;
+
+height:42px;
+
+border:1px solid var(--gold);
+
+border-radius:50%;
+
+display:grid;
+
+place-items:center;
+
+color:var(--gold);
+
+}
+
+
+.brand-text strong{
+
+display:block;
+
+font-family:"Playfair Display",serif;
+
+font-size:1.14rem;
+
+letter-spacing:1px;
+
+}
+
+
+.brand-text span{
+
+display:block;
+
+font-size:.66rem;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:var(--gold);
+
+}
+
+
+.nav-links{
+
+display:flex;
+
+align-items:center;
+
+gap:28px;
+
+}
+
+
+.nav-links > a{
+
+font-size:.92rem;
+
+font-weight:600;
+
+color:#ddd;
+
+transition:.25s;
+
+}
+
+
+.nav-links > a:hover,
+.nav-links > a.active{
+
+color:var(--gold);
+
+}
+
+
+.start-reading{
+
+background:var(--gold);
+
+color:#111 !important;
+
+padding:11px 20px;
+
+border-radius:50px;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+}
+
+
+.mobile-menu-btn{
+
+display:none;
+
+border:0;
+
+background:none;
+
+color:white;
+
+font-size:1.5rem;
+
+cursor:pointer;
+
+}
+
+
+/* =====================
+MAIN DROPDOWN
+===================== */
+
+.main-menu{
+
+position:relative;
+
+}
+
+
+.main-menu-button{
+
+border:none;
+
+background:transparent;
+
+color:#ddd;
+
+font-size:.92rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:10px 0;
+
+}
+
+
+.main-menu-button:hover{
+
+color:var(--gold);
+
+}
+
+
+.main-menu-button .bars{
+
+color:var(--gold);
+
+}
+
+
+.main-menu-button .arrow{
+
+font-size:.7rem;
+
+transition:.25s;
+
+}
+
+
+.main-menu.active .arrow{
+
+transform:rotate(180deg);
+
+}
+
+
+.menu-dropdown{
+
+position:absolute;
+
+right:0;
+
+top:calc(100% + 18px);
+
+width:310px;
+
+padding:12px;
+
+background:rgba(15,15,15,.98);
+
+border:1px solid var(--border);
+
+border-radius:20px;
+
+box-shadow:0 25px 70px rgba(0,0,0,.65);
+
+opacity:0;
+
+visibility:hidden;
+
+pointer-events:none;
+
+transform:translateY(-10px);
+
+transition:.25s;
+
+}
+
+
+.main-menu.active .menu-dropdown{
+
+opacity:1;
+
+visibility:visible;
+
+pointer-events:auto;
+
+transform:translateY(0);
+
+}
+
+
+.menu-dropdown::before{
+
+content:"";
+
+position:absolute;
+
+top:-1px;
+
+left:20px;
+
+right:20px;
+
+height:2px;
+
+background:linear-gradient(
+90deg,
+transparent,
+var(--gold),
+transparent
+);
+
+}
+
+
+.menu-title{
+
+padding:10px 14px 13px;
+
+border-bottom:1px solid rgba(255,255,255,.07);
+
+margin-bottom:6px;
+
+}
+
+
+.menu-title strong{
+
+display:block;
+
+font-family:"Playfair Display",serif;
+
+}
+
+
+.menu-title span{
+
+color:#888;
+
+font-size:.76rem;
+
+}
+
+
+.menu-dropdown a{
+
+padding:12px 15px;
+
+border-radius:11px;
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+color:#ddd;
+
+font-size:.9rem;
+
+transition:.2s;
+
+}
+
+
+.menu-dropdown a i{
+
+width:22px;
+
+text-align:center;
+
+color:var(--gold);
+
+}
+
+
+.menu-dropdown a:hover{
+
+background:rgba(216,172,86,.12);
+
+color:var(--gold);
+
+padding-left:19px;
+
+}
+
+
+
+/* =====================
+NOVELS HERO
+===================== */
+
+.novels-hero{
+
+padding:180px 0 100px;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+radial-gradient(
+circle at 75% 30%,
+rgba(216,172,86,.18),
+transparent 35%
+),
+
+linear-gradient(
+135deg,
+#080808,
+#101010
+);
+
+}
+
+
+.novels-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+border:1px solid rgba(216,172,86,.09);
+
+border-radius:50%;
+
+right:-130px;
+
+top:-120px;
+
+}
+
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1.15fr .85fr;
+
+align-items:center;
+
+gap:60px;
+
+}
+
+
+.hero-copy{
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.eyebrow{
+
+color:var(--gold);
+
+text-transform:uppercase;
+
+letter-spacing:3px;
+
+font-weight:700;
+
+font-size:.78rem;
+
+margin-bottom:15px;
+
+}
+
+
+.hero-copy h1{
+
+font-family:"Playfair Display",serif;
+
+font-size:clamp(3rem,7vw,6rem);
+
+line-height:1;
+
+margin-bottom:25px;
+
+}
+
+
+.hero-copy h1 span{
+
+color:var(--gold);
+
+}
+
+
+.hero-copy p{
+
+max-width:650px;
+
+font-size:1.08rem;
+
+color:#bbb;
+
+margin-bottom:30px;
+
+}
+
+
+.hero-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:14px;
+
+}
+
+
+.btn{
+
+border:none;
+
+padding:14px 24px;
+
+border-radius:50px;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+font-weight:700;
+
+transition:.25s;
+
+cursor:pointer;
+
+}
+
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+.btn-gold{
+
+background:var(--gold);
+
+color:#111;
+
+}
+
+
+.btn-outline{
+
+border:1px solid rgba(255,255,255,.3);
+
+color:white;
+
+}
+
+
+.hero-books{
+
+height:430px;
+
+position:relative;
+
+}
+
+
+.hero-book{
+
+position:absolute;
+
+width:190px;
+
+border-radius:14px;
+
+overflow:hidden;
+
+box-shadow:0 30px 70px rgba(0,0,0,.65);
+
+border:1px solid rgba(255,255,255,.1);
+
+}
+
+
+.hero-book img{
+
+aspect-ratio:2/3;
+
+object-fit:cover;
+
+}
+
+
+.hero-book.one{
+
+left:20px;
+
+top:75px;
+
+transform:rotate(-8deg);
+
+}
+
+
+.hero-book.two{
+
+left:150px;
+
+top:10px;
+
+z-index:2;
+
+}
+
+
+.hero-book.three{
+
+right:0;
+
+top:85px;
+
+transform:rotate(8deg);
+
+}
+
+
+
+/* =====================
+LIBRARY INTRO
+===================== */
+
+.library{
+
+padding:100px 0 120px;
+
+}
+
+
+.library-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-end;
+
+gap:30px;
+
+margin-bottom:35px;
+
+}
+
+
+.library-header h2{
+
+font-family:"Playfair Display",serif;
+
+font-size:clamp(2.2rem,5vw,3.8rem);
+
+line-height:1.1;
+
+margin-bottom:15px;
+
+}
+
+
+.library-header p{
+
+max-width:660px;
+
+color:var(--gray);
+
+}
+
+
+.library-count{
+
+color:var(--gold);
+
+font-weight:700;
+
+white-space:nowrap;
+
+}
+
+
+
+/* =====================
+FILTERS
+===================== */
+
+.filters{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-bottom:45px;
+
+}
+
+
+.filter-btn{
+
+border:1px solid #292929;
+
+background:#121212;
+
+color:#bbb;
+
+padding:10px 17px;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+
+.filter-btn:hover,
+.filter-btn.active{
+
+background:var(--gold);
+
+border-color:var(--gold);
+
+color:#111;
+
+}
+
+
+
+/* =====================
+BOOK GRID
+===================== */
+
+.book-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:32px;
+
+}
+
+
+.book-card{
+
+background:var(--card);
+
+border:1px solid rgba(255,255,255,.07);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.35s;
+
+}
+
+
+.book-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--border);
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+
+.cover{
+
+position:relative;
+
+aspect-ratio:2/3;
+
+overflow:hidden;
+
+background:#222;
+
+}
+
+
+.cover img{
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+
+.book-card:hover .cover img{
+
+transform:scale(1.045);
+
+}
+
+
+.genre{
+
+position:absolute;
+
+top:16px;
+
+left:16px;
+
+background:rgba(7,7,7,.87);
+
+backdrop-filter:blur(10px);
+
+color:var(--gold-light);
+
+padding:7px 12px;
+
+border-radius:30px;
+
+font-size:.72rem;
+
+font-weight:700;
+
+}
+
+
+.book-number{
+
+position:absolute;
+
+bottom:15px;
+
+right:15px;
+
+width:39px;
+
+height:39px;
+
+border-radius:50%;
+
+display:grid;
+
+place-items:center;
+
+background:var(--gold);
+
+color:#111;
+
+font-family:"Playfair Display",serif;
+
+font-weight:800;
+
+}
+
+
+.book-content{
+
+padding:26px;
+
+}
+
+
+.book-meta{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+color:#777;
+
+font-size:.78rem;
+
+margin-bottom:11px;
+
+}
+
+
+.book-meta i{
+
+color:var(--gold);
+
+margin-right:4px;
+
+}
+
+
+.book-content h3{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.55rem;
+
+line-height:1.2;
+
+margin-bottom:13px;
+
+}
+
+
+.book-content p{
+
+color:#aaa;
+
+font-size:.92rem;
+
+margin-bottom:23px;
+
+}
+
+
+.book-actions{
+
+display:flex;
+
+gap:10px;
+
+}
+
+
+.read-btn{
+
+flex:1;
+
+background:var(--gold);
+
+color:#111;
+
+border:none;
+
+padding:12px 16px;
+
+border-radius:10px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+
+.details-btn{
+
+width:46px;
+
+height:46px;
+
+display:grid;
+
+place-items:center;
+
+border-radius:10px;
+
+border:1px solid #333;
+
+background:#111;
+
+color:var(--gold);
+
+cursor:pointer;
+
+}
+
+
+
+/* =====================
+FEATURE STRIP
+===================== */
+
+.reader-strip{
+
+margin-top:100px;
+
+background:var(--cream);
+
+color:#171717;
+
+border-radius:28px;
+
+padding:clamp(40px,7vw,75px);
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:50px;
+
+align-items:center;
+
+}
+
+
+.reader-strip h2{
+
+font-family:"Playfair Display",serif;
+
+font-size:clamp(2rem,4vw,3.5rem);
+
+line-height:1.1;
+
+margin-bottom:18px;
+
+}
+
+
+.reader-strip p{
+
+color:#555;
+
+max-width:650px;
+
+}
+
+
+.reader-features{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:14px;
+
+}
+
+
+.reader-feature{
+
+padding:19px;
+
+border-radius:14px;
+
+background:white;
+
+border:1px solid #e6dfd2;
+
+}
+
+
+.reader-feature i{
+
+color:#aa7a25;
+
+font-size:1.25rem;
+
+margin-bottom:9px;
+
+}
+
+
+.reader-feature strong{
+
+display:block;
+
+font-size:.9rem;
+
+}
+
+
+
+/* =====================
+QUOTE
+===================== */
+
+.quote{
+
+padding:120px 0;
+
+text-align:center;
+
+}
+
+
+.quote i{
+
+color:var(--gold);
+
+font-size:2rem;
+
+margin-bottom:30px;
+
+}
+
+
+.quote blockquote{
+
+font-family:"Playfair Display",serif;
+
+max-width:850px;
+
+margin:auto;
+
+font-size:clamp(2rem,4vw,3.3rem);
+
+line-height:1.25;
+
+}
+
+
+.quote p{
+
+margin-top:25px;
+
+color:var(--gold);
+
+font-size:.78rem;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+}
+
+
+
+/* =====================
+MODAL
+===================== */
+
+.modal{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.82);
+
+z-index:2000;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+padding:25px;
+
+backdrop-filter:blur(8px);
+
+}
+
+
+.modal.active{
+
+display:flex;
+
+}
+
+
+.modal-card{
+
+max-width:760px;
+
+width:100%;
+
+background:#151515;
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+padding:35px;
+
+position:relative;
+
+box-shadow:0 40px 100px rgba(0,0,0,.75);
+
+}
+
+
+.close-modal{
+
+position:absolute;
+
+top:15px;
+
+right:15px;
+
+width:40px;
+
+height:40px;
+
+border:none;
+
+border-radius:50%;
+
+background:#252525;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+.modal-label{
+
+color:var(--gold);
+
+text-transform:uppercase;
+
+font-size:.74rem;
+
+letter-spacing:2px;
+
+font-weight:700;
+
+}
+
+
+.modal-card h2{
+
+font-family:"Playfair Display",serif;
+
+font-size:2.4rem;
+
+margin:8px 0 16px;
+
+}
+
+
+.modal-card p{
+
+color:#bbb;
+
+}
+
+
+
+/* =====================
+FOOTER
+===================== */
+
+footer{
+
+border-top:1px solid rgba(255,255,255,.08);
+
+background:#070707;
+
+padding:70px 0 30px;
+
+}
+
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:1.6fr 1fr 1fr;
+
+gap:50px;
+
+}
+
+
+.footer-brand h3{
+
+font-family:"Playfair Display",serif;
+
+font-size:1.7rem;
+
+margin-bottom:15px;
+
+}
+
+
+.footer-brand p{
+
+color:#999;
+
+max-width:440px;
+
+}
+
+
+.socials{
+
+display:flex;
+
+gap:12px;
+
+margin-top:22px;
+
+}
+
+
+.socials a{
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+border:1px solid #333;
+
+display:grid;
+
+place-items:center;
+
+}
+
+
+.footer-column h4{
+
+color:var(--gold);
+
+margin-bottom:17px;
+
+}
+
+
+.footer-column a{
+
+display:block;
+
+color:#999;
+
+margin-bottom:10px;
+
+}
+
+
+.footer-column a:hover{
+
+color:white;
+
+}
+
+
+.footer-bottom{
+
+border-top:1px solid #222;
+
+margin-top:55px;
+
+padding-top:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+gap:20px;
+
+font-size:.82rem;
+
+color:#777;
+
+}
+
+
+
+/* =====================
+TABLET
+===================== */
+
+@media(max-width:950px){
+
+.mobile-menu-btn{
+
+display:block;
+
+}
+
+
+.nav-links{
+
+position:fixed;
+
+top:78px;
+
+left:0;
+
+width:100%;
+
+max-height:calc(100vh - 78px);
+
+overflow-y:auto;
+
+background:#0c0c0c;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:28px 5%;
+
+gap:20px;
+
+transform:translateY(-150%);
+
+transition:.3s;
+
+border-bottom:1px solid #222;
+
+}
+
+
+.nav-links.active{
+
+transform:translateY(0);
+
+}
+
+
+.nav-links > a{
+
+width:100%;
+
+}
+
+
+.start-reading{
+
+justify-content:center;
+
+}
+
+
+.main-menu{
+
+width:100%;
+
+}
+
+
+.main-menu-button{
+
+width:100%;
+
+justify-content:space-between;
+
+}
+
+
+.menu-dropdown{
+
+position:static;
+
+width:100%;
+
+margin-top:10px;
+
+display:none;
+
+opacity:1;
+
+visibility:visible;
+
+pointer-events:auto;
+
+transform:none;
+
+box-shadow:none;
+
+background:#141414;
+
+}
+
+
+.main-menu.active .menu-dropdown{
+
+display:block;
+
+}
+
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.hero-books{
+
+display:none;
+
+}
+
+
+.book-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.reader-strip{
+
+grid-template-columns:1fr;
+
+}
+
+
+.footer-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+
+
+/* =====================
+PHONE
+===================== */
+
+@media(max-width:650px){
+
+.brand-text strong{
+
+font-size:1rem;
+
+}
+
+
+.brand-text span{
+
+font-size:.58rem;
+
+}
+
+
+.novels-hero{
+
+padding:145px 0 75px;
+
+}
+
+
+.library{
+
+padding:75px 0 90px;
+
+}
+
+
+.library-header{
+
+align-items:flex-start;
+
+flex-direction:column;
+
+}
+
+
+.book-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.book-card{
+
+max-width:440px;
+
+margin:auto;
+
+}
+
+
+.reader-features{
+
+grid-template-columns:1fr;
+
+}
+
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.footer-bottom{
+
+flex-direction:column;
+
+}
+
+
+.modal-card{
+
+padding:30px 24px;
+
+}
+
+
+.modal-card h2{
+
+font-size:2rem;
+
+}
+
+}
+
+
+</style>
+
 </head>
+
+
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-pen-nib"></i>
-                Kitsamba Writes
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="novels.html" class="nav-link active">Novels</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="settings.html" class="nav-btn">
-                    <i class="fas fa-cog"></i> Settings
-                </a>
-                <a href="login.html" class="nav-btn">
-                    <i class="fas fa-sign-in-alt"></i> Sign In
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1>Our Novels</h1>
-        <p>Explore compelling stories from across Africa</p>
-    </section>
 
-    <!-- Novels Grid -->
-    <section class="novels-container">
-        <div class="novels-grid">
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/The%20Silence%20At%202PM.png?raw=true" alt="The Silence at 2PM">
-                </div>
-                <div class="novel-info">
-                    <h3>The Silence at 2PM</h3>
-                    <p>A profound story about grief, loss, and discovering that love is stronger than death. When Elijah's father dies at exactly 2:00 p.m., the same moment he was born, a young man must navigate complex emotions.</p>
-                    <a href="#" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+<!-- =====================
+NAVIGATION
+===================== -->
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/The%20Streets%20of%20Fate.png?raw=true" alt="The Streets of Fate">
-                </div>
-                <div class="novel-info">
-                    <h3>The Streets of Fate</h3>
-                    <p>A powerful novel about betrayal, survival, hope, and the relentless pursuit of destiny. From abandoned street child to successful businessman, Mooli's journey reveals true wealth.</p>
-                    <a href="#" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+<header>
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/A%20Love%20Written%20In%20Rain.png?raw=true" alt="A Love Written in Rain">
-                </div>
-                <div class="novel-info">
-                    <h3>A Love Written in Rain</h3>
-                    <p>A contemporary romance where two broken hearts find each other during a violent storm in Kampala. Destiny continues to bring them together whenever the skies open.</p>
-                    <a href="#" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+<div class="container">
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/Before%20The%20Last%20Goodbye.png?raw=true" alt="Before the Last Goodbye">
-                </div>
-                <div class="novel-info">
-                    <h3>Before the Last Goodbye</h3>
-                    <p>A romantic drama where Nathan discovers his lost love Claire has been battling a life-threatening illness. Racing against time, he learns that every goodbye conceals hidden truth.</p>
-                    <a href="#" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+<nav>
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/The%20Season%20Between%20Us.png?raw=true" alt="The Season Between Us">
-                </div>
-                <div class="novel-info">
-                    <h3>The Season Between Us</h3>
-                    <p>A slow-burn romance where Daniel and Grace are reunited after five years. As golden leaves fall, old wounds resurface, but so does the promise of second chances.</p>
-                    <a href="#" class="novel-link">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
 
-            <div class="novel-card">
-                <div class="novel-cover">
-                    <img src="https://github.com/KitsambaWisdomJoshua/Kitsamba-Writes-Africa/blob/main/images/When%20Our%20Hearts%20Learned%20Silence.png?raw=true" alt="When Our Hearts Learned Silence">
-                </div>
-                <div class="novel-info">
-                    <h3>When Our Hearts Learned Silence</h3>
-                    <p>After losing his father, Elijah meets Naomi, an artist hiding her own pain. Their friendship grows through shared sunsets,
-
+<a href="index.html" class="brand">
+
+<div class="brand-icon">
+
+<i class="fa-solid fa-feather-pointed"></i>
+
+</div>
+
+
+<div class="brand-text">
+
+<strong>Kitsamba Writes</strong>
+
+<span>Africa</span>
+
+</div>
+
+</a>
+
+
+
+<button
+class="mobile-menu-btn"
+id="mobileMenuBtn"
+aria-label="Open menu">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+
+<div class="nav-links" id="navLinks">
+
+
+<a href="index.html">
+
+Home
+
+</a>
+
+
+<a href="novels.html" class="active">
+
+Novels
+
+</a>
+
+
+
+<div class="main-menu" id="mainMenu">
+
+
+<button
+class="main-menu-button"
+id="mainMenuButton"
+type="button">
+
+<i class="fa-solid fa-bars bars"></i>
+
+Menu
+
+<i class="fa-solid fa-chevron-down arrow"></i>
+
+</button>
+
+
+
+<div class="menu-dropdown">
+
+
+<div class="menu-title">
+
+<strong>Explore Kitsamba Writes</strong>
+
+<span>Stories, culture and more</span>
+
+</div>
+
+
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+
+
+<a href="about.html">
+
+<i class="fa-solid fa-user-pen"></i>
+
+About
+
+</a>
+
+
+
+<a href="articles.html">
+
+<i class="fa-solid fa-newspaper"></i>
+
+Articles
+
+</a>
+
+
+
+<a href="blog.html">
+
+<i class="fa-solid fa-pen-nib"></i>
+
+Blog
+
+</a>
+
+
+
+<a href="contact.html">
+
+<i class="fa-solid fa-envelope"></i>
+
+Contact
+
+</a>
+
+
+
+<a href="lifestyle.html">
+
+<i class="fa-solid fa-earth-africa"></i>
+
+Lifestyle
+
+</a>
+
+
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</a>
+
+
+
+<a href="novels.html">
+
+<i class="fa-solid fa-book-open"></i>
+
+Novels
+
+</a>
+
+
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+
+
+<a href="videos.html">
+
+<i class="fa-solid fa-circle-play"></i>
+
+Videos
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<a href="#library"
+class="start-reading">
+
+<i class="fa-solid fa-book-open"></i>
+
+Start Reading
+
+</a>
+
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================
+HERO
+===================== -->
+
+<section class="novels-hero">
+
+
+<div class="container hero-grid">
+
+
+<div class="hero-copy">
+
+
+<div class="eyebrow">
+
+The Kitsamba Library
+
+</div>
+
+
+<h1>
+
+Stories made to
+
+<span>stay with you.</span>
+
+</h1>
+
+
+<p>
+
+Discover stories of love, grief, ambition,
+betrayal, healing and second chances —
+told through characters and experiences
+rooted in African life.
+
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a href="#library"
+class="btn btn-gold">
+
+<i class="fa-solid fa-book-open"></i>
+
+Browse the Library
+
+</a>
+
+
+<a href="about.html"
+class="btn btn-outline">
+
+Meet the Author
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="hero-books">
+
+
+<div class="hero-book one">
+
+<img
+src="images/The Streets of Fate.png"
+alt="The Streets of Fate">
+
+</div>
+
+
+<div class="hero-book two">
+
+<img
+src="images/The Silence At 2PM.png"
+alt="The Silence at 2PM">
+
+</div>
+
+
+<div class="hero-book three">
+
+<img
+src="images/A Love Written In Rain.png"
+alt="A Love Written in Rain">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================
+BOOK LIBRARY
+===================== -->
+
+<section class="library" id="library">
+
+
+<div class="container">
+
+
+<div class="library-header">
+
+
+<div>
+
+
+<div class="eyebrow">
+
+Original fiction
+
+</div>
+
+
+<h2>
+
+Choose your next story.
+
+</h2>
+
+
+<p>
+
+Every novel carries its own world,
+characters and emotions. Browse the
+collection and discover the story that
+speaks to you.
+
+</p>
+
+
+</div>
+
+
+<div class="library-count">
+
+6 original novels
+
+</div>
+
+
+</div>
+
+
+
+<div class="filters">
+
+
+<button
+class="filter-btn active"
+data-filter="all">
+
+All Stories
+
+</button>
+
+
+<button
+class="filter-btn"
+data-filter="romance">
+
+Romance
+
+</button>
+
+
+<button
+class="filter-btn"
+data-filter="drama">
+
+Drama
+
+</button>
+
+
+<button
+class="filter-btn"
+data-filter="life">
+
+Life & Destiny
+
+</button>
+
+
+</div>
+
+
+
+<div class="book-grid">
+
+
+<!-- =====================
+BOOK 1
+===================== -->
+
+<article
+class="book-card"
+data-category="drama life">
+
+
+<div class="cover">
+
+
+<img
+src="images/The Silence At 2PM.png"
+alt="The Silence at 2PM">
+
+
+<span class="genre">
+
+Emotional Drama
+
+</span>
+
+
+<span class="book-number">
+
+01
+
+</span>
+
+
+</div>
+
+
+<div class="book-content">
+
+
+<div class="book-meta">
+
+<span>
+
+<i class="fa-solid fa-book"></i>
+
+Novel
+
+</span>
+
+
+<span>
+
+<i class="fa-solid fa-earth-africa"></i>
+
+African Fiction
+
+</span>
+
+</div>
+
+
+<h3>
+
+The Silence at 2PM
+
+</h3>
+
+
+<p>
+
+When Elijah's father dies at exactly
+2:00 p.m. — the same moment Elijah
+was born — a young man is forced to
+face grief, memory and the strength
+of love beyond loss.
+
+</p>
+
+
+<div class="book-actions">
+
+
+<button
+class="read-btn"
+onclick="openBook(
+'The Silence at 2PM',
+'A profound story about grief, loss and discovering that love can remain even after death. Elijah must navigate the memories, silence and unanswered questions left behind by his father.'
+)">
+
+Read Preview
+
+</button>
+
+
+<button
+class="details-btn"
+onclick="openBook(
+'The Silence at 2PM',
+'A profound story about grief, loss and discovering that love can remain even after death. Elijah must navigate the memories, silence and unanswered questions left behind by his father.'
+)"
+aria-label="View story details">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =====================
+BOOK 2
+===================== -->
+
+<article
+class="book-card"
+data-category="life drama">
+
+
+<div class="cover">
+
+
+<img
+src="images/The Streets of Fate.png"
+alt="The Streets of Fate">
+
+
+<span class="genre">
+
+Life & Destiny
+
+</span>
+
+
+<span class="book-number">
+
+02
+
+</span>
+
+
+</div>
+
+
+<div class="book-content">
+
+
+<div class="book-meta">
+
+<span>
+
+<i class="fa-solid fa-book"></i>
+
+Novel
+
+</span>
+
+
+<span>
+
+<i class="fa-solid fa-earth-africa"></i>
+
+African Fiction
+
+</span>
+
+</div>
+
+
+<h3>
+
+The Streets of Fate
+
+</h3>
+
+
+<p>
+
+From abandoned street child to
+successful businessman, Mooli's
+journey explores betrayal, survival,
+hope and the relentless pursuit
+of destiny.
+
+</p>
+
+
+<div class="book-actions">
+
+
+<button
+class="read-btn"
+onclick="openBook(
+'The Streets of Fate',
+'A powerful story about betrayal, survival and the pursuit of destiny. Mooli rises from the streets and discovers that success alone cannot answer every question life leaves behind.'
+)">
+
+Read Preview
+
+</button>
+
+
+<button
+class="details-btn"
+onclick="openBook(
+'The Streets of Fate',
+'A powerful story about betrayal, survival and the pursuit of destiny. Mooli rises from the streets and discovers that success alone cannot answer every question life leaves behind.'
+)">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =====================
+BOOK 3
+===================== -->
+
+<article
+class="book-card"
+data-category="romance">
+
+
+<div class="cover">
+
+
+<img
+src="images/A Love Written In Rain.png"
+alt="A Love Written in Rain">
+
+
+<span class="genre">
+
+Romance
+
+</span>
+
+
+<span class="book-number">
+
+03
+
+</span>
+
+
+</div>
+
+
+<div class="book-content">
+
+
+<div class="book-meta">
+
+<span>
+
+<i class="fa-solid fa-heart"></i>
+
+Romance
+
+</span>
+
+
+<span>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Kampala
+
+</span>
+
+</div>
+
+
+<h3>
+
+A Love Written in Rain
+
+</h3>
+
+
+<p>
+
+Two wounded hearts meet during
+a violent storm in Kampala.
+Every time the skies open,
+destiny seems determined to
+bring them together again.
+
+</p>
+
+
+<div class="book-actions">
+
+
+<button
+class="read-btn"
+onclick="openBook(
+'A Love Written in Rain',
+'A contemporary romance about two broken hearts whose paths cross during a storm in Kampala. As rain repeatedly brings them together, they must decide whether destiny deserves another chance.'
+)">
+
+Read Preview
+
+</button>
+
+
+<button
+class="details-btn"
+onclick="openBook(
+'A Love Written in Rain',
+'A contemporary romance about two broken hearts whose paths cross during a storm in Kampala. As rain repeatedly brings them together, they must decide whether destiny deserves another chance.'
+)">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =====================
+BOOK 4
+===================== -->
+
+<article
+class="book-card"
+data-category="romance drama">
+
+
+<div class="cover">
+
+
+<img
+src="images/Before The Last Goodbye.png"
+alt="Before the Last Goodbye">
+
+
+<span class="genre">
+
+Romantic Drama
+
+</span>
+
+
+<span class="book-number">
+
+04
+
+</span>
+
+
+</div>
+
+
+<div class="book-content">
+
+
+<div class="book-meta">
+
+<span>
+
+<i class="fa-solid fa-heart"></i>
+
+Romance
+
+</span>
+
+
+<span>
+
+<i class="fa-solid fa-clock"></i>
+
+Emotional
+
+</span>
+
+</div>
+
+
+<h3>
+
+Before the Last Goodbye
+
+</h3>
+
+
+<p>
+
+Nathan discovers that his lost love,
+Claire, has been fighting a
+life-threatening illness.
+Now time becomes the one thing
+they cannot afford to waste.
+
+</p>
+
+
+<div class="book-actions">
+
+
+<button
+class="read-btn"
+onclick="openBook(
+'Before the Last Goodbye',
+'A romantic drama about love, illness, truth and time. When Nathan discovers what Claire has been hiding, every remaining moment suddenly matters.'
+)">
+
+Read Preview
+
+</button>
+
+
+<button
+class="details-btn"
+onclick="openBook(
+'Before the Last Goodbye',
+'A romantic drama about love, illness, truth and time. When Nathan discovers what Claire has been hiding, every remaining moment suddenly matters.'
+)">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =====================
+BOOK 5
+===================== -->
+
+<article
+class="book-card"
+data-category="romance life">
+
+
+<div class="cover">
+
+
+<img
+src="images/The Season Between Us.png"
+alt="The Season Between Us">
+
+
+<span class="genre">
+
+Second Chances
+
+</span>
+
+
+<span class="book-number">
+
+05
+
+</span>
+
+
+</div>
+
+
+<div class="book-content">
+
+
+<div class="book-meta">
+
+<span>
+
+<i class="fa-solid fa-heart"></i>
+
+Slow Burn
+
+</span>
+
+
+<span>
+
+<i class="fa-solid fa-leaf"></i>
+
+Romance
+
+</span>
+
+</div>
+
+
+<h3>
+
+The Season Between Us
+
+</h3>
+
+
+<p>
+
+Daniel and Grace meet again
+after five years apart.
+Old wounds return with them —
+but perhaps so does the possibility
+of a second chance.
+
+</p>
+
+
+<div class="book-actions">
+
+
+<button
+class="read-btn"
+onclick="openBook(
+'The Season Between Us',
+'A slow-burn romance about Daniel and Grace, reunited after five years. As old wounds resurface, they must decide whether some seasons are endings or beginnings.'
+)">
+
+Read Preview
+
+</button>
+
+
+<button
+class="details-btn"
+onclick="openBook(
+'The Season Between Us',
+'A slow-burn romance about Daniel and Grace, reunited after five years. As old wounds resurface, they must decide whether some seasons are endings or beginnings.'
+)">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =====================
+BOOK 6
+===================== -->
+
+<article
+class="book-card"
+data-category="romance drama life">
+
+
+<div class="cover">
+
+
+<img
+src="images/When Our Hearts Learned Silence.png"
+alt="When Our Hearts Learned Silence">
+
+
+<span class="genre">
+
+Healing & Love
+
+</span>
+
+
+<span class="book-number">
+
+06
+
+</span>
+
+
+</div>
+
+
+<div class="book-content">
+
+
+<div class="book-meta">
+
+<span>
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+Healing
+
+</span>
+
+
+<span>
+
+<i class="fa-solid fa-book"></i>
+
+Drama
+
+</span>
+
+</div>
+
+
+<h3>
+
+When Our Hearts Learned Silence
+
+</h3>
+
+
+<p>
+
+After losing his father, Elijah
+meets Naomi, an artist carrying
+pain of her own. Their friendship
+grows quietly through grief,
+art and shared moments.
+
+</p>
+
+
+<div class="book-actions">
+
+
+<button
+class="read-btn"
+onclick="openBook(
+'When Our Hearts Learned Silence',
+'After losing his father, Elijah meets Naomi, an artist hiding pain of her own. Their friendship grows through quiet conversations, shared sunsets and the kind of understanding words cannot always provide.'
+)">
+
+Read Preview
+
+</button>
+
+
+<button
+class="details-btn"
+onclick="openBook(
+'When Our Hearts Learned Silence',
+'After losing his father, Elijah meets Naomi, an artist hiding pain of her own. Their friendship grows through quiet conversations, shared sunsets and the kind of understanding words cannot always provide.'
+)">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+</div>
+
+
+
+<!-- READER EXPERIENCE -->
+
+<div class="reader-strip">
+
+
+<div>
+
+
+<div class="eyebrow">
+
+Coming next
+
+</div>
+
+
+<h2>
+
+A reading experience built around the story.
+
+</h2>
+
+
+<p>
+
+The next stage of Kitsamba Writes Africa
+will turn these books into a proper
+chapter-reading experience with reading
+progress, chapter navigation and
+reader controls.
+
+</p>
+
+
+</div>
+
+
+
+<div class="reader-features">
+
+
+<div class="reader-feature">
+
+<i class="fa-solid fa-list-ol"></i>
+
+<strong>Chapter Navigation</strong>
+
+</div>
+
+
+<div class="reader-feature">
+
+<i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+<strong>Previous & Next</strong>
+
+</div>
+
+
+<div class="reader-feature">
+
+<i class="fa-solid fa-font"></i>
+
+<strong>Text Controls</strong>
+
+</div>
+
+
+<div class="reader-feature">
+
+<i class="fa-solid fa-bookmark"></i>
+
+<strong>Bookmarks</strong>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================
+QUOTE
+===================== -->
+
+<section class="quote">
+
+
+<div class="container">
+
+
+<i class="fa-solid fa-quote-left"></i>
+
+
+<blockquote>
+
+Some stories entertain us.
+Others leave something behind
+long after we close the book.
+
+</blockquote>
+
+
+<p>
+
+Kitsamba Writes Africa
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================
+FOOTER
+===================== -->
+
+<footer>
+
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+
+<h3>
+
+Kitsamba Writes Africa
+
+</h3>
+
+
+<p>
+
+A home for African stories,
+novels, ideas and culture.
+
+Writing Africa,
+one story at a time.
+
+</p>
+
+
+<div class="socials">
+
+
+<a href="#">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+
+<a href="#">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<a href="#">
+
+<i class="fa-brands fa-tiktok"></i>
+
+</a>
+
+
+<a href="#">
+
+<i class="fa-brands fa-youtube"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-column">
+
+
+<h4>
+
+Explore
+
+</h4>
+
+
+<a href="novels.html">
+
+Novels
+
+</a>
+
+
+<a href="articles.html">
+
+Articles
+
+</a>
+
+
+<a href="blog.html">
+
+Blog
+
+</a>
+
+
+<a href="lifestyle.html">
+
+African Lifestyle
+
+</a>
+
+
+<a href="videos.html">
+
+Videos
+
+</a>
+
+
+</div>
+
+
+
+<div class="footer-column">
+
+
+<h4>
+
+Website
+
+</h4>
+
+
+<a href="about.html">
+
+About
+
+</a>
+
+
+<a href="contact.html">
+
+Contact
+
+</a>
+
+
+<a href="login.html">
+
+Reader Login
+
+</a>
+
+
+<a href="settings.html">
+
+Settings
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+
+<span>
+
+© <span id="year"></span>
+Kitsamba Writes Africa.
+All rights reserved.
+
+</span>
+
+
+<span>
+
+Stories born from Africa.
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</footer>
+
+
+
+<!-- =====================
+BOOK PREVIEW MODAL
+===================== -->
+
+<div class="modal" id="bookModal">
+
+
+<div class="modal-card">
+
+
+<button
+class="close-modal"
+onclick="closeBook()">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+<div class="modal-label">
+
+Story Preview
+
+</div>
+
+
+<h2 id="modalTitle">
+
+Novel title
+
+</h2>
+
+
+<p id="modalDescription">
+
+Story description.
+
+</p>
+
+
+<div style="margin-top:25px;">
+
+
+<a
+href="#library"
+class="btn btn-gold"
+onclick="closeBook()">
+
+<i class="fa-solid fa-book-open"></i>
+
+Return to Library
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =====================
+MOBILE MENU
+===================== */
+
+const mobileMenuBtn =
+document.getElementById("mobileMenuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+const mainMenu =
+document.getElementById("mainMenu");
+
+const mainMenuButton =
+document.getElementById("mainMenuButton");
+
+
+mobileMenuBtn.addEventListener(
+"click",
+function(){
+
+navLinks.classList.toggle("active");
+
+const icon =
+mobileMenuBtn.querySelector("i");
+
+
+if(navLinks.classList.contains("active")){
+
+icon.className =
+"fa-solid fa-xmark";
+
+}else{
+
+icon.className =
+"fa-solid fa-bars";
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+/* =====================
+DROPDOWN MENU
+===================== */
+
+mainMenuButton.addEventListener(
+"click",
+function(event){
+
+event.stopPropagation();
+
+mainMenu.classList.toggle("active");
+
+});
+
+
+document.addEventListener(
+"click",
+function(event){
+
+if(!mainMenu.contains(event.target)){
+
+mainMenu.classList.remove("active");
+
+}
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+navLinks.classList.remove("active");
+
+mainMenu.classList.remove("active");
+
+mobileMenuBtn
+.querySelector("i")
+.className =
+"fa-solid fa-bars";
+
+});
+
+});
+
+
+/* =====================
+FILTER BOOKS
+===================== */
+
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+const bookCards =
+document.querySelectorAll(".book-card");
+
+
+filterButtons.forEach(function(button){
+
+
+button.addEventListener(
+"click",
+function(){
+
+
+filterButtons.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+
+button.classList.add("active");
+
+
+const filter =
+button.dataset.filter;
+
+
+bookCards.forEach(function(card){
+
+
+if(
+filter === "all" ||
+card.dataset.category.includes(filter)
+){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+
+});
+
+
+});
+
+
+});
+
+
+/* =====================
+BOOK PREVIEW
+===================== */
+
+const bookModal =
+document.getElementById("bookModal");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+const modalDescription =
+document.getElementById("modalDescription");
+
+
+function openBook(title,description){
+
+modalTitle.textContent =
+title;
+
+modalDescription.textContent =
+description;
+
+bookModal.classList.add("active");
+
+document.body.style.overflow =
+"hidden";
+
+}
+
+
+function closeBook(){
+
+bookModal.classList.remove("active");
+
+document.body.style.overflow =
+"";
+
+}
+
+
+bookModal.addEventListener(
+"click",
+function(event){
+
+if(event.target === bookModal){
+
+closeBook();
+
+}
+
+});
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Escape"){
+
+closeBook();
+
+}
+
+});
+
+
+/* =====================
+YEAR
+===================== */
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+</script>
+
+
+</body>
+
+</html>
