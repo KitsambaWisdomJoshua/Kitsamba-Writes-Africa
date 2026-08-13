@@ -5,230 +5,252 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Novels | Kitsamba Writes Africa</title>
 
 <meta name="description"
-content="Explore original African novels and stories from Kitsamba Writes Africa.">
+content="Explore original African novels from Kitsamba Writes Africa. Read previews, purchase full novels and share your feedback.">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
 <link rel="preconnect"
 href="https://fonts.gstatic.com"
 crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
 rel="stylesheet">
 
 
 <style>
 
+/* =========================================
+GLOBAL
+========================================= */
+
 :root{
 
---black:#0b0b0b;
---dark:#121212;
---card:#181818;
+    --black:#080808;
+    --dark:#111111;
+    --card:#171717;
 
---gold:#d8ac56;
---gold-light:#f2cf83;
+    --gold:#d8ac56;
+    --gold-light:#f1cf86;
 
---white:#ffffff;
---gray:#aaa;
+    --white:#ffffff;
+    --gray:#aaaaaa;
 
---cream:#f7f1e5;
+    --cream:#f7f1e5;
 
---border:rgba(216,172,86,.25);
+    --border:rgba(216,172,86,.25);
 
 }
 
 
 *{
 
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
 }
 
 
 html{
 
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 
 }
 
 
 body{
 
-font-family:"DM Sans",sans-serif;
+    font-family:"DM Sans",sans-serif;
 
-background:var(--black);
+    background:var(--black);
 
-color:white;
+    color:white;
 
-line-height:1.6;
+    line-height:1.65;
 
-overflow-x:hidden;
+    overflow-x:hidden;
 
 }
 
 
 a{
 
-text-decoration:none;
-color:inherit;
+    text-decoration:none;
+    color:inherit;
 
 }
 
 
-button,
-input{
+button{
 
-font-family:inherit;
+    font-family:inherit;
 
 }
 
 
 img{
 
-width:100%;
-display:block;
+    width:100%;
+    display:block;
 
 }
 
 
 .container{
 
-width:min(1180px,92%);
-
-margin:auto;
+    width:min(1180px,92%);
+    margin:auto;
 
 }
 
 
-/* =====================
+.eyebrow{
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:.75rem;
+
+    font-weight:800;
+
+    margin-bottom:14px;
+
+}
+
+
+
+/* =========================================
 NAVIGATION
-===================== */
+========================================= */
 
 header{
 
-position:fixed;
+    position:fixed;
 
-top:0;
-left:0;
+    top:0;
+    left:0;
 
-width:100%;
+    width:100%;
 
-z-index:999;
+    z-index:1000;
 
-background:rgba(8,8,8,.88);
+    background:rgba(8,8,8,.90);
 
-backdrop-filter:blur(16px);
+    backdrop-filter:blur(16px);
 
-border-bottom:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
 
 }
 
 
 nav{
 
-min-height:78px;
+    min-height:78px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-gap:25px;
+    gap:25px;
 
 }
 
 
 .brand{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:12px;
+    gap:12px;
 
-flex-shrink:0;
+    flex-shrink:0;
 
 }
 
 
 .brand-icon{
 
-width:42px;
+    width:42px;
+    height:42px;
 
-height:42px;
+    border:1px solid var(--gold);
 
-border:1px solid var(--gold);
+    border-radius:50%;
 
-border-radius:50%;
+    display:grid;
 
-display:grid;
+    place-items:center;
 
-place-items:center;
-
-color:var(--gold);
+    color:var(--gold);
 
 }
 
 
 .brand-text strong{
 
-display:block;
+    display:block;
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-font-size:1.14rem;
+    font-size:1.14rem;
 
-letter-spacing:1px;
+    letter-spacing:1px;
 
 }
 
 
 .brand-text span{
 
-display:block;
+    display:block;
 
-font-size:.66rem;
+    color:var(--gold);
 
-letter-spacing:2px;
+    font-size:.65rem;
 
-text-transform:uppercase;
+    letter-spacing:2px;
 
-color:var(--gold);
+    text-transform:uppercase;
 
 }
 
 
 .nav-links{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:28px;
+    gap:27px;
 
 }
 
 
 .nav-links > a{
 
-font-size:.92rem;
+    font-size:.91rem;
 
-font-weight:600;
+    font-weight:700;
 
-color:#ddd;
+    color:#dddddd;
 
-transition:.25s;
+    transition:.25s;
 
 }
 
@@ -236,600 +258,560 @@ transition:.25s;
 .nav-links > a:hover,
 .nav-links > a.active{
 
-color:var(--gold);
+    color:var(--gold);
 
 }
 
 
 .start-reading{
 
-background:var(--gold);
+    background:var(--gold);
 
-color:#111 !important;
+    color:#111 !important;
 
-padding:11px 20px;
+    padding:11px 19px;
 
-border-radius:50px;
+    border-radius:50px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:8px;
+    gap:8px;
 
 }
 
 
 .mobile-menu-btn{
 
-display:none;
+    display:none;
 
-border:0;
+    border:none;
 
-background:none;
+    background:transparent;
 
-color:white;
+    color:white;
 
-font-size:1.5rem;
+    font-size:1.5rem;
 
-cursor:pointer;
+    cursor:pointer;
 
 }
 
 
-/* =====================
-MAIN DROPDOWN
-===================== */
+
+/* =========================================
+MENU
+========================================= */
 
 .main-menu{
 
-position:relative;
+    position:relative;
 
 }
 
 
 .main-menu-button{
 
-border:none;
+    border:none;
 
-background:transparent;
+    background:transparent;
 
-color:#ddd;
+    color:#dddddd;
 
-font-size:.92rem;
+    font-size:.91rem;
 
-font-weight:600;
+    font-weight:700;
 
-cursor:pointer;
+    display:flex;
 
-display:flex;
+    align-items:center;
 
-align-items:center;
+    gap:8px;
 
-gap:8px;
+    cursor:pointer;
 
-padding:10px 0;
+    padding:10px 0;
 
 }
 
 
 .main-menu-button:hover{
 
-color:var(--gold);
+    color:var(--gold);
 
 }
 
 
 .main-menu-button .bars{
 
-color:var(--gold);
+    color:var(--gold);
 
 }
 
 
 .main-menu-button .arrow{
 
-font-size:.7rem;
+    font-size:.7rem;
 
-transition:.25s;
+    transition:.25s;
 
 }
 
 
 .main-menu.active .arrow{
 
-transform:rotate(180deg);
+    transform:rotate(180deg);
 
 }
 
 
 .menu-dropdown{
 
-position:absolute;
+    position:absolute;
 
-right:0;
+    right:0;
 
-top:calc(100% + 18px);
+    top:calc(100% + 18px);
 
-width:310px;
+    width:300px;
 
-padding:12px;
+    padding:12px;
 
-background:rgba(15,15,15,.98);
+    background:#101010;
 
-border:1px solid var(--border);
+    border:1px solid var(--border);
 
-border-radius:20px;
+    border-radius:18px;
 
-box-shadow:0 25px 70px rgba(0,0,0,.65);
+    box-shadow:0 25px 70px rgba(0,0,0,.7);
 
-opacity:0;
+    opacity:0;
 
-visibility:hidden;
+    visibility:hidden;
 
-pointer-events:none;
+    pointer-events:none;
 
-transform:translateY(-10px);
+    transform:translateY(-10px);
 
-transition:.25s;
+    transition:.25s;
 
 }
 
 
 .main-menu.active .menu-dropdown{
 
-opacity:1;
+    opacity:1;
 
-visibility:visible;
+    visibility:visible;
 
-pointer-events:auto;
+    pointer-events:auto;
 
-transform:translateY(0);
-
-}
-
-
-.menu-dropdown::before{
-
-content:"";
-
-position:absolute;
-
-top:-1px;
-
-left:20px;
-
-right:20px;
-
-height:2px;
-
-background:linear-gradient(
-90deg,
-transparent,
-var(--gold),
-transparent
-);
+    transform:translateY(0);
 
 }
 
 
 .menu-title{
 
-padding:10px 14px 13px;
+    padding:10px 13px 13px;
 
-border-bottom:1px solid rgba(255,255,255,.07);
+    border-bottom:1px solid #252525;
 
-margin-bottom:6px;
+    margin-bottom:6px;
 
 }
 
 
 .menu-title strong{
 
-display:block;
+    display:block;
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
 }
 
 
 .menu-title span{
 
-color:#888;
+    color:#777;
 
-font-size:.76rem;
+    font-size:.75rem;
 
 }
 
 
 .menu-dropdown a{
 
-padding:12px 15px;
+    padding:12px 14px;
 
-border-radius:11px;
+    border-radius:10px;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:14px;
+    gap:13px;
 
-color:#ddd;
+    color:#ccc;
 
-font-size:.9rem;
+    font-size:.88rem;
 
-transition:.2s;
+    transition:.2s;
 
 }
 
 
 .menu-dropdown a i{
 
-width:22px;
+    width:20px;
 
-text-align:center;
+    color:var(--gold);
 
-color:var(--gold);
+    text-align:center;
 
 }
 
 
 .menu-dropdown a:hover{
 
-background:rgba(216,172,86,.12);
+    background:rgba(216,172,86,.11);
 
-color:var(--gold);
-
-padding-left:19px;
+    color:white;
 
 }
 
 
 
-/* =====================
-NOVELS HERO
-===================== */
+/* =========================================
+HERO
+========================================= */
 
 .novels-hero{
 
-padding:180px 0 100px;
+    min-height:690px;
 
-position:relative;
+    display:flex;
 
-overflow:hidden;
+    align-items:center;
 
-background:
+    padding:155px 0 90px;
 
-radial-gradient(
-circle at 75% 30%,
-rgba(216,172,86,.18),
-transparent 35%
-),
+    position:relative;
 
-linear-gradient(
-135deg,
-#080808,
-#101010
-);
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 74% 25%,
+        rgba(216,172,86,.20),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #070707,
+        #121212
+    );
 
 }
 
 
 .novels-hero::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:450px;
+    width:550px;
+    height:550px;
 
-height:450px;
+    border:1px solid rgba(216,172,86,.08);
 
-border:1px solid rgba(216,172,86,.09);
+    border-radius:50%;
 
-border-radius:50%;
-
-right:-130px;
-
-top:-120px;
+    right:-160px;
+    top:-170px;
 
 }
 
 
 .hero-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1.15fr .85fr;
+    grid-template-columns:1.1fr .9fr;
 
-align-items:center;
+    align-items:center;
 
-gap:60px;
+    gap:60px;
 
 }
 
 
 .hero-copy{
 
-position:relative;
+    position:relative;
 
-z-index:2;
-
-}
-
-
-.eyebrow{
-
-color:var(--gold);
-
-text-transform:uppercase;
-
-letter-spacing:3px;
-
-font-weight:700;
-
-font-size:.78rem;
-
-margin-bottom:15px;
+    z-index:2;
 
 }
 
 
 .hero-copy h1{
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-font-size:clamp(3rem,7vw,6rem);
+    font-size:clamp(3.2rem,7vw,6rem);
 
-line-height:1;
+    line-height:.98;
 
-margin-bottom:25px;
+    margin-bottom:26px;
 
 }
 
 
 .hero-copy h1 span{
 
-color:var(--gold);
+    color:var(--gold);
 
 }
 
 
 .hero-copy p{
 
-max-width:650px;
+    max-width:670px;
 
-font-size:1.08rem;
+    color:#b5b5b5;
 
-color:#bbb;
+    font-size:1.07rem;
 
-margin-bottom:30px;
+    margin-bottom:32px;
 
 }
 
 
 .hero-buttons{
 
-display:flex;
+    display:flex;
 
-flex-wrap:wrap;
+    flex-wrap:wrap;
 
-gap:14px;
+    gap:13px;
 
 }
 
 
 .btn{
 
-border:none;
+    padding:13px 22px;
 
-padding:14px 24px;
+    border-radius:50px;
 
-border-radius:50px;
+    font-weight:800;
 
-display:inline-flex;
+    display:inline-flex;
 
-align-items:center;
+    align-items:center;
 
-gap:10px;
+    justify-content:center;
 
-font-weight:700;
+    gap:9px;
 
-transition:.25s;
-
-cursor:pointer;
+    transition:.25s;
 
 }
 
 
 .btn:hover{
 
-transform:translateY(-3px);
+    transform:translateY(-3px);
 
 }
 
 
 .btn-gold{
 
-background:var(--gold);
+    background:var(--gold);
 
-color:#111;
+    color:#111;
 
 }
 
 
 .btn-outline{
 
-border:1px solid rgba(255,255,255,.3);
+    border:1px solid #444;
 
-color:white;
+    color:white;
 
 }
 
 
 .hero-books{
 
-height:430px;
+    height:430px;
 
-position:relative;
+    position:relative;
 
 }
 
 
 .hero-book{
 
-position:absolute;
+    position:absolute;
 
-width:190px;
+    width:190px;
 
-border-radius:14px;
+    border-radius:15px;
 
-overflow:hidden;
+    overflow:hidden;
 
-box-shadow:0 30px 70px rgba(0,0,0,.65);
+    box-shadow:0 35px 80px rgba(0,0,0,.7);
 
-border:1px solid rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.10);
 
 }
 
 
 .hero-book img{
 
-aspect-ratio:2/3;
+    aspect-ratio:2/3;
 
-object-fit:cover;
+    object-fit:cover;
 
 }
 
 
 .hero-book.one{
 
-left:20px;
+    left:5px;
 
-top:75px;
+    top:85px;
 
-transform:rotate(-8deg);
+    transform:rotate(-8deg);
 
 }
 
 
 .hero-book.two{
 
-left:150px;
+    left:145px;
 
-top:10px;
+    top:10px;
 
-z-index:2;
+    z-index:2;
 
 }
 
 
 .hero-book.three{
 
-right:0;
+    right:0;
 
-top:85px;
+    top:95px;
 
-transform:rotate(8deg);
+    transform:rotate(8deg);
 
 }
 
 
 
-/* =====================
-LIBRARY INTRO
-===================== */
+/* =========================================
+LIBRARY
+========================================= */
 
 .library{
 
-padding:100px 0 120px;
+    padding:100px 0 120px;
 
 }
 
 
 .library-header{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:flex-end;
+    align-items:flex-end;
 
-gap:30px;
+    gap:35px;
 
-margin-bottom:35px;
+    margin-bottom:35px;
 
 }
 
 
 .library-header h2{
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-font-size:clamp(2.2rem,5vw,3.8rem);
+    font-size:clamp(2.3rem,5vw,3.8rem);
 
-line-height:1.1;
+    line-height:1.08;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
 
 
 .library-header p{
 
-max-width:660px;
+    max-width:680px;
 
-color:var(--gray);
+    color:#999;
 
 }
 
 
 .library-count{
 
-color:var(--gold);
+    color:var(--gold);
 
-font-weight:700;
+    font-weight:800;
 
-white-space:nowrap;
+    white-space:nowrap;
 
 }
 
 
 
-/* =====================
+/* =========================================
 FILTERS
-===================== */
+========================================= */
 
 .filters{
 
-display:flex;
+    display:flex;
 
-gap:10px;
+    flex-wrap:wrap;
 
-flex-wrap:wrap;
+    gap:10px;
 
-margin-bottom:45px;
+    margin-bottom:45px;
 
 }
 
 
 .filter-btn{
 
-border:1px solid #292929;
+    border:1px solid #292929;
 
-background:#121212;
+    background:#111;
 
-color:#bbb;
+    color:#aaa;
 
-padding:10px 17px;
+    padding:10px 17px;
 
-border-radius:50px;
+    border-radius:50px;
 
-cursor:pointer;
+    cursor:pointer;
 
-font-weight:600;
+    font-weight:700;
 
-transition:.25s;
+    transition:.25s;
 
 }
 
@@ -837,900 +819,1011 @@ transition:.25s;
 .filter-btn:hover,
 .filter-btn.active{
 
-background:var(--gold);
+    background:var(--gold);
 
-border-color:var(--gold);
+    border-color:var(--gold);
 
-color:#111;
+    color:#111;
 
 }
 
 
 
-/* =====================
+/* =========================================
 BOOK GRID
-===================== */
+========================================= */
 
 .book-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
-gap:32px;
+    gap:32px;
 
 }
 
 
 .book-card{
 
-background:var(--card);
+    background:var(--card);
 
-border:1px solid rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.07);
 
-border-radius:20px;
+    border-radius:22px;
 
-overflow:hidden;
+    overflow:hidden;
 
-transition:.35s;
+    transition:.35s;
 
 }
 
 
 .book-card:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-7px);
 
-border-color:var(--border);
+    border-color:var(--border);
 
-box-shadow:0 25px 60px rgba(0,0,0,.45);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
 
 }
 
 
 .cover{
 
-position:relative;
+    position:relative;
 
-aspect-ratio:2/3;
+    aspect-ratio:2/3;
 
-overflow:hidden;
+    overflow:hidden;
 
-background:#222;
+    background:#222;
 
 }
 
 
 .cover img{
 
-height:100%;
+    height:100%;
 
-object-fit:cover;
+    object-fit:cover;
 
-transition:.5s;
+    transition:.5s;
 
 }
 
 
 .book-card:hover .cover img{
 
-transform:scale(1.045);
+    transform:scale(1.04);
 
 }
 
 
 .genre{
 
-position:absolute;
+    position:absolute;
 
-top:16px;
+    top:15px;
+    left:15px;
 
-left:16px;
+    padding:7px 12px;
 
-background:rgba(7,7,7,.87);
+    border-radius:30px;
 
-backdrop-filter:blur(10px);
+    background:rgba(7,7,7,.88);
 
-color:var(--gold-light);
+    backdrop-filter:blur(10px);
 
-padding:7px 12px;
+    color:var(--gold-light);
 
-border-radius:30px;
+    font-size:.71rem;
 
-font-size:.72rem;
-
-font-weight:700;
+    font-weight:800;
 
 }
 
 
 .book-number{
 
-position:absolute;
+    position:absolute;
 
-bottom:15px;
+    right:15px;
+    bottom:15px;
 
-right:15px;
+    width:40px;
+    height:40px;
 
-width:39px;
+    border-radius:50%;
 
-height:39px;
+    background:var(--gold);
 
-border-radius:50%;
+    color:#111;
 
-display:grid;
+    display:grid;
 
-place-items:center;
+    place-items:center;
 
-background:var(--gold);
+    font-family:"Playfair Display",serif;
 
-color:#111;
-
-font-family:"Playfair Display",serif;
-
-font-weight:800;
+    font-weight:800;
 
 }
 
 
 .book-content{
 
-padding:26px;
+    padding:26px;
 
 }
 
 
 .book-meta{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    flex-wrap:wrap;
 
-gap:14px;
+    align-items:center;
 
-color:#777;
+    gap:13px;
 
-font-size:.78rem;
+    color:#777;
 
-margin-bottom:11px;
+    font-size:.76rem;
+
+    margin-bottom:12px;
 
 }
 
 
 .book-meta i{
 
-color:var(--gold);
+    color:var(--gold);
 
-margin-right:4px;
+    margin-right:4px;
 
 }
 
 
 .book-content h3{
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-font-size:1.55rem;
+    font-size:1.55rem;
 
-line-height:1.2;
+    line-height:1.2;
 
-margin-bottom:13px;
-
-}
-
-
-.book-content p{
-
-color:#aaa;
-
-font-size:.92rem;
-
-margin-bottom:23px;
+    margin-bottom:13px;
 
 }
 
 
-.book-actions{
+.description{
 
-display:flex;
+    color:#aaa;
 
-gap:10px;
+    font-size:.91rem;
+
+    margin-bottom:19px;
+
+}
+
+
+
+/* =========================================
+PRICES
+========================================= */
+
+.book-price{
+
+    margin:18px 0;
+
+    padding:15px;
+
+    border:1px solid rgba(216,172,86,.23);
+
+    border-radius:14px;
+
+    background:rgba(216,172,86,.07);
+
+}
+
+
+.price-label{
+
+    color:#888;
+
+    font-size:.69rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.7px;
+
+    font-weight:800;
+
+}
+
+
+.price-main{
+
+    margin-top:3px;
+
+    color:var(--gold-light);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.65rem;
+
+    font-weight:800;
+
+}
+
+
+.price-note{
+
+    margin-top:3px;
+
+    color:#818181;
+
+    font-size:.72rem;
+
+}
+
+
+.currency-status{
+
+    color:#777;
+
+    font-size:.68rem;
+
+    margin-top:3px;
+
+}
+
+
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.primary-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:9px;
+
+}
+
+
+.read-btn,
+.buy-btn{
+
+    min-height:47px;
+
+    border:none;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    font-weight:800;
+
+    font-size:.82rem;
+
+    cursor:pointer;
+
+    transition:.25s;
 
 }
 
 
 .read-btn{
 
-flex:1;
+    background:var(--gold);
 
-background:var(--gold);
-
-color:#111;
-
-border:none;
-
-padding:12px 16px;
-
-border-radius:10px;
-
-font-weight:800;
-
-cursor:pointer;
+    color:#111;
 
 }
 
 
-.details-btn{
+.buy-btn{
 
-width:46px;
+    background:white;
 
-height:46px;
+    color:#111;
 
-display:grid;
+}
 
-place-items:center;
 
-border-radius:10px;
+.read-btn:hover,
+.buy-btn:hover{
 
-border:1px solid #333;
+    transform:translateY(-2px);
 
-background:#111;
+}
 
-color:var(--gold);
 
-cursor:pointer;
+.buy-btn:hover{
+
+    background:var(--gold-light);
+
+}
+
+
+.secondary-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:9px;
+
+    margin-top:9px;
+
+}
+
+
+.secondary-btn{
+
+    min-height:42px;
+
+    padding:9px 10px;
+
+    border-radius:10px;
+
+    border:1px solid #333;
+
+    background:#101010;
+
+    color:#bbb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:7px;
+
+    font-size:.76rem;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+
+.secondary-btn i{
+
+    color:var(--gold);
+
+}
+
+
+.secondary-btn:hover{
+
+    color:white;
+
+    border-color:var(--gold);
+
+}
+
+
+.coming-btn{
+
+    width:100%;
+
+    min-height:47px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:#242424;
+
+    color:#777;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    font-weight:800;
+
+    cursor:not-allowed;
 
 }
 
 
 
-/* =====================
-FEATURE STRIP
-===================== */
+/* =========================================
+READER INFO
+========================================= */
 
 .reader-strip{
 
-margin-top:100px;
+    margin-top:100px;
 
-background:var(--cream);
+    padding:clamp(40px,7vw,75px);
 
-color:#171717;
+    border-radius:28px;
 
-border-radius:28px;
+    background:var(--cream);
 
-padding:clamp(40px,7vw,75px);
+    color:#171717;
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1.2fr .8fr;
+    grid-template-columns:1.2fr .8fr;
 
-gap:50px;
+    gap:50px;
 
-align-items:center;
+    align-items:center;
 
 }
 
 
 .reader-strip h2{
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-font-size:clamp(2rem,4vw,3.5rem);
+    font-size:clamp(2.1rem,4vw,3.5rem);
 
-line-height:1.1;
+    line-height:1.1;
 
-margin-bottom:18px;
+    margin-bottom:17px;
 
 }
 
 
 .reader-strip p{
 
-color:#555;
+    color:#555;
 
-max-width:650px;
+    max-width:650px;
 
 }
 
 
 .reader-features{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-gap:14px;
+    gap:14px;
 
 }
 
 
 .reader-feature{
 
-padding:19px;
+    padding:19px;
 
-border-radius:14px;
+    border-radius:14px;
 
-background:white;
+    background:white;
 
-border:1px solid #e6dfd2;
+    border:1px solid #e4dccd;
 
 }
 
 
 .reader-feature i{
 
-color:#aa7a25;
+    color:#a87925;
 
-font-size:1.25rem;
+    font-size:1.2rem;
 
-margin-bottom:9px;
+    margin-bottom:8px;
 
 }
 
 
 .reader-feature strong{
 
-display:block;
+    display:block;
 
-font-size:.9rem;
+    font-size:.88rem;
+
+}
+
+
+.reader-feature span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#777;
+
+    font-size:.75rem;
 
 }
 
 
 
-/* =====================
+/* =========================================
 QUOTE
-===================== */
+========================================= */
 
 .quote{
 
-padding:120px 0;
+    padding:120px 0;
 
-text-align:center;
+    text-align:center;
 
 }
 
 
 .quote i{
 
-color:var(--gold);
+    color:var(--gold);
 
-font-size:2rem;
+    font-size:2rem;
 
-margin-bottom:30px;
+    margin-bottom:28px;
 
 }
 
 
 .quote blockquote{
 
-font-family:"Playfair Display",serif;
+    max-width:850px;
 
-max-width:850px;
+    margin:auto;
 
-margin:auto;
+    font-family:"Playfair Display",serif;
 
-font-size:clamp(2rem,4vw,3.3rem);
+    font-size:clamp(2rem,4vw,3.2rem);
 
-line-height:1.25;
+    line-height:1.27;
 
 }
 
 
 .quote p{
 
-margin-top:25px;
+    color:var(--gold);
 
-color:var(--gold);
+    margin-top:25px;
 
-font-size:.78rem;
+    font-size:.72rem;
 
-letter-spacing:3px;
+    text-transform:uppercase;
 
-text-transform:uppercase;
-
-}
-
-
-
-/* =====================
-MODAL
-===================== */
-
-.modal{
-
-position:fixed;
-
-inset:0;
-
-background:rgba(0,0,0,.82);
-
-z-index:2000;
-
-display:none;
-
-align-items:center;
-
-justify-content:center;
-
-padding:25px;
-
-backdrop-filter:blur(8px);
+    letter-spacing:3px;
 
 }
 
 
-.modal.active{
 
-display:flex;
-
-}
-
-
-.modal-card{
-
-max-width:760px;
-
-width:100%;
-
-background:#151515;
-
-border:1px solid var(--border);
-
-border-radius:22px;
-
-padding:35px;
-
-position:relative;
-
-box-shadow:0 40px 100px rgba(0,0,0,.75);
-
-}
-
-
-.close-modal{
-
-position:absolute;
-
-top:15px;
-
-right:15px;
-
-width:40px;
-
-height:40px;
-
-border:none;
-
-border-radius:50%;
-
-background:#252525;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-
-.modal-label{
-
-color:var(--gold);
-
-text-transform:uppercase;
-
-font-size:.74rem;
-
-letter-spacing:2px;
-
-font-weight:700;
-
-}
-
-
-.modal-card h2{
-
-font-family:"Playfair Display",serif;
-
-font-size:2.4rem;
-
-margin:8px 0 16px;
-
-}
-
-
-.modal-card p{
-
-color:#bbb;
-
-}
-
-
-
-/* =====================
+/* =========================================
 FOOTER
-===================== */
+========================================= */
 
 footer{
 
-border-top:1px solid rgba(255,255,255,.08);
+    padding:70px 0 30px;
 
-background:#070707;
+    background:#060606;
 
-padding:70px 0 30px;
+    border-top:1px solid #202020;
 
 }
 
 
 .footer-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1.6fr 1fr 1fr;
+    grid-template-columns:1.5fr 1fr 1fr;
 
-gap:50px;
+    gap:50px;
 
 }
 
 
 .footer-brand h3{
 
-font-family:"Playfair Display",serif;
+    font-family:"Playfair Display",serif;
 
-font-size:1.7rem;
+    font-size:1.7rem;
 
-margin-bottom:15px;
+    margin-bottom:14px;
 
 }
 
 
 .footer-brand p{
 
-color:#999;
+    color:#888;
 
-max-width:440px;
+    max-width:430px;
 
 }
 
 
 .socials{
 
-display:flex;
+    display:flex;
 
-gap:12px;
+    gap:10px;
 
-margin-top:22px;
+    margin-top:20px;
 
 }
 
 
 .socials a{
 
-width:40px;
+    width:40px;
+    height:40px;
 
-height:40px;
+    border-radius:50%;
 
-border-radius:50%;
+    border:1px solid #333;
 
-border:1px solid #333;
+    display:grid;
 
-display:grid;
+    place-items:center;
 
-place-items:center;
+    color:#aaa;
+
+}
+
+
+.socials a:hover{
+
+    color:var(--gold);
+
+    border-color:var(--gold);
 
 }
 
 
 .footer-column h4{
 
-color:var(--gold);
+    color:var(--gold);
 
-margin-bottom:17px;
+    margin-bottom:17px;
 
 }
 
 
 .footer-column a{
 
-display:block;
+    display:block;
 
-color:#999;
+    color:#888;
 
-margin-bottom:10px;
+    margin-bottom:10px;
 
 }
 
 
 .footer-column a:hover{
 
-color:white;
+    color:white;
 
 }
 
 
 .footer-bottom{
 
-border-top:1px solid #222;
+    border-top:1px solid #202020;
 
-margin-top:55px;
+    margin-top:55px;
 
-padding-top:25px;
+    padding-top:24px;
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-gap:20px;
+    gap:20px;
 
-font-size:.82rem;
+    color:#666;
 
-color:#777;
+    font-size:.79rem;
+
+}
+
+
+.rate-credit{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:#626262;
+
+    font-size:.68rem;
+
+}
+
+
+.rate-credit a{
+
+    color:#888;
 
 }
 
 
 
-/* =====================
+/* =========================================
 TABLET
-===================== */
+========================================= */
 
 @media(max-width:950px){
 
-.mobile-menu-btn{
+    .mobile-menu-btn{
 
-display:block;
+        display:block;
+
+    }
+
+
+    .nav-links{
+
+        position:fixed;
+
+        top:78px;
+
+        left:0;
+
+        width:100%;
+
+        max-height:calc(100vh - 78px);
+
+        overflow-y:auto;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+        padding:27px 5%;
+
+        background:#0b0b0b;
+
+        border-bottom:1px solid #222;
+
+        transform:translateY(-150%);
+
+        transition:.3s;
+
+    }
+
+
+    .nav-links.active{
+
+        transform:translateY(0);
+
+    }
+
+
+    .nav-links > a{
+
+        width:100%;
+
+    }
+
+
+    .start-reading{
+
+        justify-content:center;
+
+    }
+
+
+    .main-menu{
+
+        width:100%;
+
+    }
+
+
+    .main-menu-button{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+
+    .menu-dropdown{
+
+        position:static;
+
+        width:100%;
+
+        display:none;
+
+        margin-top:10px;
+
+        opacity:1;
+
+        visibility:visible;
+
+        pointer-events:auto;
+
+        transform:none;
+
+        box-shadow:none;
+
+    }
+
+
+    .main-menu.active .menu-dropdown{
+
+        display:block;
+
+    }
+
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .hero-books{
+
+        display:none;
+
+    }
+
+
+    .book-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .reader-strip{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .footer-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
 
 }
 
 
-.nav-links{
 
-position:fixed;
-
-top:78px;
-
-left:0;
-
-width:100%;
-
-max-height:calc(100vh - 78px);
-
-overflow-y:auto;
-
-background:#0c0c0c;
-
-flex-direction:column;
-
-align-items:flex-start;
-
-padding:28px 5%;
-
-gap:20px;
-
-transform:translateY(-150%);
-
-transition:.3s;
-
-border-bottom:1px solid #222;
-
-}
-
-
-.nav-links.active{
-
-transform:translateY(0);
-
-}
-
-
-.nav-links > a{
-
-width:100%;
-
-}
-
-
-.start-reading{
-
-justify-content:center;
-
-}
-
-
-.main-menu{
-
-width:100%;
-
-}
-
-
-.main-menu-button{
-
-width:100%;
-
-justify-content:space-between;
-
-}
-
-
-.menu-dropdown{
-
-position:static;
-
-width:100%;
-
-margin-top:10px;
-
-display:none;
-
-opacity:1;
-
-visibility:visible;
-
-pointer-events:auto;
-
-transform:none;
-
-box-shadow:none;
-
-background:#141414;
-
-}
-
-
-.main-menu.active .menu-dropdown{
-
-display:block;
-
-}
-
-
-.hero-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.hero-books{
-
-display:none;
-
-}
-
-
-.book-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-
-.reader-strip{
-
-grid-template-columns:1fr;
-
-}
-
-
-.footer-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-}
-
-
-
-/* =====================
+/* =========================================
 PHONE
-===================== */
+========================================= */
 
 @media(max-width:650px){
 
-.brand-text strong{
+    .brand-text strong{
 
-font-size:1rem;
+        font-size:.98rem;
 
-}
-
-
-.brand-text span{
-
-font-size:.58rem;
-
-}
+    }
 
 
-.novels-hero{
+    .brand-text span{
 
-padding:145px 0 75px;
+        font-size:.57rem;
 
-}
-
-
-.library{
-
-padding:75px 0 90px;
-
-}
+    }
 
 
-.library-header{
+    .novels-hero{
 
-align-items:flex-start;
+        min-height:auto;
 
-flex-direction:column;
+        padding:140px 0 75px;
 
-}
-
-
-.book-grid{
-
-grid-template-columns:1fr;
-
-}
+    }
 
 
-.book-card{
+    .library{
 
-max-width:440px;
+        padding:75px 0 90px;
 
-margin:auto;
-
-}
+    }
 
 
-.reader-features{
+    .library-header{
 
-grid-template-columns:1fr;
+        flex-direction:column;
 
-}
+        align-items:flex-start;
 
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-}
+    }
 
 
-.footer-bottom{
+    .book-grid{
 
-flex-direction:column;
+        grid-template-columns:1fr;
 
-}
-
-
-.modal-card{
-
-padding:30px 24px;
-
-}
+    }
 
 
-.modal-card h2{
+    .book-card{
 
-font-size:2rem;
+        max-width:440px;
+
+        width:100%;
+
+        margin:auto;
+
+    }
+
+
+    .reader-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+    }
 
 }
 
-}
 
+@media(max-width:420px){
+
+    .primary-actions,
+    .secondary-actions{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
 
 </style>
 
 </head>
 
 
-
 <body>
 
 
-<!-- =====================
+<!-- =========================================
 NAVIGATION
-===================== -->
+========================================= -->
 
 <header>
 
@@ -1739,7 +1832,8 @@ NAVIGATION
 <nav>
 
 
-<a href="index.html" class="brand">
+<a href="index.html"
+class="brand">
 
 <div class="brand-icon">
 
@@ -1750,9 +1844,13 @@ NAVIGATION
 
 <div class="brand-text">
 
-<strong>Kitsamba Writes</strong>
+<strong>
+Kitsamba Writes
+</strong>
 
-<span>Africa</span>
+<span>
+Africa
+</span>
 
 </div>
 
@@ -1771,7 +1869,8 @@ aria-label="Open menu">
 
 
 
-<div class="nav-links" id="navLinks">
+<div class="nav-links"
+id="navLinks">
 
 
 <a href="index.html">
@@ -1781,7 +1880,8 @@ Home
 </a>
 
 
-<a href="novels.html" class="active">
+<a href="novels.html"
+class="active">
 
 Novels
 
@@ -1789,8 +1889,8 @@ Novels
 
 
 
-<div class="main-menu" id="mainMenu">
-
+<div class="main-menu"
+id="mainMenu">
 
 <button
 class="main-menu-button"
@@ -1806,18 +1906,20 @@ Menu
 </button>
 
 
-
 <div class="menu-dropdown">
 
 
 <div class="menu-title">
 
-<strong>Explore Kitsamba Writes</strong>
+<strong>
+Explore Kitsamba Writes
+</strong>
 
-<span>Stories, culture and more</span>
+<span>
+Stories, culture and more
+</span>
 
 </div>
-
 
 
 <a href="index.html">
@@ -1829,7 +1931,6 @@ Home
 </a>
 
 
-
 <a href="about.html">
 
 <i class="fa-solid fa-user-pen"></i>
@@ -1837,7 +1938,6 @@ Home
 About
 
 </a>
-
 
 
 <a href="articles.html">
@@ -1849,7 +1949,6 @@ Articles
 </a>
 
 
-
 <a href="blog.html">
 
 <i class="fa-solid fa-pen-nib"></i>
@@ -1857,7 +1956,6 @@ Articles
 Blog
 
 </a>
-
 
 
 <a href="contact.html">
@@ -1869,7 +1967,6 @@ Contact
 </a>
 
 
-
 <a href="lifestyle.html">
 
 <i class="fa-solid fa-earth-africa"></i>
@@ -1877,7 +1974,6 @@ Contact
 Lifestyle
 
 </a>
-
 
 
 <a href="login.html">
@@ -1889,7 +1985,6 @@ Login
 </a>
 
 
-
 <a href="novels.html">
 
 <i class="fa-solid fa-book-open"></i>
@@ -1899,7 +1994,6 @@ Novels
 </a>
 
 
-
 <a href="settings.html">
 
 <i class="fa-solid fa-gear"></i>
@@ -1907,7 +2001,6 @@ Novels
 Settings
 
 </a>
-
 
 
 <a href="videos.html">
@@ -1945,18 +2038,16 @@ Start Reading
 
 
 
-<!-- =====================
+<!-- =========================================
 HERO
-===================== -->
+========================================= -->
 
 <section class="novels-hero">
-
 
 <div class="container hero-grid">
 
 
 <div class="hero-copy">
-
 
 <div class="eyebrow">
 
@@ -1969,17 +2060,19 @@ The Kitsamba Library
 
 Stories made to
 
-<span>stay with you.</span>
+<span>
+stay with you.
+</span>
 
 </h1>
 
 
 <p>
 
-Discover stories of love, grief, ambition,
-betrayal, healing and second chances —
-told through characters and experiences
-rooted in African life.
+Discover original African stories of survival,
+love, grief, ambition, destiny, healing and
+second chances. Read a preview, choose a story
+that speaks to you, and unlock the complete novel.
 
 </p>
 
@@ -1992,7 +2085,7 @@ class="btn btn-gold">
 
 <i class="fa-solid fa-book-open"></i>
 
-Browse the Library
+Explore Novels
 
 </a>
 
@@ -2008,7 +2101,6 @@ Meet the Author
 
 
 </div>
-
 
 </div>
 
@@ -2053,12 +2145,13 @@ alt="A Love Written in Rain">
 
 
 
-<!-- =====================
-BOOK LIBRARY
-===================== -->
+<!-- =========================================
+LIBRARY
+========================================= -->
 
-<section class="library" id="library">
-
+<section
+class="library"
+id="library">
 
 <div class="container">
 
@@ -2068,10 +2161,9 @@ BOOK LIBRARY
 
 <div>
 
-
 <div class="eyebrow">
 
-Original fiction
+Original Fiction
 
 </div>
 
@@ -2085,13 +2177,12 @@ Choose your next story.
 
 <p>
 
-Every novel carries its own world,
-characters and emotions. Browse the
-collection and discover the story that
-speaks to you.
+Read previews of available novels before purchasing.
+Your Uganda price remains fixed while international
+readers can see an estimated equivalent in their
+local currency.
 
 </p>
-
 
 </div>
 
@@ -2106,6 +2197,8 @@ speaks to you.
 </div>
 
 
+
+<!-- FILTERS -->
 
 <div class="filters">
 
@@ -2153,9 +2246,10 @@ Life & Destiny
 <div class="book-grid">
 
 
-<!-- =====================
+<!-- =========================================
 BOOK 1
-===================== -->
+THE SILENCE AT 2PM
+========================================= -->
 
 <article
 class="book-card"
@@ -2163,7 +2257,6 @@ data-category="drama life">
 
 
 <div class="cover">
-
 
 <img
 src="images/The Silence At 2PM.png"
@@ -2183,8 +2276,8 @@ Emotional Drama
 
 </span>
 
-
 </div>
+
 
 
 <div class="book-content">
@@ -2212,6 +2305,7 @@ African Fiction
 </div>
 
 
+
 <h3>
 
 The Silence at 2PM
@@ -2219,7 +2313,7 @@ The Silence at 2PM
 </h3>
 
 
-<p>
+<p class="description">
 
 When Elijah's father dies at exactly
 2:00 p.m. — the same moment Elijah
@@ -2230,30 +2324,65 @@ of love beyond loss.
 </p>
 
 
-<div class="book-actions">
+
+<div
+class="book-price"
+data-ugx-price="18000">
 
 
-<button
-class="read-btn"
-onclick="openBook(
-'The Silence at 2PM',
-'A profound story about grief, loss and discovering that love can remain even after death. Elijah must navigate the memories, silence and unanswered questions left behind by his father.'
-)">
+<div class="price-label">
+
+Full Novel
+
+</div>
+
+
+<div class="price-main local-price">
+
+UGX 18,000
+
+</div>
+
+
+<div class="price-note">
+
+Official Uganda price: UGX 18,000
+
+</div>
+
+
+<div class="currency-status">
+
+Local currency estimate loading...
+
+</div>
+
+
+</div>
+
+
+
+<div class="primary-actions">
+
+
+<a
+href="silence-at-2pm.html"
+class="read-btn">
+
+<i class="fa-solid fa-book-open"></i>
 
 Read Preview
 
-</button>
+</a>
 
 
 <button
-class="details-btn"
-onclick="openBook(
-'The Silence at 2PM',
-'A profound story about grief, loss and discovering that love can remain even after death. Elijah must navigate the memories, silence and unanswered questions left behind by his father.'
-)"
-aria-label="View story details">
+class="buy-btn"
+onclick="startCheckout('silence-at-2pm')">
 
-<i class="fa-solid fa-arrow-right"></i>
+<i class="fa-solid fa-lock-open"></i>
+
+Buy Full Novel
 
 </button>
 
@@ -2261,16 +2390,45 @@ aria-label="View story details">
 </div>
 
 
+
+<div class="secondary-actions">
+
+
+<a
+href="silence-at-2pm.html#feedback"
+class="secondary-btn">
+
+<i class="fa-solid fa-star"></i>
+
+Feedback
+
+</a>
+
+
+<a
+href="silence-at-2pm.html#comments"
+class="secondary-btn">
+
+<i class="fa-solid fa-comments"></i>
+
+Comments
+
+</a>
+
+
 </div>
 
+
+</div>
 
 </article>
 
 
 
-<!-- =====================
+<!-- =========================================
 BOOK 2
-===================== -->
+THE STREETS OF FATE
+========================================= -->
 
 <article
 class="book-card"
@@ -2278,7 +2436,6 @@ data-category="life drama">
 
 
 <div class="cover">
-
 
 <img
 src="images/The Streets of Fate.png"
@@ -2298,8 +2455,8 @@ Life & Destiny
 
 </span>
 
-
 </div>
+
 
 
 <div class="book-content">
@@ -2327,6 +2484,7 @@ African Fiction
 </div>
 
 
+
 <h3>
 
 The Streets of Fate
@@ -2334,36 +2492,104 @@ The Streets of Fate
 </h3>
 
 
-<p>
+<p class="description">
 
-From abandoned street child to
-successful businessman, Mooli's
-journey explores betrayal, survival,
-hope and the relentless pursuit
-of destiny.
+From abandoned street child to successful
+businessman, Mooli's journey explores
+betrayal, survival, hope and the relentless
+pursuit of destiny.
 
 </p>
 
 
-<div class="book-actions">
+
+<div
+class="book-price"
+data-ugx-price="16500">
+
+
+<div class="price-label">
+
+Full Novel
+
+</div>
+
+
+<div class="price-main local-price">
+
+UGX 16,500
+
+</div>
+
+
+<div class="price-note">
+
+Official Uganda price: UGX 16,500
+
+</div>
+
+
+<div class="currency-status">
+
+Local currency estimate loading...
+
+</div>
+
+
+</div>
+
+
+
+<div class="primary-actions">
 
 
 <a
 href="streets-of-fate.html"
-class="read-btn"
-style="text-align:center;">
+class="read-btn">
 
-Read Free
+<i class="fa-solid fa-book-open"></i>
+
+Read Preview
+
+</a>
+
+
+<button
+class="buy-btn"
+onclick="startCheckout('streets-of-fate')">
+
+<i class="fa-solid fa-lock-open"></i>
+
+Buy Full Novel
+
+</button>
+
+
+</div>
+
+
+
+<div class="secondary-actions">
+
+
+<a
+href="streets-of-fate.html#feedback"
+class="secondary-btn">
+
+<i class="fa-solid fa-star"></i>
+
+Feedback
 
 </a>
 
 
 <a
-href="streets-of-fate.html"
-class="details-btn"
-aria-label="Read The Streets of Fate">
+href="streets-of-fate.html#comments"
+class="secondary-btn">
 
-<i class="fa-solid fa-arrow-right"></i>
+<i class="fa-solid fa-comments"></i>
+
+Comments
 
 </a>
 
@@ -2372,15 +2598,14 @@ aria-label="Read The Streets of Fate">
 
 
 </div>
-
 
 </article>
 
 
 
-<!-- =====================
+<!-- =========================================
 BOOK 3
-===================== -->
+========================================= -->
 
 <article
 class="book-card"
@@ -2388,7 +2613,6 @@ data-category="romance">
 
 
 <div class="cover">
-
 
 <img
 src="images/A Love Written In Rain.png"
@@ -2408,8 +2632,8 @@ Romance
 
 </span>
 
-
 </div>
+
 
 
 <div class="book-content">
@@ -2437,6 +2661,7 @@ Kampala
 </div>
 
 
+
 <h3>
 
 A Love Written in Rain
@@ -2444,57 +2669,36 @@ A Love Written in Rain
 </h3>
 
 
-<p>
+<p class="description">
 
-Two wounded hearts meet during
-a violent storm in Kampala.
-Every time the skies open,
-destiny seems determined to
-bring them together again.
+Two wounded hearts meet during a violent
+storm in Kampala. Every time the skies
+open, destiny seems determined to bring
+them together again.
 
 </p>
 
 
-<div class="book-actions">
-
-
 <button
-class="read-btn"
-onclick="openBook(
-'A Love Written in Rain',
-'A contemporary romance about two broken hearts whose paths cross during a storm in Kampala. As rain repeatedly brings them together, they must decide whether destiny deserves another chance.'
-)">
+class="coming-btn"
+disabled>
 
-Read Preview
+<i class="fa-solid fa-clock"></i>
 
-</button>
-
-
-<button
-class="details-btn"
-onclick="openBook(
-'A Love Written in Rain',
-'A contemporary romance about two broken hearts whose paths cross during a storm in Kampala. As rain repeatedly brings them together, they must decide whether destiny deserves another chance.'
-)">
-
-<i class="fa-solid fa-arrow-right"></i>
+Coming Soon
 
 </button>
 
 
 </div>
-
-
-</div>
-
 
 </article>
 
 
 
-<!-- =====================
+<!-- =========================================
 BOOK 4
-===================== -->
+========================================= -->
 
 <article
 class="book-card"
@@ -2502,7 +2706,6 @@ data-category="romance drama">
 
 
 <div class="cover">
-
 
 <img
 src="images/Before The Last Goodbye.png"
@@ -2522,8 +2725,8 @@ Romantic Drama
 
 </span>
 
-
 </div>
+
 
 
 <div class="book-content">
@@ -2551,6 +2754,7 @@ Emotional
 </div>
 
 
+
 <h3>
 
 Before the Last Goodbye
@@ -2558,57 +2762,36 @@ Before the Last Goodbye
 </h3>
 
 
-<p>
+<p class="description">
 
 Nathan discovers that his lost love,
-Claire, has been fighting a
-life-threatening illness.
-Now time becomes the one thing
+Claire, has been fighting a life-threatening
+illness. Now time becomes the one thing
 they cannot afford to waste.
 
 </p>
 
 
-<div class="book-actions">
-
-
 <button
-class="read-btn"
-onclick="openBook(
-'Before the Last Goodbye',
-'A romantic drama about love, illness, truth and time. When Nathan discovers what Claire has been hiding, every remaining moment suddenly matters.'
-)">
+class="coming-btn"
+disabled>
 
-Read Preview
+<i class="fa-solid fa-clock"></i>
 
-</button>
-
-
-<button
-class="details-btn"
-onclick="openBook(
-'Before the Last Goodbye',
-'A romantic drama about love, illness, truth and time. When Nathan discovers what Claire has been hiding, every remaining moment suddenly matters.'
-)">
-
-<i class="fa-solid fa-arrow-right"></i>
+Coming Soon
 
 </button>
 
 
 </div>
-
-
-</div>
-
 
 </article>
 
 
 
-<!-- =====================
+<!-- =========================================
 BOOK 5
-===================== -->
+========================================= -->
 
 <article
 class="book-card"
@@ -2616,7 +2799,6 @@ data-category="romance life">
 
 
 <div class="cover">
-
 
 <img
 src="images/The Season Between Us.png"
@@ -2636,8 +2818,8 @@ Second Chances
 
 </span>
 
-
 </div>
+
 
 
 <div class="book-content">
@@ -2665,6 +2847,7 @@ Romance
 </div>
 
 
+
 <h3>
 
 The Season Between Us
@@ -2672,57 +2855,36 @@ The Season Between Us
 </h3>
 
 
-<p>
+<p class="description">
 
-Daniel and Grace meet again
-after five years apart.
-Old wounds return with them —
-but perhaps so does the possibility
-of a second chance.
+Daniel and Grace meet again after five
+years apart. Old wounds return with them,
+but perhaps so does the possibility of
+a second chance.
 
 </p>
 
 
-<div class="book-actions">
-
-
 <button
-class="read-btn"
-onclick="openBook(
-'The Season Between Us',
-'A slow-burn romance about Daniel and Grace, reunited after five years. As old wounds resurface, they must decide whether some seasons are endings or beginnings.'
-)">
+class="coming-btn"
+disabled>
 
-Read Preview
+<i class="fa-solid fa-clock"></i>
 
-</button>
-
-
-<button
-class="details-btn"
-onclick="openBook(
-'The Season Between Us',
-'A slow-burn romance about Daniel and Grace, reunited after five years. As old wounds resurface, they must decide whether some seasons are endings or beginnings.'
-)">
-
-<i class="fa-solid fa-arrow-right"></i>
+Coming Soon
 
 </button>
 
 
 </div>
-
-
-</div>
-
 
 </article>
 
 
 
-<!-- =====================
+<!-- =========================================
 BOOK 6
-===================== -->
+========================================= -->
 
 <article
 class="book-card"
@@ -2730,7 +2892,6 @@ data-category="romance drama life">
 
 
 <div class="cover">
-
 
 <img
 src="images/When Our Hearts Learned Silence.png"
@@ -2750,8 +2911,8 @@ Healing & Love
 
 </span>
 
-
 </div>
+
 
 
 <div class="book-content">
@@ -2779,6 +2940,7 @@ Drama
 </div>
 
 
+
 <h3>
 
 When Our Hearts Learned Silence
@@ -2786,90 +2948,87 @@ When Our Hearts Learned Silence
 </h3>
 
 
-<p>
+<p class="description">
 
-After losing his father, Elijah
-meets Naomi, an artist carrying
-pain of her own. Their friendship
-grows quietly through grief,
-art and shared moments.
+After losing his father, Elijah meets
+Naomi, an artist carrying pain of her own.
+Their friendship grows quietly through
+grief, art and shared moments.
 
 </p>
 
 
-<div class="book-actions">
-
-
 <button
-class="read-btn"
-onclick="openBook(
-'When Our Hearts Learned Silence',
-'After losing his father, Elijah meets Naomi, an artist hiding pain of her own. Their friendship grows through quiet conversations, shared sunsets and the kind of understanding words cannot always provide.'
-)">
+class="coming-btn"
+disabled>
 
-Read Preview
+<i class="fa-solid fa-clock"></i>
 
-</button>
-
-
-<button
-class="details-btn"
-onclick="openBook(
-'When Our Hearts Learned Silence',
-'After losing his father, Elijah meets Naomi, an artist hiding pain of her own. Their friendship grows through quiet conversations, shared sunsets and the kind of understanding words cannot always provide.'
-)">
-
-<i class="fa-solid fa-arrow-right"></i>
+Coming Soon
 
 </button>
 
 
 </div>
-
-
-</div>
-
 
 </article>
 
 
+</div>
+
+
+
+<div class="rate-credit">
+
+International prices are approximate
+currency equivalents.
+
+<a
+href="https://www.exchangerate-api.com"
+target="_blank"
+rel="noopener">
+
+Rates by Exchange Rate API
+
+</a>
 
 </div>
 
 
 
-<!-- READER EXPERIENCE -->
+<!-- =========================================
+READER EXPERIENCE
+========================================= -->
 
 <div class="reader-strip">
 
 
 <div>
 
-
 <div class="eyebrow">
 
-Coming next
+For Readers
 
 </div>
 
 
 <h2>
 
-A reading experience built around the story.
+Preview the story.
+Buy only when it speaks to you.
 
 </h2>
 
 
 <p>
 
-The next stage of Kitsamba Writes Africa
-will turn these books into a proper
-chapter-reading experience with reading
-progress, chapter navigation and
-reader controls.
+Available novels allow readers to begin with
+a free preview. When you are ready to continue,
+purchase the complete novel and keep reading.
+You can also leave feedback and join reader
+discussions about each story.
 
 </p>
-
 
 </div>
 
@@ -2880,42 +3039,65 @@ reader controls.
 
 <div class="reader-feature">
 
-<i class="fa-solid fa-list-ol"></i>
+<i class="fa-solid fa-book-open"></i>
 
-<strong>Chapter Navigation</strong>
+<strong>
+Free Preview
+</strong>
 
-</div>
-
-
-<div class="reader-feature">
-
-<i class="fa-solid fa-arrow-right-arrow-left"></i>
-
-<strong>Previous & Next</strong>
+<span>
+Start reading before buying.
+</span>
 
 </div>
 
 
 <div class="reader-feature">
 
-<i class="fa-solid fa-font"></i>
+<i class="fa-solid fa-lock-open"></i>
 
-<strong>Text Controls</strong>
+<strong>
+Full Novel Access
+</strong>
+
+<span>
+Unlock after purchase.
+</span>
 
 </div>
 
 
 <div class="reader-feature">
 
-<i class="fa-solid fa-bookmark"></i>
+<i class="fa-solid fa-comments"></i>
 
-<strong>Bookmarks</strong>
+<strong>
+Reader Comments
+</strong>
+
+<span>
+Discuss the story.
+</span>
+
+</div>
+
+
+<div class="reader-feature">
+
+<i class="fa-solid fa-star"></i>
+
+<strong>
+Reader Feedback
+</strong>
+
+<span>
+Rate your reading experience.
+</span>
 
 </div>
 
 
 </div>
-
 
 </div>
 
@@ -2926,24 +3108,21 @@ reader controls.
 
 
 
-<!-- =====================
+<!-- =========================================
 QUOTE
-===================== -->
+========================================= -->
 
 <section class="quote">
 
-
 <div class="container">
-
 
 <i class="fa-solid fa-quote-left"></i>
 
 
 <blockquote>
 
-Some stories entertain us.
-Others leave something behind
-long after we close the book.
+Some stories entertain you.
+Others quietly become part of you.
 
 </blockquote>
 
@@ -2954,19 +3133,17 @@ Kitsamba Writes Africa
 
 </p>
 
-
 </div>
 
 </section>
 
 
 
-<!-- =====================
+<!-- =========================================
 FOOTER
-===================== -->
+========================================= -->
 
 <footer>
-
 
 <div class="container">
 
@@ -2975,7 +3152,6 @@ FOOTER
 
 
 <div class="footer-brand">
-
 
 <h3>
 
@@ -2986,11 +3162,9 @@ Kitsamba Writes Africa
 
 <p>
 
-A home for African stories,
-novels, ideas and culture.
-
-Writing Africa,
-one story at a time.
+Original African stories exploring life,
+love, struggle, destiny, healing and the
+human experiences that connect us.
 
 </p>
 
@@ -2998,28 +3172,32 @@ one story at a time.
 <div class="socials">
 
 
-<a href="#">
+<a href="#"
+aria-label="Facebook">
 
 <i class="fa-brands fa-facebook-f"></i>
 
 </a>
 
 
-<a href="#">
+<a href="#"
+aria-label="Instagram">
 
 <i class="fa-brands fa-instagram"></i>
 
 </a>
 
 
-<a href="#">
+<a href="#"
+aria-label="TikTok">
 
 <i class="fa-brands fa-tiktok"></i>
 
 </a>
 
 
-<a href="#">
+<a href="#"
+aria-label="YouTube">
 
 <i class="fa-brands fa-youtube"></i>
 
@@ -3028,13 +3206,11 @@ one story at a time.
 
 </div>
 
-
 </div>
 
 
 
 <div class="footer-column">
-
 
 <h4>
 
@@ -3083,7 +3259,6 @@ Videos
 
 
 <div class="footer-column">
-
 
 <h4>
 
@@ -3151,82 +3326,15 @@ Stories born from Africa.
 
 </div>
 
-
 </footer>
-
-
-
-<!-- =====================
-BOOK PREVIEW MODAL
-===================== -->
-
-<div class="modal" id="bookModal">
-
-
-<div class="modal-card">
-
-
-<button
-class="close-modal"
-onclick="closeBook()">
-
-<i class="fa-solid fa-xmark"></i>
-
-</button>
-
-
-<div class="modal-label">
-
-Story Preview
-
-</div>
-
-
-<h2 id="modalTitle">
-
-Novel title
-
-</h2>
-
-
-<p id="modalDescription">
-
-Story description.
-
-</p>
-
-
-<div style="margin-top:25px;">
-
-
-<a
-href="#library"
-class="btn btn-gold"
-onclick="closeBook()">
-
-<i class="fa-solid fa-book-open"></i>
-
-Return to Library
-
-</a>
-
-
-</div>
-
-
-</div>
-
-
-</div>
 
 
 
 <script>
 
-
-/* =====================
-MOBILE MENU
-===================== */
+/* =========================================
+MOBILE NAVIGATION
+========================================= */
 
 const mobileMenuBtn =
 document.getElementById("mobileMenuBtn");
@@ -3245,40 +3353,40 @@ mobileMenuBtn.addEventListener(
 "click",
 function(){
 
-navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
 
-const icon =
-mobileMenuBtn.querySelector("i");
+    const icon =
+    mobileMenuBtn.querySelector("i");
 
 
-if(navLinks.classList.contains("active")){
+    if(
+        navLinks.classList.contains("active")
+    ){
 
-icon.className =
-"fa-solid fa-xmark";
+        icon.className =
+        "fa-solid fa-xmark";
 
-}else{
+    }
 
-icon.className =
-"fa-solid fa-bars";
+    else{
 
-mainMenu.classList.remove("active");
+        icon.className =
+        "fa-solid fa-bars";
 
-}
+        mainMenu.classList.remove("active");
+
+    }
 
 });
 
-
-/* =====================
-DROPDOWN MENU
-===================== */
 
 mainMenuButton.addEventListener(
 "click",
 function(event){
 
-event.stopPropagation();
+    event.stopPropagation();
 
-mainMenu.classList.toggle("active");
+    mainMenu.classList.toggle("active");
 
 });
 
@@ -3287,11 +3395,13 @@ document.addEventListener(
 "click",
 function(event){
 
-if(!mainMenu.contains(event.target)){
+    if(
+        !mainMenu.contains(event.target)
+    ){
 
-mainMenu.classList.remove("active");
+        mainMenu.classList.remove("active");
 
-}
+    }
 
 });
 
@@ -3300,27 +3410,28 @@ document
 .querySelectorAll(".nav-links a")
 .forEach(function(link){
 
-link.addEventListener(
-"click",
-function(){
+    link.addEventListener(
+    "click",
+    function(){
 
-navLinks.classList.remove("active");
+        navLinks.classList.remove("active");
 
-mainMenu.classList.remove("active");
+        mainMenu.classList.remove("active");
 
-mobileMenuBtn
-.querySelector("i")
-.className =
-"fa-solid fa-bars";
+        mobileMenuBtn
+        .querySelector("i")
+        .className =
+        "fa-solid fa-bars";
+
+    });
 
 });
 
-});
 
 
-/* =====================
-FILTER BOOKS
-===================== */
+/* =========================================
+BOOK FILTERS
+========================================= */
 
 const filterButtons =
 document.querySelectorAll(".filter-btn");
@@ -3329,128 +3440,371 @@ const bookCards =
 document.querySelectorAll(".book-card");
 
 
-filterButtons.forEach(function(button){
+filterButtons.forEach(
+function(button){
+
+    button.addEventListener(
+    "click",
+    function(){
+
+        filterButtons.forEach(
+        function(btn){
+
+            btn.classList.remove("active");
+
+        });
 
 
-button.addEventListener(
-"click",
-function(){
+        button.classList.add("active");
 
 
-filterButtons.forEach(function(btn){
+        const filter =
+        button.dataset.filter;
 
-btn.classList.remove("active");
+
+        bookCards.forEach(
+        function(card){
+
+            const categories =
+            card.dataset.category;
+
+
+            if(
+                filter === "all" ||
+                categories.includes(filter)
+            ){
+
+                card.style.display = "block";
+
+            }
+
+            else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
 
 });
 
 
-button.classList.add("active");
+
+/* =========================================
+LOCAL CURRENCY
+========================================= */
+
+async function loadLocalCurrencyPrices(){
+
+    const priceBoxes =
+    document.querySelectorAll(
+        "[data-ugx-price]"
+    );
 
 
-const filter =
-button.dataset.filter;
+    if(
+        !priceBoxes.length
+    ){
+
+        return;
+
+    }
 
 
-bookCards.forEach(function(card){
+    let visitorCurrency = "USD";
+
+    let visitorCountry = "";
 
 
-if(
-filter === "all" ||
-card.dataset.category.includes(filter)
-){
+    try{
 
-card.style.display = "block";
+        const locationResponse =
+        await fetch(
+            "https://ipapi.co/json/"
+        );
 
-}else{
 
-card.style.display = "none";
+        if(
+            !locationResponse.ok
+        ){
+
+            throw new Error(
+                "Location request failed"
+            );
+
+        }
+
+
+        const locationData =
+        await locationResponse.json();
+
+
+        visitorCurrency =
+        locationData.currency || "USD";
+
+
+        visitorCountry =
+        locationData.country_code || "";
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Could not detect visitor location.",
+            error
+        );
+
+    }
+
+
+
+    /* Uganda always uses UGX */
+
+    if(
+        visitorCountry === "UG"
+    ){
+
+        visitorCurrency = "UGX";
+
+    }
+
+
+
+    /* =====================================
+    UGANDA
+    ===================================== */
+
+    if(
+        visitorCurrency === "UGX"
+    ){
+
+        priceBoxes.forEach(
+        function(box){
+
+            const amount =
+            Number(
+                box.dataset.ugxPrice
+            );
+
+
+            const priceElement =
+            box.querySelector(
+                ".local-price"
+            );
+
+
+            const statusElement =
+            box.querySelector(
+                ".currency-status"
+            );
+
+
+            priceElement.textContent =
+            new Intl.NumberFormat(
+                "en-UG",
+                {
+                    style:"currency",
+                    currency:"UGX",
+                    maximumFractionDigits:0
+                }
+            ).format(amount);
+
+
+            statusElement.textContent =
+            "Price shown in Uganda Shillings.";
+
+        });
+
+
+        return;
+
+    }
+
+
+
+    /* =====================================
+    INTERNATIONAL CONVERSION
+    ===================================== */
+
+    try{
+
+        const rateResponse =
+        await fetch(
+            "https://open.er-api.com/v6/latest/UGX"
+        );
+
+
+        if(
+            !rateResponse.ok
+        ){
+
+            throw new Error(
+                "Exchange rate request failed"
+            );
+
+        }
+
+
+        const rateData =
+        await rateResponse.json();
+
+
+        if(
+            !rateData.rates ||
+            !rateData.rates[visitorCurrency]
+        ){
+
+            throw new Error(
+                "Visitor currency unavailable"
+            );
+
+        }
+
+
+        const exchangeRate =
+        rateData.rates[visitorCurrency];
+
+
+        priceBoxes.forEach(
+        function(box){
+
+            const ugxAmount =
+            Number(
+                box.dataset.ugxPrice
+            );
+
+
+            const convertedAmount =
+            ugxAmount * exchangeRate;
+
+
+            const priceElement =
+            box.querySelector(
+                ".local-price"
+            );
+
+
+            const statusElement =
+            box.querySelector(
+                ".currency-status"
+            );
+
+
+            try{
+
+                priceElement.textContent =
+                new Intl.NumberFormat(
+                    undefined,
+                    {
+                        style:"currency",
+                        currency:visitorCurrency,
+                        maximumFractionDigits:2
+                    }
+                ).format(
+                    convertedAmount
+                );
+
+            }
+
+            catch(error){
+
+                priceElement.textContent =
+                visitorCurrency +
+                " " +
+                convertedAmount.toFixed(2);
+
+            }
+
+
+            statusElement.textContent =
+            "Approximate price in " +
+            visitorCurrency +
+            ".";
+
+        });
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Currency conversion unavailable.",
+            error
+        );
+
+
+        priceBoxes.forEach(
+        function(box){
+
+            const statusElement =
+            box.querySelector(
+                ".currency-status"
+            );
+
+
+            statusElement.textContent =
+            "International conversion temporarily unavailable.";
+
+        });
+
+    }
 
 }
 
 
-});
+
+/* =========================================
+BUY FULL NOVEL
+========================================= */
+
+function startCheckout(book){
 
 
-});
+    if(
+        book === "silence-at-2pm"
+    ){
+
+        window.location.href =
+        "silence-at-2pm.html?buy=1";
+
+        return;
+
+    }
 
 
-});
+    if(
+        book === "streets-of-fate"
+    ){
 
+        window.location.href =
+        "streets-of-fate.html?buy=1";
 
-/* =====================
-BOOK PREVIEW
-===================== */
+        return;
 
-const bookModal =
-document.getElementById("bookModal");
-
-const modalTitle =
-document.getElementById("modalTitle");
-
-const modalDescription =
-document.getElementById("modalDescription");
-
-
-function openBook(title,description){
-
-modalTitle.textContent =
-title;
-
-modalDescription.textContent =
-description;
-
-bookModal.classList.add("active");
-
-document.body.style.overflow =
-"hidden";
+    }
 
 }
 
 
-function closeBook(){
 
-bookModal.classList.remove("active");
-
-document.body.style.overflow =
-"";
-
-}
-
-
-bookModal.addEventListener(
-"click",
-function(event){
-
-if(event.target === bookModal){
-
-closeBook();
-
-}
-
-});
-
-
-document.addEventListener(
-"keydown",
-function(event){
-
-if(event.key === "Escape"){
-
-closeBook();
-
-}
-
-});
-
-
-/* =====================
-YEAR
-===================== */
+/* =========================================
+COPYRIGHT YEAR
+========================================= */
 
 document.getElementById("year")
 .textContent =
 new Date().getFullYear();
 
+
+
+/* =========================================
+START CURRENCY SYSTEM
+========================================= */
+
+loadLocalCurrencyPrices();
 
 </script>
 
