@@ -2,31 +2,28 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>The Silence at 2PM | Kitsamba Writes Africa</title>
 
-<meta name="description"
-content="Read The Silence at 2PM by Kitsamba Joshua. Preview the opening chapters and unlock the complete African coming-of-age drama.">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<meta
+    name="description"
+    content="Read The Silence at 2PM by Kitsamba Joshua. Read three chapters free and purchase the complete novel."
+>
 
 <link
-href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
-rel="stylesheet">
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
@@ -63,13 +60,13 @@ a{
     text-decoration:none;
 }
 
-button{
-    font-family:inherit;
-}
-
 img{
     display:block;
     width:100%;
+}
+
+button{
+    font-family:inherit;
 }
 
 .container{
@@ -78,15 +75,15 @@ img{
 }
 
 
-/* ==============================
-NAVIGATION
-============================== */
+/* =========================
+   HEADER
+========================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(8,8,8,.92);
+    background:rgba(8,8,8,.94);
     backdrop-filter:blur(15px);
     border-bottom:1px solid #222;
 }
@@ -141,23 +138,23 @@ nav{
 }
 
 
-/* ==============================
-HERO
-============================== */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     padding:75px 0;
     background:
-    radial-gradient(
-        circle at 80% 20%,
-        rgba(216,172,86,.18),
-        transparent 30%
-    ),
-    linear-gradient(
-        135deg,
-        #080808,
-        #121212
-    );
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(216,172,86,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #080808,
+            #121212
+        );
 }
 
 .hero-grid{
@@ -227,6 +224,41 @@ HERO
     margin-right:5px;
 }
 
+.price-box{
+    margin-top:25px;
+    padding:17px 19px;
+    background:rgba(216,172,86,.08);
+    border:1px solid var(--border);
+    border-radius:15px;
+    max-width:460px;
+}
+
+.price-small{
+    color:#888;
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:800;
+}
+
+.local-price{
+    font-family:"Playfair Display",serif;
+    color:var(--gold-light);
+    font-size:2rem;
+    font-weight:800;
+}
+
+.official-price{
+    color:#999;
+    font-size:.78rem;
+}
+
+.paypal-price{
+    color:#ccc;
+    font-size:.78rem;
+    margin-top:4px;
+}
+
 .hero-actions{
     display:flex;
     flex-wrap:wrap;
@@ -258,43 +290,9 @@ HERO
 }
 
 
-/* ==============================
-PRICE
-============================== */
-
-.price-box{
-    margin-top:25px;
-    padding:17px 19px;
-    background:rgba(216,172,86,.08);
-    border:1px solid var(--border);
-    border-radius:15px;
-    max-width:440px;
-}
-
-.price-small{
-    color:#888;
-    font-size:.7rem;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-weight:800;
-}
-
-.local-price{
-    font-family:"Playfair Display",serif;
-    color:var(--gold-light);
-    font-size:2rem;
-    font-weight:800;
-}
-
-.official-price{
-    color:#888;
-    font-size:.75rem;
-}
-
-
-/* ==============================
-MAIN READER
-============================== */
+/* =========================
+   READER
+========================= */
 
 .reader-layout{
     display:grid;
@@ -350,9 +348,9 @@ MAIN READER
 }
 
 
-/* ==============================
-CHAPTER
-============================== */
+/* =========================
+   CHAPTERS
+========================= */
 
 .chapter{
     background:var(--cream);
@@ -406,18 +404,18 @@ CHAPTER
 }
 
 
-/* ==============================
-PREMIUM
-============================== */
+/* =========================
+   PREMIUM
+========================= */
 
 .premium{
     background:
-    radial-gradient(
-        circle at 50% 0%,
-        rgba(216,172,86,.15),
-        transparent 34%
-    ),
-    #111;
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(216,172,86,.15),
+            transparent 34%
+        ),
+        #111;
 
     border:1px solid var(--border);
     border-radius:25px;
@@ -452,7 +450,7 @@ PREMIUM
 }
 
 .purchase-price{
-    margin:28px auto 8px;
+    margin:28px auto 0;
     font-family:"Playfair Display",serif;
     font-size:2.5rem;
     color:var(--gold-light);
@@ -460,33 +458,106 @@ PREMIUM
 }
 
 .purchase-official{
-    color:#777;
+    color:#999;
     font-size:.78rem;
+    margin-bottom:5px;
 }
 
-.buy-main{
-    margin-top:25px;
+.checkout-price{
+    color:#ccc;
+    font-size:.82rem;
+    margin-bottom:24px;
+}
+
+
+/* PAYPAL */
+
+.paypal-area{
+    max-width:520px;
+    margin:25px auto 0;
+}
+
+.paypal-buy-button{
+    width:100%;
     border:none;
-    background:var(--gold);
-    color:#111;
-    padding:15px 27px;
     border-radius:50px;
+    min-height:54px;
+    padding:14px 28px;
+    background:#FFD140;
+    color:#111;
+    font-size:1rem;
     font-weight:800;
     cursor:pointer;
-    font-size:.95rem;
+    transition:.25s;
+}
+
+.paypal-buy-button:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.03);
+}
+
+.paypal-branding{
+    margin-top:10px;
+    color:#999;
+    font-size:.74rem;
+}
+
+.paypal-branding img{
+    width:auto;
+    height:16px;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:5px;
+}
+
+.cards-image{
+    width:auto;
+    max-width:180px;
+    margin:10px auto 0;
 }
 
 .payment-note{
+    max-width:680px;
+    margin:18px auto 0;
+    color:#999;
+    font-size:.8rem;
+}
+
+.after-payment{
+    margin:20px auto 0;
+    padding:18px;
+    border:1px solid #333;
+    border-radius:14px;
+    background:#151515;
     max-width:650px;
-    margin:16px auto 0;
-    color:#777;
-    font-size:.76rem;
+}
+
+.after-payment strong{
+    color:var(--gold-light);
+}
+
+.after-payment p{
+    color:#aaa;
+    font-size:.82rem;
+    margin:6px 0 12px;
+}
+
+.after-payment a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    padding:10px 16px;
+    border-radius:30px;
+    font-size:.8rem;
+    font-weight:800;
 }
 
 
-/* ==============================
-LOCKED CHAPTERS
-============================== */
+/* =========================
+   LOCKED CHAPTERS
+========================= */
 
 .locked-chapters{
     max-width:690px;
@@ -513,9 +584,9 @@ LOCKED CHAPTERS
 }
 
 
-/* ==============================
-FEEDBACK
-============================== */
+/* =========================
+   FEEDBACK & COMMENTS
+========================= */
 
 .feedback-section,
 .comments-section{
@@ -564,11 +635,6 @@ FEEDBACK
     border:1px solid #333;
 }
 
-
-/* ==============================
-COMMENTS
-============================== */
-
 .comments-box{
     margin-top:25px;
     background:#0c0c0c;
@@ -578,9 +644,9 @@ COMMENTS
 }
 
 
-/* ==============================
-FOOTER
-============================== */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     border-top:1px solid #222;
@@ -591,9 +657,9 @@ footer{
 }
 
 
-/* ==============================
-RESPONSIVE
-============================== */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:850px){
 
@@ -614,7 +680,6 @@ RESPONSIVE
         top:auto;
         max-height:none;
     }
-
 }
 
 @media(max-width:580px){
@@ -634,20 +699,16 @@ RESPONSIVE
     .chapter-nav{
         flex-direction:column;
     }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ==============================
-HEADER
-============================== -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -655,40 +716,25 @@ HEADER
 
 <nav>
 
-<a
-href="index.html"
-class="brand">
+<a href="index.html" class="brand">
 
 <span class="brand-icon">
-
 <i class="fa-solid fa-feather-pointed"></i>
-
 </span>
 
-<strong>
-Kitsamba Writes Africa
-</strong>
+<strong>Kitsamba Writes Africa</strong>
 
 </a>
-
 
 <div class="nav-actions">
 
-<a
-href="novels.html"
-class="nav-btn library-btn">
-
+<a href="novels.html" class="nav-btn library-btn">
 ← Library
-
 </a>
 
-<a
-href="#premium"
-class="nav-btn unlock-btn">
-
+<a href="#premium" class="nav-btn unlock-btn">
 <i class="fa-solid fa-lock-open"></i>
-Unlock Novel
-
+Buy Novel
 </a>
 
 </div>
@@ -700,24 +746,22 @@ Unlock Novel
 </header>
 
 
-
-<!-- ==============================
-HERO
-============================== -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
 <div class="container hero-grid">
 
-
 <div class="cover">
 
 <img
-src="images/The Silence At 2PM.png"
-alt="The Silence at 2PM book cover">
+    src="images/The Silence At 2PM.png"
+    alt="The Silence at 2PM book cover"
+>
 
 </div>
-
 
 <div>
 
@@ -725,23 +769,17 @@ alt="The Silence at 2PM book cover">
 Kitsamba Writes Africa Original
 </div>
 
-<h1>
-The Silence at 2PM
-</h1>
+<h1>The Silence at 2PM</h1>
 
 <div class="author">
 By Kitsamba Joshua
 </div>
 
 <p class="hero-description">
-
-Born at exactly 2PM, Elijah grows through
-family, school, grief, love and the memory
-of a father whose loss changes the direction
-of his life forever.
-
+Born at exactly 2PM, Elijah grows through family,
+school, grief, love and the memory of a father whose
+loss changes the direction of his life forever.
 </p>
-
 
 <div class="meta">
 
@@ -767,10 +805,7 @@ African Fiction
 
 </div>
 
-
-<div
-class="price-box"
-data-ugx-price="18000">
+<div class="price-box" data-ugx-price="18000">
 
 <div class="price-small">
 Full Novel
@@ -784,25 +819,24 @@ UGX 18,000
 Official Uganda price: UGX 18,000
 </div>
 
+<div class="paypal-price">
+PayPal checkout: $4.85 USD
 </div>
 
+</div>
 
 <div class="hero-actions">
 
-<a
-href="#chapter-1"
-class="action-btn gold-btn">
+<a href="#chapter-1" class="action-btn gold-btn">
 
 <i class="fa-solid fa-book-open"></i>
 Start Reading Free
 
 </a>
 
-<a
-href="#premium"
-class="action-btn outline-btn">
+<a href="#premium" class="action-btn outline-btn">
 
-<i class="fa-solid fa-lock"></i>
+<i class="fa-brands fa-paypal"></i>
 Buy Full Novel
 
 </a>
@@ -811,16 +845,14 @@ Buy Full Novel
 
 </div>
 
-
 </div>
 
 </section>
 
 
-
-<!-- ==============================
-READER
-============================== -->
+<!-- =========================
+     READER
+========================= -->
 
 <main class="container reader-layout">
 
@@ -829,384 +861,266 @@ READER
 
 <aside class="toc">
 
-<h3>
-Chapters
-</h3>
-
+<h3>Chapters</h3>
 
 <a href="#chapter-1">
-
 <i class="fa-regular fa-circle-check"></i>
-
-<span>
-Chapter 1: The Birth of Elijah
-</span>
-
+<span>Chapter 1: The Birth of Elijah</span>
 </a>
-
 
 <a href="#chapter-2">
-
 <i class="fa-regular fa-circle-check"></i>
-
-<span>
-Chapter 2: Early Lessons
-</span>
-
+<span>Chapter 2: Early Lessons</span>
 </a>
-
 
 <a href="#chapter-3">
-
 <i class="fa-regular fa-circle-check"></i>
-
-<span>
-Chapter 3: The Silence at 2PM
-</span>
-
+<span>Chapter 3: The Silence at 2PM</span>
 </a>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 4: A Life Interrupted
-</span>
-
+<span>Chapter 4: A Life Interrupted</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 5: Rise and Shine
-</span>
-
+<span>Chapter 5: Rise and Shine</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 6: High School Beginnings
-</span>
-
+<span>Chapter 6: High School Beginnings</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 7: The First Crush
-</span>
-
+<span>Chapter 7: The First Crush</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 8: Building Trust
-</span>
-
+<span>Chapter 8: Building Trust</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 9: Love and Loyalty
-</span>
-
+<span>Chapter 9: Love and Loyalty</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 10: Distance and Doubt
-</span>
-
+<span>Chapter 10: Distance and Doubt</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 11: Promises in the Rain
-</span>
-
+<span>Chapter 11: Promises in the Rain</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 12: Adapting to Nabumali
-</span>
-
+<span>Chapter 12: Adapting to Nabumali</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 13: Testing Bonds
-</span>
-
+<span>Chapter 13: Testing Bonds</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 14: Trials and Temptations
-</span>
-
+<span>Chapter 14: Trials and Temptations</span>
 </div>
 
-
 <div class="locked">
-
 <i class="fa-solid fa-lock"></i>
-
-<span>
-Chapter 15: The Silence at 2 P.M.
-</span>
-
+<span>Chapter 15: The Silence at 2 P.M.</span>
 </div>
 
 </aside>
 
 
-
 <section>
 
 
-<!-- ==============================
-CHAPTER 1
-============================== -->
+<!-- =========================
+     CHAPTER 1
+========================= -->
 
-<article
-class="chapter"
-id="chapter-1">
+<article class="chapter" id="chapter-1">
 
 <div class="chapter-label">
 Free Chapter 1 of 3
 </div>
 
-<h2>
-Chapter 1: The Birth of Elijah
-</h2>
-
+<h2>Chapter 1: The Birth of Elijah</h2>
 
 <div class="chapter-text">
 
 <p>
-In the rolling hills of Manafwa District,
-the afternoon of April 27th, 2008, was quiet,
-almost reverent. The village stirred slowly to
-life as the sun peeked over the distant mountains,
-casting long shadows across the fields where men
-tilled the soil and women carried water in brightly
-colored jerrycans. Birds flitted between the banana
-trees, and the faint hum of drums from a nearby
-ceremony mixed with the gentle murmur of the river.
+In the rolling hills of Manafwa District, the afternoon of
+April 27th, 2008, was quiet, almost reverent. The village
+stirred slowly to life as the sun peeked over the distant
+mountains, casting long shadows across the fields where men
+tilled the soil and women carried water in brightly colored
+jerrycans. Birds flitted between the banana trees, and the
+faint hum of drums from a nearby ceremony mixed with the
+gentle murmur of the river.
 </p>
 
 <p>
-Inside a standard permanent house with a corrugated
-iron roof, Patricia moved carefully across the room,
-her hands steady despite the fatigue etched into her
-face. Her husband, Kitsamba, sat nearby, holding her
-hand, his eyes full of worry and anticipation. It was
-the day their youngest child would be born, and the
-air was thick with expectation.
+Inside a standard permanent house with a corrugated iron roof,
+Patricia moved carefully across the room, her hands steady
+despite the fatigue etched into her face. Her husband,
+Kitsamba, sat nearby, holding her hand, his eyes full of worry
+and anticipation. It was the day their youngest child would
+be born, and the air was thick with expectation.
 </p>
 
 <p>
-“Patricia,” Kitsamba whispered softly, his voice
-trembling just slightly, “he will be strong, I can
-feel it. He will make us proud.”
+“Patricia,” Kitsamba whispered softly, his voice trembling
+just slightly, “he will be strong, I can feel it. He will make
+us proud.”
 </p>
 
 <p>
-Patricia smiled faintly, exhaustion and hope battling
-for dominance on her face. “He will,” she said,
-though her voice carried the weight of what labor
-had already cost her.
+Patricia smiled faintly, exhaustion and hope battling for
+dominance on her face. “He will,” she said, though her voice
+carried the weight of what labor had already cost her.
 </p>
 
 <p>
-The midwife, a small woman named Nakasolo, moved
-quickly and silently, her practiced hands ready for
-the moment. Outside, the children played quietly,
-sensing that something important was happening
-inside their home.
+The midwife, a small woman named Nakasolo, moved quickly and
+silently, her practiced hands ready for the moment. Outside,
+the children played quietly, sensing that something important
+was happening inside their home.
 </p>
 
 <p>
-At exactly 2PM, the cries of a newborn cut through
-the warm afternoon air. Elijah had entered the world.
-The sound of his first breath seemed to silence the
-village, as if even the trees had paused to listen.
-Kitsamba’s eyes filled with tears, and Patricia,
-weak but smiling, felt an overwhelming surge of
+At exactly 2PM, the cries of a newborn cut through the warm
+afternoon air. Elijah had entered the world. The sound of his
+first breath seemed to silence the village, as if even the
+trees had paused to listen. Kitsamba’s eyes filled with tears,
+and Patricia, weak but smiling, felt an overwhelming surge of
 love and relief.
 </p>
 
 <p>
-“He is beautiful,” Kitsamba whispered, holding
-the small bundle close. “Strong and full of life.”
+“He is beautiful,” Kitsamba whispered, holding the small
+bundle close. “Strong and full of life.”
 </p>
 
 <p>
-The midwife nodded. “He is healthy, and he is
-blessed. May he grow to bring honor and happiness
-to this family.”
+The midwife nodded. “He is healthy, and he is blessed. May
+he grow to bring honor and happiness to this family.”
 </p>
 
 <p>
-From that moment, Elijah became a cherished part
-of the household. Kitsamba would often carry him
-through the compound, telling him stories of their
-ancestors, of the hills and rivers, and of the values
-that would shape the boy into a man.
+From that moment, Elijah became a cherished part of the
+household. Kitsamba would often carry him through the compound,
+telling him stories of their ancestors, of the hills and
+rivers, and of the values that would shape the boy into a man.
 </p>
 
 <p>
-Days and weeks passed. Elijah grew in the warm
-embrace of his family. The village provided a
-simple yet rich childhood — days spent running
-through banana groves, helping carry water,
-listening to elders’ stories under the shade of
-ancient trees, and learning the rhythms of life
-that had guided generations before him.
+Days and weeks passed. Elijah grew in the warm embrace of his
+family. The village provided a simple yet rich childhood —
+days spent running through banana groves, helping carry water,
+listening to elders’ stories under the shade of ancient trees,
+and learning the rhythms of life that had guided generations
+before him.
 </p>
 
 <p>
-Kitsamba, a man of patience and humor, would
-often sit with his children and speak softly about
-the world. He loved his children deeply and was
-willing to do anything for his family.
+Kitsamba, a man of patience and humor, would often sit with
+his children and speak softly about the world. He loved his
+children deeply and was willing to do anything for his family.
 </p>
 
 <p>
-“One day,” he said, “you will have to make choices
-that are difficult, Elijah. But remember, always
-choose what is right, even if it is not easy.
-Your heart will guide you.”
+“One day,” he said, “you will have to make choices that are
+difficult, Elijah. But remember, always choose what is right,
+even if it is not easy. Your heart will guide you.”
 </p>
 
 <p>
-Elijah, too young to fully understand, listened
-with wide eyes. Yet even at that age, he sensed
-the importance of his father’s words, though they
-would only reveal their depth years later.
+Elijah, too young to fully understand, listened with wide
+eyes. Yet even at that age, he sensed the importance of his
+father’s words, though they would only reveal their depth
+years later.
 </p>
 
 <p>
-Patricia, wise and practical, balanced Kitsamba’s
-softness with discipline. She taught the children
-the importance of respect, faith and hard work.
-“A strong family,” she would say, “is not built
-only with love, but with patience, honesty
+Patricia, wise and practical, balanced Kitsamba’s softness
+with discipline. She taught the children the importance of
+respect, faith and hard work. “A strong family,” she would
+say, “is not built only with love, but with patience, honesty
 and courage.”
 </p>
 
 <p>
-Years passed in a rhythm of simple joys and small
-achievements. Elijah learned to run through the
-village paths, climb trees and catch fish from the
-river. His days were filled with laughter, minor
-scuffles and the warmth of family.
+Years passed in a rhythm of simple joys and small achievements.
+Elijah learned to run through the village paths, climb trees
+and catch fish from the river. His days were filled with
+laughter, minor scuffles and the warmth of family.
 </p>
 
 <p>
-Yet life in Manafwa was not always easy. Land
-disputes among relatives sometimes created tension,
-and Kitsamba, ever the protector, carried the weight
-of these concerns quietly.
+Yet life in Manafwa was not always easy. Land disputes among
+relatives sometimes created tension, and Kitsamba, ever the
+protector, carried the weight of these concerns quietly.
 </p>
 
 <p>
-As Elijah approached the age for schooling, his
-parents made a decision that would shape his future.
-Village schools were not performing as well as
-Kitsamba hoped, and he wanted more than basic
-education for his children.
+As Elijah approached the age for schooling, his parents made
+a decision that would shape his future. Village schools were
+not performing as well as Kitsamba hoped, and he wanted more
+than basic education for his children.
 </p>
 
 <p>
-After long discussions, they decided to send Elijah
-and his siblings to Kampala for better schooling,
-believing that the city would provide opportunities
-for him to thrive.
+After long discussions, they decided to send Elijah and his
+siblings to Kampala for better schooling, believing that the
+city would provide opportunities for him to thrive.
 </p>
 
 <p>
-The move was both exciting and frightening.
-Elijah stepped into a world far larger than the
-familiar hills of Manafwa. The sights, sounds
-and smells of the city were overwhelming,
+The move was both exciting and frightening. Elijah stepped
+into a world far larger than the familiar hills of Manafwa.
+The sights, sounds and smells of the city were overwhelming,
 yet full of possibility.
 </p>
 
 <p>
-“Remember, Elijah,” Kitsamba said, “no matter how
-far you go, or how different the world seems,
-you carry our home inside you. Be strong,
-be honest and always protect your heart.”
+“Remember, Elijah,” Kitsamba said, “no matter how far you go,
+or how different the world seems, you carry our home inside
+you. Be strong, be honest and always protect your heart.”
 </p>
 
 <p>
-In Kampala, Elijah adapted slowly. Kireka Hill
-Infant School became the first place where he
-learned the formal lessons that would build his
-mind alongside the values his parents had instilled.
-Discipline, faith and kindness were emphasized
+In Kampala, Elijah adapted slowly. Kireka Hill Infant School
+became the first place where he learned the formal lessons
+that would build his mind alongside the values his parents
+had instilled. Discipline, faith and kindness were emphasized
 daily.
 </p>
 
 <p>
-Even as he adjusted, Elijah never forgot Manafwa —
-the hills, the river, the scent of the soil after
-rain, and the sound of his father’s voice.
-And he never forgot the precise moment of his
-birth: 2PM.
+Even as he adjusted, Elijah never forgot Manafwa — the hills,
+the river, the scent of the soil after rain, and the sound of
+his father’s voice. And he never forgot the precise moment of
+his birth: 2PM.
 </p>
 
 <p>
-For now, life was filled with learning, friendship
-and the gentle warmth of family love. But fate,
-as it often does, was quietly preparing a moment
-of silence that would echo through Elijah’s life.
+For now, life was filled with learning, friendship and the
+gentle warmth of family love. But fate, as it often does, was
+quietly preparing a moment of silence that would echo through
+Elijah’s life.
 </p>
 
 </div>
-
 
 <div class="chapter-nav">
 
@@ -1221,303 +1135,269 @@ Next Chapter →
 </article>
 
 
+<!-- =========================
+     CHAPTER 2
+========================= -->
 
-<!-- ==============================
-CHAPTER 2
-============================== -->
-
-<article
-class="chapter"
-id="chapter-2">
+<article class="chapter" id="chapter-2">
 
 <div class="chapter-label">
 Free Chapter 2 of 3
 </div>
 
-<h2>
-Chapter 2: Early Lessons
-</h2>
-
+<h2>Chapter 2: Early Lessons</h2>
 
 <div class="chapter-text">
 
 <p>
-The first morning at Kireka Hill Infant School
-was bright and full of possibilities. The streets
-of Kampala were already bustling with people
-heading to work, bicycles weaving through the
-crowds, and the distant honking of matatus
-filled the air.
+The first morning at Kireka Hill Infant School was bright and
+full of possibilities. The streets of Kampala were already
+bustling with people heading to work, bicycles weaving through
+the crowds, and the distant honking of matatus filled the air.
 </p>
 
 <p>
-Elijah clutched his small backpack tightly,
-feeling both excitement and fear.
+Elijah clutched his small backpack tightly, feeling both
+excitement and fear.
 </p>
 
 <p>
-His mother, Patricia, walked beside him,
-holding his hand firmly.
+His mother, Patricia, walked beside him, holding his hand
+firmly.
 </p>
 
 <p>
-“Remember, Elijah,” she said softly,
-“you are here to learn, to be disciplined,
-and to make your father proud. Listen carefully,
-obey the teachers and treat everyone with respect.”
+“Remember, Elijah,” she said softly, “you are here to learn,
+to be disciplined, and to make your father proud. Listen
+carefully, obey the teachers and treat everyone with respect.”
 </p>
 
 <p>
-Elijah nodded. He tried to smile, though his
-heart beat fast. The city felt so different from
-Manafwa — the smells, the noise, the movement
-of people. It was alive in a way that the quiet
-village never was.
+Elijah nodded. He tried to smile, though his heart beat fast.
+The city felt so different from Manafwa — the smells, the
+noise, the movement of people. It was alive in a way that the
+quiet village never was.
 </p>
 
 <p>
-The school was small but well kept. The gates
-were painted bright green, the classrooms orderly,
-and the playground filled with children laughing,
-running and playing games of chase and football.
+The school was small but well kept. The gates were painted
+bright green, the classrooms orderly, and the playground
+filled with children laughing, running and playing games of
+chase and football.
 </p>
 
 <p>
-Inside the classroom, Elijah found a seat beside
-a boy named Ezra — a cheerful boy who had already
-made friends quickly.
+Inside the classroom, Elijah found a seat beside a boy named
+Ezra — a cheerful boy who had already made friends quickly.
 </p>
 
 <p>
-Ezra greeted him with a wide smile.
-“Hey! Are you new here? I haven’t seen you before!”
+Ezra greeted him with a wide smile. “Hey! Are you new here?
+I haven’t seen you before!”
 </p>
 
 <p>
-“Yes,” Elijah replied shyly.
-“I just came from... far away.”
+“Yes,” Elijah replied shyly. “I just came from... far away.”
 </p>
 
 <p>
-Ezra nodded. “It’s okay. You’ll get used to it.
-I’ll show you around.”
+Ezra nodded. “It’s okay. You’ll get used to it. I’ll show
+you around.”
 </p>
 
 <p>
-The first weeks were challenging. Elijah struggled
-to keep up with lessons, and the teachers’ voices
-sounded stern compared with the gentle guidance
-of his mother and father.
+The first weeks were challenging. Elijah struggled to keep up
+with lessons, and the teachers’ voices sounded stern compared
+with the gentle guidance of his mother and father.
 </p>
 
 <p>
-But slowly, he began learning the rhythms of the
-school — when to stand, when to recite prayers,
-and how to answer questions correctly.
+But slowly, he began learning the rhythms of the school —
+when to stand, when to recite prayers, and how to answer
+questions correctly.
 </p>
 
 <p>
-Kireka Hill was a religious school, and every
-morning began with prayers. The chapel echoed
-with the voices of children singing hymns Elijah
-had once heard only at home.
+Kireka Hill was a religious school, and every morning began
+with prayers. The chapel echoed with the voices of children
+singing hymns Elijah had once heard only at home.
 </p>
 
 <p>
-The discipline of the school was strict but fair.
-For every misbehavior, there was correction,
-and for every good deed, encouragement.
+The discipline of the school was strict but fair. For every
+misbehavior, there was correction, and for every good deed,
+encouragement.
 </p>
 
 <p>
-It was here that Elijah learned the value of focus
-and attention.
+It was here that Elijah learned the value of focus and
+attention.
 </p>
 
 <p>
-His teacher, Miss Nabirye, noticed his quiet
-demeanor and patience.
+His teacher, Miss Nabirye, noticed his quiet demeanor and
+patience.
 </p>
 
 <p>
-“Elijah,” she said one day, “you are calm and
-thoughtful. Those are good qualities. Always
-remember, listening is sometimes more important
-than speaking.”
+“Elijah,” she said one day, “you are calm and thoughtful.
+Those are good qualities. Always remember, listening is
+sometimes more important than speaking.”
 </p>
 
 <p>
-Elijah smiled, feeling proud. For the first time,
-he realized that even in a new place, he could
-find his strength.
+Elijah smiled, feeling proud. For the first time, he realized
+that even in a new place, he could find his strength.
 </p>
 
 <p>
-Outside lessons, the playground became Elijah’s
-sanctuary. He watched as older children played
-football, raced through the dusty field, and
-shouted in excitement.
+Outside lessons, the playground became Elijah’s sanctuary.
+He watched as older children played football, raced through
+the dusty field, and shouted in excitement.
 </p>
 
 <p>
-Slowly, he began joining in, laughing when he
-fell and celebrating small victories when he won
-a chase. He discovered the joy of friendship,
-even if he was still reserved.
+Slowly, he began joining in, laughing when he fell and
+celebrating small victories when he won a chase. He discovered
+the joy of friendship, even if he was still reserved.
 </p>
 
 <p>
-One of the lessons he carried from home was faith.
-Each day before meals, he would quietly pray,
-asking God for strength and courage. Those prayers
-became a private comfort that kept him grounded.
+One of the lessons he carried from home was faith. Each day
+before meals, he would quietly pray, asking God for strength
+and courage. Those prayers became a private comfort that kept
+him grounded.
 </p>
 
 <p>
-At school, Elijah met a girl named Julie.
-She was quiet, gentle and always seemed to be
-helping others.
+At school, Elijah met a girl named Julie. She was quiet,
+gentle and always seemed to be helping others.
 </p>
 
 <p>
-Julie became a friend, someone he could talk to
-about small things — sharing pencils, reading
-lessons together and discussing what they wanted
-to become when they grew up.
+Julie became a friend, someone he could talk to about small
+things — sharing pencils, reading lessons together and
+discussing what they wanted to become when they grew up.
 </p>
 
 <p>
-As the months passed, Elijah began excelling.
-He surprised everyone, including himself, by
-scoring high marks in reading, writing and
-Mathematics.
+As the months passed, Elijah began excelling. He surprised
+everyone, including himself, by scoring high marks in reading,
+writing and Mathematics.
 </p>
 
 <p>
-His diligence earned him recognition from teachers
-and admiration from classmates.
+His diligence earned him recognition from teachers and
+admiration from classmates.
 </p>
 
 <p>
-But life was not only about school. Back in
-Manafwa, his father Kitsamba continued to watch
-over him from afar, writing letters filled with
-advice, encouragement and stories from the village.
+But life was not only about school. Back in Manafwa, his
+father Kitsamba continued to watch over him from afar, writing
+letters filled with advice, encouragement and stories from
+the village.
 </p>
 
 <p>
-Each letter arrived with a sense of warmth,
-reminding Elijah of the love waiting for him
-at home.
+Each letter arrived with a sense of warmth, reminding Elijah
+of the love waiting for him at home.
 </p>
 
 <p>
-One afternoon during break time, Elijah and Ezra
-sat under a mango tree eating lunch.
+One afternoon during break time, Elijah and Ezra sat under a
+mango tree eating lunch.
 </p>
 
 <p>
-Ezra leaned over, eyes wide with excitement.
-“Hey, Elijah, do you want to play football with us?”
+Ezra leaned over, eyes wide with excitement. “Hey, Elijah,
+do you want to play football with us?”
 </p>
 
 <p>
-Elijah hesitated. His small frame and village
-upbringing made him feel unsure. But he nodded.
-“Okay, let’s try.”
+Elijah hesitated. His small frame and village upbringing made
+him feel unsure. But he nodded. “Okay, let’s try.”
 </p>
 
 <p>
-The game was chaotic and exhilarating.
-Elijah ran as fast as he could, dodging bigger boys,
-laughing when he fell and cheering when he scored.
-For the first time, he felt completely at ease —
-part of something larger than himself.
+The game was chaotic and exhilarating. Elijah ran as fast as
+he could, dodging bigger boys, laughing when he fell and
+cheering when he scored. For the first time, he felt
+completely at ease — part of something larger than himself.
 </p>
 
 <p>
-It was during these moments that Elijah began
-to understand the balance of life. Discipline,
-faith and learning were crucial, but so were
-friendship, play and laughter.
+It was during these moments that Elijah began to understand
+the balance of life. Discipline, faith and learning were
+crucial, but so were friendship, play and laughter.
 </p>
 
 <p>
-Each day brought a lesson, some academic,
-some social, all shaping him into the boy who
-would one day face challenges far greater than
-a schoolyard game.
+Each day brought a lesson, some academic, some social, all
+shaping him into the boy who would one day face challenges
+far greater than a schoolyard game.
 </p>
 
 <p>
-As weeks turned into months, Elijah became known
-among teachers and students as the calm,
-thoughtful boy who listened more than he spoke,
-worked diligently and treated others with respect.
+As weeks turned into months, Elijah became known among
+teachers and students as the calm, thoughtful boy who listened
+more than he spoke, worked diligently and treated others with
+respect.
 </p>
 
 <p>
-Yet beneath the surface, a spark of curiosity
-and ambition was growing.
+Yet beneath the surface, a spark of curiosity and ambition
+was growing.
 </p>
 
 <p>
-He began to dream of the future — of becoming
-someone important, of helping others, and of
-carrying the lessons from both his village and
-school into the wider world.
+He began to dream of the future — of becoming someone
+important, of helping others, and of carrying the lessons
+from both his village and school into the wider world.
 </p>
 
 <p>
-One evening, as the sun dipped behind the tall
-buildings of Kampala, Elijah sat on the small
-veranda of his boarding room writing a letter
-home to his father.
+One evening, as the sun dipped behind the tall buildings of
+Kampala, Elijah sat on the small veranda of his boarding room
+writing a letter home to his father.
 </p>
 
 <p>
-“Dear Father,” he began, “school is difficult,
-but I am learning every day. The teachers are kind,
-and the other children are friendly. I think I am
-doing well, and I hope to make you proud.
-I miss you and Mother. I pray every day for your
-guidance and protection. I promise to be a good
-boy and to work hard.”
+“Dear Father,” he began, “school is difficult, but I am
+learning every day. The teachers are kind, and the other
+children are friendly. I think I am doing well, and I hope
+to make you proud. I miss you and Mother. I pray every day
+for your guidance and protection. I promise to be a good boy
+and to work hard.”
 </p>
 
 <p>
-As he sealed the letter, Elijah felt warmth in his
-heart. He was far from Manafwa, far from the hills
-and rivers he had known since birth, but he was
-beginning to understand that strength came not
-only from where you were, but from what you
+As he sealed the letter, Elijah felt warmth in his heart.
+He was far from Manafwa, far from the hills and rivers he had
+known since birth, but he was beginning to understand that
+strength came not only from where you were, but from what you
 carried inside you.
 </p>
 
 <p>
-The lessons of Kireka Hill Infant School were
-planting the seeds of resilience, courage and hope.
+The lessons of Kireka Hill Infant School were planting the
+seeds of resilience, courage and hope.
 </p>
 
 <p>
-And as Elijah closed his eyes that night,
-he felt a quiet confidence — the understanding
-that no matter what challenges lay ahead,
-he would meet them with the same patience,
-faith and determination that had been nurtured
-in him from the day he was born.
+And as Elijah closed his eyes that night, he felt a quiet
+confidence — the understanding that no matter what challenges
+lay ahead, he would meet them with the same patience, faith
+and determination that had been nurtured in him from the day
+he was born.
 </p>
 
 <p>
-And somewhere in the quiet of the night,
-the village of Manafwa seemed to whisper
-through the wind:
-“He is growing, our boy. He will be strong.
-He will be wise.”
+And somewhere in the quiet of the night, the village of
+Manafwa seemed to whisper through the wind: “He is growing,
+our boy. He will be strong. He will be wise.”
 </p>
 
 </div>
-
 
 <div class="chapter-nav">
 
@@ -1534,175 +1414,158 @@ Next Chapter →
 </article>
 
 
+<!-- =========================
+     CHAPTER 3
+========================= -->
 
-<!-- ==============================
-CHAPTER 3
-============================== -->
-
-<article
-class="chapter"
-id="chapter-3">
+<article class="chapter" id="chapter-3">
 
 <div class="chapter-label">
 Free Chapter 3 of 3
 </div>
 
-<h2>
-Chapter 3: The Silence at 2PM
-</h2>
-
+<h2>Chapter 3: The Silence at 2PM</h2>
 
 <div class="chapter-text">
 
 <p>
-Elijah had grown used to life in Kampala.
-The rhythm of school, the laughter of classmates,
-and the quiet moments in prayer had become
-part of his days.
+Elijah had grown used to life in Kampala. The rhythm of school,
+the laughter of classmates, and the quiet moments in prayer
+had become part of his days.
 </p>
 
 <p>
-Yet despite the comfort of routine, a part of him
-always yearned for Manafwa — the hills, the rivers,
-the smell of wet soil after rain, and most of all,
-the presence of his father, Kitsamba.
+Yet despite the comfort of routine, a part of him always
+yearned for Manafwa — the hills, the rivers, the smell of wet
+soil after rain, and most of all, the presence of his father,
+Kitsamba.
 </p>
 
 <p>
-It was on his eleventh birthday, April 27th, 2019,
-that the world he knew would shift forever.
+It was on his eleventh birthday, April 27th, 2019, that the
+world he knew would shift forever.
 </p>
 
 <p>
-The day began like any other. Elijah woke up in
-the boarding school dormitory, greeted by his
-friends with smiles and small gifts of pencils
-and erasers.
+The day began like any other. Elijah woke up in the boarding
+school dormitory, greeted by his friends with smiles and small
+gifts of pencils and erasers.
 </p>
 
 <p>
-Laughter echoed through the halls as they
-celebrated, but Elijah’s mind drifted —
-thinking of his father, thinking of home.
+Laughter echoed through the halls as they celebrated, but
+Elijah’s mind drifted — thinking of his father, thinking of
+home.
 </p>
 
 <p>
-“Are you coming to the breakfast table, Elijah?”
-asked Ezra, nudging him gently.
+“Are you coming to the breakfast table, Elijah?” asked Ezra,
+nudging him gently.
 </p>
 
 <p>
-“I... I’ll be there in a moment,” Elijah replied,
-still lost in thought.
+“I... I’ll be there in a moment,” Elijah replied, still lost
+in thought.
 </p>
 
 <p>
-His father’s words from years ago came to him:
-“No matter how far you go, carry our home
-inside you.”
+His father’s words from years ago came to him: “No matter how
+far you go, carry our home inside you.”
 </p>
 
 <p>
-He smiled faintly, unaware that he was about to
-experience a silence far heavier than any he had
-ever known.
+He smiled faintly, unaware that he was about to experience a
+silence far heavier than any he had ever known.
 </p>
 
 <p>
-Back in Manafwa, life carried on with a deceptive
-calm. Kitsamba, always the strong figure in the
-family, had been quietly troubled for months.
+Back in Manafwa, life carried on with a deceptive calm.
+Kitsamba, always the strong figure in the family, had been
+quietly troubled for months.
 </p>
 
 <p>
-Land disputes with relatives had grown tense.
-Arguments, misunderstandings and threats had
-taken a toll on him.
+Land disputes with relatives had grown tense. Arguments,
+misunderstandings and threats had taken a toll on him.
 </p>
 
 <p>
-Kitsamba, who had always been calm and protective,
-now spent nights pacing, his heart heavy with worry
-for his family’s future.
+Kitsamba, who had always been calm and protective, now spent
+nights pacing, his heart heavy with worry for his family’s
+future.
 </p>
 
 <p>
-Patricia noticed the change, the way he grew
-quieter and more withdrawn.
+Patricia noticed the change, the way he grew quieter and more
+withdrawn.
 </p>
 
 <p>
-“Kitsamba,” she said one evening, “you worry
-too much. Leave some for God to handle.”
+“Kitsamba,” she said one evening, “you worry too much. Leave
+some for God to handle.”
 </p>
 
 <p>
-He nodded, but his eyes betrayed his thoughts.
-“Patricia, some things... they cannot wait.
-I must protect our children. I must ensure
-they have a future.”
+He nodded, but his eyes betrayed his thoughts. “Patricia,
+some things... they cannot wait. I must protect our children.
+I must ensure they have a future.”
 </p>
 
 <p>
-That day, April 27th, 2019, began like any other.
-The sun rose gently over the hills, birds sang,
-and children played in the compound.
+That day, April 27th, 2019, began like any other. The sun rose
+gently over the hills, birds sang, and children played in the
+compound.
 </p>
 
 <p>
-But the air felt different — heavy, tense.
-Kitsamba had a meeting with a family member,
-a meeting that would end tragically.
+But the air felt different — heavy, tense. Kitsamba had a
+meeting with a family member, a meeting that would end
+tragically.
 </p>
 
 <p>
-At exactly 2PM, the same hour that had marked
-Elijah’s birth eleven years earlier, the world
-in Manafwa went silent.
+At exactly 2PM, the same hour that had marked Elijah’s birth
+eleven years earlier, the world in Manafwa went silent.
 </p>
 
 <p>
-Kitsamba, overwhelmed by stress, fear and
-heartbreak, suddenly collapsed.
+Kitsamba, overwhelmed by stress, fear and heartbreak, suddenly
+collapsed.
 </p>
 
 <p>
-Patricia rushed to his side, but it was too late.
-The strong man who had guided Elijah, laughed
-with him and loved his family unconditionally
-had passed away.
+Patricia rushed to his side, but it was too late. The strong
+man who had guided Elijah, laughed with him and loved his
+family unconditionally had passed away.
 </p>
 
 <p>
-Far away in Kampala, Elijah sat in the classroom,
-preparing for his birthday celebrations with
-classmates.
+Far away in Kampala, Elijah sat in the classroom, preparing
+for his birthday celebrations with classmates.
 </p>
 
 <p>
-The laughter, jokes and small gifts filled the
-room with joy, but no one could imagine the storm
-that had struck his home at that very moment.
+The laughter, jokes and small gifts filled the room with joy,
+but no one could imagine the storm that had struck his home
+at that very moment.
 </p>
 
 <p>
-It was not until several days later that Elijah
-received the news.
+It was not until several days later that Elijah received the
+news.
 </p>
 
 <p>
-A letter, carefully delivered by a family friend,
-reached him quietly, almost hesitantly.
-He opened it with curiosity, then froze as he
-read the words.
+A letter, carefully delivered by a family friend, reached him
+quietly, almost hesitantly. He opened it with curiosity, then
+froze as he read the words.
 </p>
 
 <p>
-“My dear Elijah, I am sorry to bring you this
-news in a letter. Your father, Kitsamba, passed
-away on your birthday at exactly 2PM.
-Come home as soon as you can.
-We love you. — Mother.”
+“My dear Elijah, I am sorry to bring you this news in a
+letter. Your father, Kitsamba, passed away on your birthday
+at exactly 2PM. Come home as soon as you can. We love you.
+— Mother.”
 </p>
 
 <p>
@@ -1710,74 +1573,67 @@ Elijah’s world tilted.
 </p>
 
 <p>
-The room, the school, even the sun outside,
-seemed to vanish. He could not breathe.
-His friends crowded around him, asking what
-had happened, but he could not speak.
+The room, the school, even the sun outside, seemed to vanish.
+He could not breathe. His friends crowded around him, asking
+what had happened, but he could not speak.
 </p>
 
 <p>
-The letter trembled in his hands as he stared
-blankly at the floor.
+The letter trembled in his hands as he stared blankly at the
+floor.
 </p>
 
 <p>
-He remembered his father holding him,
-whispering to him and teaching him about life.
-That warmth, the love, the guidance —
-all suddenly gone.
+He remembered his father holding him, whispering to him and
+teaching him about life. That warmth, the love, the guidance
+— all suddenly gone.
 </p>
 
 <p>
-The boy who had once been calm, who had always
-carried himself with careful thought, now felt
-a storm raging inside.
+The boy who had once been calm, who had always carried
+himself with careful thought, now felt a storm raging inside.
 </p>
 
 <p>
-Traveling home was a blur. The bus ride seemed
-endless. The roads, towns and trees were familiar
-yet distant, like a dream slipping through his
-fingers.
+Traveling home was a blur. The bus ride seemed endless. The
+roads, towns and trees were familiar yet distant, like a dream
+slipping through his fingers.
 </p>
 
 <p>
-When he finally arrived in Manafwa, the compound
-felt emptier than ever.
+When he finally arrived in Manafwa, the compound felt emptier
+than ever.
 </p>
 
 <p>
-Patricia stood at the gate, her face pale but
-strong, holding back tears.
+Patricia stood at the gate, her face pale but strong, holding
+back tears.
 </p>
 
 <p>
-The children ran to him, clinging, crying and
-confused by the depth of the silence that had
-taken their father.
+The children ran to him, clinging, crying and confused by the
+depth of the silence that had taken their father.
 </p>
 
 <p>
-Elijah dropped his bags and held his mother
-tightly. He could feel the warmth of her body,
-yet the emptiness of loss pressed on him like
-a heavy stone.
+Elijah dropped his bags and held his mother tightly. He could
+feel the warmth of her body, yet the emptiness of loss pressed
+on him like a heavy stone.
 </p>
 
 <p>
-Days passed, and the reality of Kitsamba’s death
-settled like dust over the family.
-Friends and neighbors came to pay their respects.
+Days passed, and the reality of Kitsamba’s death settled like
+dust over the family. Friends and neighbors came to pay their
+respects.
 </p>
 
 <p>
-The funeral was filled with tears, prayers and
-solemn faces.
+The funeral was filled with tears, prayers and solemn faces.
 </p>
 
 <p>
-Elijah stood beside his mother, feeling a strange
-mixture of anger, sadness and helplessness.
+Elijah stood beside his mother, feeling a strange mixture of
+anger, sadness and helplessness.
 </p>
 
 <p>
@@ -1785,57 +1641,49 @@ Evenings were the hardest.
 </p>
 
 <p>
-Alone in his room, he would replay memories of
-his father — the stories, the laughter, the gentle
-hands that had guided him through life.
+Alone in his room, he would replay memories of his father —
+the stories, the laughter, the gentle hands that had guided
+him through life.
 </p>
 
 <p>
-Every memory was a treasure and a wound
-at the same time.
+Every memory was a treasure and a wound at the same time.
 </p>
 
 <p>
-But as the days turned into weeks, a promise
-grew inside Elijah — a promise not to let the
-pain destroy him.
+But as the days turned into weeks, a promise grew inside
+Elijah — a promise not to let the pain destroy him.
 </p>
 
 <p>
-He would become strong, just as his father
-had been, and he would fight for justice,
-not only for his family, but for those whose
-voices were ignored.
+He would become strong, just as his father had been, and he
+would fight for justice, not only for his family, but for
+those whose voices were ignored.
 </p>
 
 <p>
-The dream he once had of becoming a journalist
-began to change. In its place, another purpose
-emerged: he would become a lawyer, a defender
-of truth and justice.
+The dream he once had of becoming a journalist began to
+change. In its place, another purpose emerged: he would become
+a lawyer, a defender of truth and justice.
 </p>
 
 <p>
-He did not yet know how difficult the journey
-would be.
+He did not yet know how difficult the journey would be.
 </p>
 
 <p>
-He did not yet know that life would test him
-with friends who would betray him, love that
-would challenge him, and choices that would
-shape him into the man he was destined to become.
+He did not yet know that life would test him with friends who
+would betray him, love that would challenge him, and choices
+that would shape him into the man he was destined to become.
 </p>
 
 <p>
-But he knew one thing:
-the silence at 2PM would remain in his heart
-forever — a reminder of loss, love and the
-beginning of a new chapter.
+But he knew one thing: the silence at 2PM would remain in his
+heart forever — a reminder of loss, love and the beginning of
+a new chapter.
 </p>
 
 </div>
-
 
 <div class="chapter-nav">
 
@@ -1852,74 +1700,119 @@ Continue Reading →
 </article>
 
 
+<!-- =========================
+     PREMIUM / PAYPAL
+========================= -->
 
-<!-- ==============================
-PREMIUM SECTION
-============================== -->
-
-<section
-class="premium"
-id="premium">
+<section class="premium" id="premium">
 
 <div class="lock-circle">
-
 <i class="fa-solid fa-lock"></i>
-
 </div>
 
 <div class="eyebrow">
 Premium Access
 </div>
 
-<h2>
-Continue Elijah's journey.
-</h2>
+<h2>Continue Elijah's journey.</h2>
 
 <p class="premium-intro">
-
 You have reached the end of the free preview.
 Purchase the complete novel to continue from
 Chapter 4 through Chapter 15.
-
 </p>
 
-
-<div
-class="purchase-price"
-id="purchasePrice">
-
+<div class="purchase-price" id="purchasePrice">
 UGX 18,000
-
 </div>
 
 <div class="purchase-official">
-
 Official Uganda price:
 <strong>UGX 18,000</strong>
+</div>
+
+<div class="checkout-price">
+PayPal checkout price: <strong>$4.85 USD</strong>
+</div>
+
+
+<!-- =========================
+     LIVE PAYPAL PAYMENT
+========================= -->
+
+<div class="paypal-area">
+
+<form
+    action="https://www.paypal.com/ncp/payment/PG5KSS95GZC2U"
+    method="post"
+    target="_blank"
+>
+
+<button
+    class="paypal-buy-button"
+    type="submit"
+>
+
+<i class="fa-brands fa-paypal"></i>
+&nbsp;
+Buy Full Novel — $4.85 USD
+
+</button>
+
+</form>
+
+<img
+    class="cards-image"
+    src="https://www.paypalobjects.com/images/Debit_Credit.svg"
+    alt="Debit and credit cards accepted"
+>
+
+<div class="paypal-branding">
+
+Secure checkout powered by
+
+<img
+    src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg"
+    alt="PayPal"
+>
+
+</div>
 
 </div>
 
 
-<button
-class="buy-main"
-onclick="buyNovel()">
-
-<i class="fa-solid fa-lock-open"></i>
-
-Buy Full Novel
-
-</button>
-
-
 <p class="payment-note">
-
-Secure online payment will be connected to this
-button. No money will be taken until the secure
-checkout system is activated.
-
+Clicking Buy Full Novel opens the secure PayPal checkout
+for The Silence at 2PM. The payment price is $4.85 USD.
 </p>
 
 
+<!-- AFTER PAYMENT -->
+
+<div class="after-payment">
+
+<strong>
+Already paid?
+</strong>
+
+<p>
+Keep your PayPal payment receipt. Until automatic reader
+unlock is added, contact Kitsamba Writes Africa after
+payment so your purchase can be confirmed and your full
+novel access can be provided.
+</p>
+
+<a href="contact.html">
+
+<i class="fa-solid fa-envelope"></i>
+I Have Paid — Contact Author
+
+</a>
+
+</div>
+
+
+<!-- LOCKED CHAPTERS -->
 
 <div class="locked-chapters">
 
@@ -1988,51 +1881,42 @@ Chapter 15: The Silence at 2 P.M.
 </section>
 
 
+<!-- =========================
+     FEEDBACK
+========================= -->
 
-<!-- ==============================
-FEEDBACK
-============================== -->
-
-<section
-class="feedback-section"
-id="feedback">
+<section class="feedback-section" id="feedback">
 
 <div class="eyebrow">
 Reader Feedback
 </div>
 
-<h2>
-What did you think?
-</h2>
+<h2>What did you think?</h2>
 
 <p>
-
 Your feedback helps improve future stories.
 You can send private feedback to the author
 or join the public reader discussion below.
-
 </p>
-
 
 <div class="feedback-actions">
 
 <a
-href="contact.html"
-class="feedback-btn feedback-primary">
+    href="contact.html"
+    class="feedback-btn feedback-primary"
+>
 
 <i class="fa-solid fa-star"></i>
-
 Give Feedback
 
 </a>
 
-
 <a
-href="#comments"
-class="feedback-btn feedback-secondary">
+    href="#comments"
+    class="feedback-btn feedback-secondary"
+>
 
 <i class="fa-solid fa-comments"></i>
-
 Join Comments
 
 </a>
@@ -2042,58 +1926,48 @@ Join Comments
 </section>
 
 
+<!-- =========================
+     COMMENTS
+========================= -->
 
-<!-- ==============================
-COMMENTS
-============================== -->
-
-<section
-class="comments-section"
-id="comments">
+<section class="comments-section" id="comments">
 
 <div class="eyebrow">
 Reader Community
 </div>
 
-<h2>
-Comments & Discussion
-</h2>
+<h2>Comments & Discussion</h2>
 
 <p>
-
 Share your thoughts about The Silence at 2PM.
 Please discuss the story respectfully and avoid
 posting major spoilers without warning other readers.
-
 </p>
-
 
 <div class="comments-box">
 
 <script
-src="https://utteranc.es/client.js"
-repo="KitsambaWisdomJoshua/Kitsamba-Writes-Africa"
-issue-term="pathname"
-label="reader-comments"
-theme="github-dark"
-crossorigin="anonymous"
-async>
+    src="https://utteranc.es/client.js"
+    repo="KitsambaWisdomJoshua/Kitsamba-Writes-Africa"
+    issue-term="pathname"
+    label="reader-comments"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
 </script>
 
 </div>
 
 </section>
 
-
 </section>
 
 </main>
 
 
-
-<!-- ==============================
-FOOTER
-============================== -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -2108,54 +1982,40 @@ All rights reserved.
 </footer>
 
 
-
 <script>
 
-/* ==============================
-YEAR
-============================== */
+/* =========================
+   YEAR
+========================= */
 
-document.getElementById("year")
-.textContent =
+document.getElementById("year").textContent =
 new Date().getFullYear();
 
 
-
-/* ==============================
-LOCAL CURRENCY
-============================== */
+/* =========================
+   LOCAL CURRENCY DISPLAY
+========================= */
 
 async function loadLocalPrice(){
 
     const priceBox =
-    document.querySelector(
-        "[data-ugx-price]"
-    );
+    document.querySelector("[data-ugx-price]");
 
     const heroPrice =
-    priceBox.querySelector(
-        ".local-price"
-    );
+    priceBox.querySelector(".local-price");
 
     const purchasePrice =
-    document.getElementById(
-        "purchasePrice"
-    );
+    document.getElementById("purchasePrice");
 
-    const ugxPrice =
-    18000;
+    const ugxPrice = 18000;
 
     let currency = "USD";
-
     let country = "";
-
 
     try{
 
         const locationResponse =
-        await fetch(
-            "https://ipapi.co/json/"
-        );
+        await fetch("https://ipapi.co/json/");
 
         const locationData =
         await locationResponse.json();
@@ -2167,7 +2027,6 @@ async function loadLocalPrice(){
         locationData.country_code || "";
 
     }
-
     catch(error){
 
         console.log(
@@ -2177,18 +2036,14 @@ async function loadLocalPrice(){
     }
 
 
-    if(
-        country === "UG"
-    ){
+    if(country === "UG"){
 
         currency = "UGX";
 
     }
 
 
-    if(
-        currency === "UGX"
-    ){
+    if(currency === "UGX"){
 
         heroPrice.textContent =
         "UGX 18,000";
@@ -2211,14 +2066,11 @@ async function loadLocalPrice(){
         const ratesData =
         await ratesResponse.json();
 
-
         if(
             !ratesData.rates ||
             !ratesData.rates[currency]
         ){
-
             return;
-
         }
 
 
@@ -2243,12 +2095,10 @@ async function loadLocalPrice(){
             ).format(converted);
 
         }
-
         catch(error){
 
             formatted =
-            currency +
-            " " +
+            currency + " " +
             converted.toFixed(2);
 
         }
@@ -2261,7 +2111,6 @@ async function loadLocalPrice(){
         formatted;
 
     }
-
     catch(error){
 
         console.log(
@@ -2273,62 +2122,38 @@ async function loadLocalPrice(){
 }
 
 
-
-/* ==============================
-BUY BUTTON
-============================== */
-
-function buyNovel(){
-
-    alert(
-        "Secure payment checkout is the next step. " +
-        "No payment has been taken yet."
-    );
-
-}
-
-
-
-/* ==============================
-?buy=1 FROM NOVELS PAGE
-============================== */
+/* =========================
+   ?buy=1 FROM NOVELS PAGE
+========================= */
 
 const query =
 new URLSearchParams(
     window.location.search
 );
 
-
-if(
-    query.get("buy") === "1"
-){
+if(query.get("buy") === "1"){
 
     setTimeout(
-    function(){
+        function(){
 
-        document
-        .getElementById("premium")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+            document
+            .getElementById("premium")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
-    },
-    400
+        },
+        400
     );
 
 }
 
 
-
-/* ==============================
-START PRICE SYSTEM
-============================== */
+/* START CURRENCY SYSTEM */
 
 loadLocalPrice();
 
 </script>
 
-
 </body>
-
 </html>
