@@ -45,7 +45,6 @@
     }
   }
 
-  // Apply immediately so pages do not flash the wrong theme while loading.
   applyTheme(readTheme());
 
   const css = `
@@ -57,41 +56,51 @@
       --kw-light-surface-2: #f0e7d9;
       --kw-light-text: #211c17;
       --kw-light-muted: #6f6458;
-      --kw-light-border: rgba(72, 54, 34, .16);
+      --kw-light-border: rgba(72,54,34,.16);
     }
 
     #kw-theme-toggle {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 99999;
+      position: relative;
+      inset: auto;
+      z-index: 10;
+      flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      min-width: 106px;
-      height: 46px;
-      padding: 0 15px;
+      gap: 8px;
+      min-width: 96px;
+      height: 40px;
+      margin-left: 10px;
+      padding: 0 13px;
       border-radius: 999px;
-      border: 1px solid rgba(216, 172, 86, .45);
-      background: rgba(15, 15, 15, .94);
+      border: 1px solid rgba(216,172,86,.45);
+      background: rgba(15,15,15,.92);
       color: #fff;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, .28);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      box-shadow: none;
       font-family: "DM Sans", Arial, sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: .2px;
+      line-height: 1;
+      white-space: nowrap;
       cursor: pointer;
       transition: transform .2s ease, background .25s ease, color .25s ease, border-color .25s ease;
     }
 
-    #kw-theme-toggle:hover { transform: translateY(-2px); border-color: var(--kw-gold); }
-    #kw-theme-toggle:focus-visible { outline: 3px solid rgba(216, 172, 86, .35); outline-offset: 3px; }
+    #kw-theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--kw-gold);
+      color: var(--kw-gold-light);
+    }
+
+    #kw-theme-toggle:focus-visible {
+      outline: 3px solid rgba(216,172,86,.35);
+      outline-offset: 3px;
+    }
+
     #kw-theme-toggle svg {
-      width: 19px;
-      height: 19px;
+      width: 18px;
+      height: 18px;
       fill: none;
       stroke: currentColor;
       stroke-width: 1.9;
@@ -101,10 +110,9 @@
     }
 
     html.kw-light #kw-theme-toggle {
-      background: rgba(255, 250, 242, .96);
+      background: rgba(255,250,242,.98);
       color: #2a2118;
-      border-color: rgba(116, 82, 38, .30);
-      box-shadow: 0 12px 35px rgba(70, 49, 24, .16);
+      border-color: rgba(116,82,38,.35);
     }
 
     html.kw-light {
@@ -144,7 +152,7 @@
     html.kw-light .main-menu,
     html.kw-light .menu-dropdown,
     html.kw-light .dropdown-menu {
-      background-color: rgba(255, 250, 242, .96) !important;
+      background-color: rgba(255,250,242,.96) !important;
       color: var(--kw-light-text) !important;
       border-color: var(--kw-light-border) !important;
     }
@@ -204,7 +212,7 @@
       background-color: var(--kw-light-surface) !important;
       color: var(--kw-light-text) !important;
       border-color: var(--kw-light-border) !important;
-      box-shadow: 0 16px 38px rgba(66, 45, 22, .08) !important;
+      box-shadow: 0 16px 38px rgba(66,45,22,.08) !important;
     }
 
     html.kw-light footer,
@@ -263,16 +271,16 @@
     html.kw-light h6,
     html.kw-light strong { color: var(--kw-light-text); }
 
-    /* Keep readable paper pages warm and book-like in both modes. */
     html.kw-light .reader-card,
     html.kw-light .paper {
       background: #fffaf0 !important;
       color: #211c16 !important;
-      box-shadow: 0 25px 65px rgba(82, 56, 28, .16) !important;
+      box-shadow: 0 25px 65px rgba(82,56,28,.16) !important;
     }
 
     html.kw-light .reader-card *,
     html.kw-light .paper * { color: inherit; }
+
     html.kw-light .chapter-label,
     html.kw-light .eyebrow,
     html.kw-light .country,
@@ -304,21 +312,56 @@
       transition: background-color .28s ease, color .28s ease, border-color .28s ease, box-shadow .28s ease;
     }
 
-    @media (max-width: 640px) {
+    /* Fallback only for a page that has a header but no nav element. */
+    header.kw-theme-fallback-host { position: relative; }
+    header.kw-theme-fallback-host #kw-theme-toggle {
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+      margin-left: 0;
+    }
+    header.kw-theme-fallback-host #kw-theme-toggle:hover {
+      transform: translateY(calc(-50% - 1px));
+    }
+
+    @media (max-width: 900px) {
       #kw-theme-toggle {
-        right: 14px;
-        bottom: 14px;
-        width: 46px;
-        min-width: 46px;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
         padding: 0;
+        margin-left: 7px;
       }
       #kw-theme-toggle span { display: none; }
+    }
+
+    @media (max-width: 520px) {
+      #kw-theme-toggle {
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+        margin-left: 5px;
+      }
+      #kw-theme-toggle svg { width: 17px; height: 17px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       #kw-theme-toggle, body, header, footer, main, section, article, aside, nav { transition: none !important; }
     }
   `;
+
+  function findNavigationHost() {
+    return (
+      document.querySelector('header nav') ||
+      document.querySelector('header .nav') ||
+      document.querySelector('header .navbar') ||
+      document.querySelector('header .nav-container') ||
+      document.querySelector('header .header-inner') ||
+      document.querySelector('nav') ||
+      document.querySelector('header')
+    );
+  }
 
   function mount() {
     if (!document.getElementById('kw-theme-style')) {
@@ -328,8 +371,9 @@
       document.head.appendChild(style);
     }
 
-    if (!document.getElementById('kw-theme-toggle')) {
-      const button = document.createElement('button');
+    let button = document.getElementById('kw-theme-toggle');
+    if (!button) {
+      button = document.createElement('button');
       button.id = 'kw-theme-toggle';
       button.type = 'button';
       button.addEventListener('click', () => {
@@ -337,7 +381,16 @@
         saveTheme(next);
         applyTheme(next);
       });
-      document.body.appendChild(button);
+    }
+
+    const host = findNavigationHost();
+    if (host) {
+      if (host.tagName.toLowerCase() === 'header') {
+        host.classList.add('kw-theme-fallback-host');
+      }
+      host.appendChild(button);
+    } else {
+      document.body.insertBefore(button, document.body.firstChild);
     }
 
     applyTheme(readTheme());
