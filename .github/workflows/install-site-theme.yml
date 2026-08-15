@@ -1,0 +1,68 @@
+name: Install site-wide theme
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'theme.js'
+      - '.github/workflows/install-site-theme.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Add theme script to every HTML page
+        shell: python
+        run: |
+          from pathlib import Path
+          import os
+
+          changed = []
+          for path in Path('.').rglob('*.html'):
+              if '.git' in path.parts or '.github' in path.parts:
+                  continue
+
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+
+              if 'theme.js' in text and '<script' in text:
+                  continue
+
+              relative = os.path.relpath('theme.js', path.parent).replace(os.sep, '/')
+              tag = f'<script src="{relative}"></script>'
+
+              if '</head>' in text:
+                  text = text.replace('</head>', f'{tag}\n</head>', 1)
+              elif '</body>' in text:
+                  text = text.replace('</body>', f'{tag}\n</body>', 1)
+              else:
+                  text += f'\n{tag}\n'
+
+              path.write_text(text, encoding='utf-8')
+              changed.append(str(path))
+
+          print(f'Updated {len(changed)} HTML pages')
+          for item in changed:
+              print(f' - {item}')
+
+      - name: Commit theme installation
+        run: |
+          if git diff --quiet; then
+            echo "Theme is already installed on all HTML pages."
+            exit 0
+          fi
+          git config user.name "Kitsamba Writes Theme Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add '*.html' '**/*.html' || true
+          git commit -m "Apply dark and light theme to all pages"
+          git push
