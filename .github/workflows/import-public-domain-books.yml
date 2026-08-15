@@ -1,0 +1,98 @@
+name: Import public-domain books
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-public-domain-books.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-books:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download verified public-domain texts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p books/texts
+
+          curl -L --fail --retry 3 \
+            'https://www.gutenberg.org/cache/epub/1452/pg1452.txt' \
+            -o /tmp/native-life.txt
+
+          curl -L --fail --retry 3 \
+            'https://www.gutenberg.org/cache/epub/15399/pg15399.txt' \
+            -o /tmp/equiano.txt
+
+          curl -L --fail --retry 3 \
+            'https://www.gutenberg.org/cache/epub/1441/pg1441.txt' \
+            -o /tmp/african-farm.txt
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          books = [
+              ('/tmp/native-life.txt', 'books/texts/native-life-in-south-africa.txt',
+               'Native Life in South Africa', 'Sol T. Plaatje', 'Project Gutenberg eBook #1452'),
+              ('/tmp/equiano.txt', 'books/texts/interesting-narrative-olaudah-equiano.txt',
+               'The Interesting Narrative of the Life of Olaudah Equiano', 'Olaudah Equiano', 'Project Gutenberg eBook #15399'),
+              ('/tmp/african-farm.txt', 'books/texts/story-of-an-african-farm.txt',
+               'The Story of an African Farm', 'Olive Schreiner', 'Project Gutenberg eBook #1441'),
+          ]
+
+          def extract_body(text: str) -> str:
+              lines = text.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+              start = None
+              end = None
+              for i, line in enumerate(lines):
+                  if start is None and '*** START OF THE PROJECT GUTENBERG EBOOK' in line.upper():
+                      start = i + 1
+                  elif start is not None and '*** END OF THE PROJECT GUTENBERG EBOOK' in line.upper():
+                      end = i
+                      break
+              if start is None:
+                  return text.strip()
+              return '\n'.join(lines[start:end]).strip()
+
+          for source, destination, title, author, source_note in books:
+              raw = Path(source).read_text(encoding='utf-8-sig', errors='replace')
+              body = extract_body(raw)
+              header = (
+                  f'{title}\n'
+                  f'By {author}\n\n'
+                  'PUBLIC-DOMAIN EDITION FOR KITSAMBA WRITES AFRICA\n'
+                  f'Source transcription: {source_note}\n'
+                  'This work is hosted locally because its copyright term has expired in Uganda.\n\n'
+                  '============================================================\n\n'
+              )
+              Path(destination).write_text(header + body + '\n', encoding='utf-8')
+          PY
+
+          test -s books/texts/native-life-in-south-africa.txt
+          test -s books/texts/interesting-narrative-olaudah-equiano.txt
+          test -s books/texts/story-of-an-african-farm.txt
+
+      - name: Commit imported texts
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Kitsamba Writes Library Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add books/texts/native-life-in-south-africa.txt \
+                  books/texts/interesting-narrative-olaudah-equiano.txt \
+                  books/texts/story-of-an-african-farm.txt
+
+          if git diff --cached --quiet; then
+            echo 'No book changes to commit.'
+            exit 0
+          fi
+
+          git commit -m 'Import verified public-domain African books'
+          git push
